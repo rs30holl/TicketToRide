@@ -5,6 +5,7 @@ import java.util.*;
  * @author (your name)
  * @version (a version number or a date)
  */
+////////////////////////////////////////////////////////////////////////////////
 public class Hand
 {
     public ArrayList<Card> cards = new ArrayList<>();

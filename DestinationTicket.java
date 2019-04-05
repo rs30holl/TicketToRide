@@ -5,6 +5,7 @@ import java.awt.Color;
  * @author (your name)
  * @version (a version number or a date)
  */
+////////////////////////////////////////////////////////////////////////////////
 public class DestinationTicket extends Card
 {
     private Path track;
