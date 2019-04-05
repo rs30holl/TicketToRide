@@ -6,8 +6,10 @@ import java.awt.Color;
  * @author (your name)
  * @version (a version number or a date)
  */
+////////////////////////////////////////////////////////////////////////////////
 public class Board
 {
+    
     private ArrayList<LocationNode> points = new ArrayList<>();
     private ArrayList<Card> deck = new ArrayList<>();
 
