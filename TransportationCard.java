@@ -7,9 +7,14 @@ import java.awt.Color;
  */
 public class TransportationCard extends Card
 {
-    private Color color;
+    private String color;
     
-    public TransportationCard(Color c){
+    public TransportationCard(String c){
         color = c;
+    }
+    
+    @Override
+    public String getColor(){
+        return color;
     }
 }

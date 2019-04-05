@@ -1,4 +1,4 @@
-
+import java.awt.Color;
 /**
  * Write a description of class DestinationTicket here.
  *
@@ -14,4 +14,7 @@ public class DestinationTicket extends Card
         track = t;
         score = p;
     }
+    
+    @Override
+    public String getColor(){return null;}
 }

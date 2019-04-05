@@ -8,17 +8,33 @@ import java.awt.Color;
 public class Path
 {
     private LocationNode start, end;
-    private Color color;
+    private String color;
     private int weight, length;
 
     /**
      * Constructor for objects of class Path
      */
-    public Path(LocationNode s, LocationNode e, Color c, int w, int l){
+    public Path(LocationNode s, LocationNode e, String c, int w, int l){
         start = s;
         end = e;
         color = c;
         weight = w;
         length = l;
+    }
+    
+    public int getLength(){
+        return length;
+    }
+    
+    public String getColor(){
+        return color;
+    }
+    
+    public LocationNode getStart(){
+        return start;
+    }
+    
+    public LocationNode getEnd(){
+        return end;
     }
 }
