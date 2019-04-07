@@ -12,15 +12,17 @@ public class Player
     private Hand hand;
     private String name;
     private ArrayList<Path> claimedRoutes = new ArrayList<>();
+    private String color;
     
     /**
      * Constructor for the objects of Player class
      * 
      * @param n: Name of the Player
      */
-    public Player(String n){
+    public Player(String n, String c){
         hand = new Hand();
         name = n;
+        color = c;
     }
     
     /**
