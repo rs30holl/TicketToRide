@@ -5,11 +5,7 @@ import java.awt.Color;
  * @author (your name here)
  * @version (version number or date here)
  */
-////////////////////////////////////////////////////////////////////////////////
 public abstract class Card
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
     public abstract String getColor();
 }

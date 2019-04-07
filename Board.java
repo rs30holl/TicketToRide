@@ -6,12 +6,11 @@ import java.awt.Color;
  * @author (your name)
  * @version (a version number or a date)
  */
-////////////////////////////////////////////////////////////////////////////////
 public class Board
 {
-    
     private ArrayList<LocationNode> points = new ArrayList<>();
-    private ArrayList<Card> deck = new ArrayList<>();
+    public static ArrayList<Card> deck = new ArrayList<>();
+    public static ArrayList<Card> discard = new ArrayList<>();
 
     public Board(){
         LocationNode cp = new LocationNode("Central Park", 0, 0, true);

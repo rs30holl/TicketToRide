@@ -5,7 +5,6 @@ import java.util.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-////////////////////////////////////////////////////////////////////////////////
 public class LocationNode
 {
     private String name;
@@ -18,6 +17,18 @@ public class LocationNode
         x = a;
         y = b;
         point = p;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public int getX(){
+        return x;
+    }
+    
+    public int getY(){
+        return y;
     }
     
     public void addPath(Path p){

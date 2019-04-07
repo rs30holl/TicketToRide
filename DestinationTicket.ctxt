@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=DestinationTicket
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ DestinationTicket\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=s\ e\ p
+comment1.target=DestinationTicket(LocationNode,\ LocationNode,\ int)
+comment2.params=
+comment2.target=LocationNode\ getStart()
+comment3.params=
+comment3.target=LocationNode\ getEnd()
+comment4.params=
+comment4.target=java.lang.String\ getColor()
+numComments=5

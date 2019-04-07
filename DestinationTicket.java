@@ -5,15 +5,23 @@ import java.awt.Color;
  * @author (your name)
  * @version (a version number or a date)
  */
-////////////////////////////////////////////////////////////////////////////////
 public class DestinationTicket extends Card
 {
-    private Path track;
+    private LocationNode start, end;
     private int score;
     
-    public DestinationTicket(Path t, int p){
-        track = t;
+    public DestinationTicket(LocationNode s, LocationNode e, int p){
+        start = s;
+        end = e;
         score = p;
+    }
+    
+    public LocationNode getStart(){
+        return start;
+    }
+    
+    public LocationNode getEnd(){
+        return end;
     }
     
     @Override

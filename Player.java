@@ -6,7 +6,6 @@ import java.util.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-////////////////////////////////////////////////////////////////////////////////
 public class Player
 {
     private Hand hand;
@@ -17,15 +16,30 @@ public class Player
         hand = new Hand();
         name = n;
     }
+    
+    public void setName(String n){
+        name = n;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public void drawCard(){
+        hand.addCard(Board.deck.get(0));
+        Board.deck.remove(0);
+    }
 
     public void claimRoute(Path p){
         int length = p.getLength();
-        Color color = p.getColor();
+        String color = p.getColor();
         int numCards = 0;
         for (Card c : hand.cards){
             if (c instanceof TransportationCard){
                 if (c.getColor().equals(color)){
                     numCards++;
+                    Board.discard.add(c);
+                    hand.removeCard(c);
                 }
             }
         }
