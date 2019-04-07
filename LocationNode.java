@@ -13,6 +13,13 @@ public class LocationNode
     private boolean point;
     private ArrayList<Path> paths = new ArrayList<>();
     
+    /**
+     * Constructs an object of LocationNode
+     * @param String n
+     * @param int a
+     * @param int b 
+     * @param boolean p
+     */
     public LocationNode(String n, int a, int b, boolean p){
         name = n;
         x = a;
@@ -20,26 +27,49 @@ public class LocationNode
         point = p;
     }
     
+    /**
+     * Returns the name of this node
+     * @return String
+     */
     public String getName(){
         return name;
     }
     
+    /**
+     * Returns the X coordinate of this node
+     * @return int
+     */
     public int getX(){
         return x;
     }
     
+    /**
+     * Returns the Y coordinate of this node
+     * @return int
+     */
     public int getY(){
         return y;
     }
     
+    /**
+     * Adds the specified path to this nodes list of connected paths
+     * @param Path p
+     */
     public void addPath(Path p){
         paths.add(p);
     }
     
+    /**
+     * Removes the specified path from this nodes list of connected paths
+     * @param Path p
+     */
     public void removePath(Path p){
         paths.remove(p);
     }
     
+    /**
+     * Prints every path connected to this node
+     */
     public void printPaths(){
         System.out.println(this.name + " has paths to:");
         
@@ -52,6 +82,9 @@ public class LocationNode
         }
     }
     
+    /**
+     * Returns whether this class is worth a point
+     */
     public boolean hasPoints(){
         if (this.point){
             return true;
