@@ -1,19 +1,27 @@
 import java.awt.Color;
 /**
- * Write a description of class TransportationCard here.
+ * This is a class for the transportation cards.
  *
  * @author Ryan Holland, Julia Krasinski, Briella Sala,
  * Matt Harrison, Michael Lostritto
- * @version (a version number or a date)
+ * @version (4/7/2019)
  */
 public class TransportationCard extends Card
 {
     private String color;
     
+    /**
+     * Constructor for the objects of TransportationCard class.
+     * 
+     * @param c: Color
+     */
     public TransportationCard(String c){
         color = c;
     }
     
+    /**
+     * Gets the color of the card. 
+     */
     @Override
     public String getColor(){
         return color;
