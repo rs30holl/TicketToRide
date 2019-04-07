@@ -12,19 +12,17 @@ public class Player
     private Hand hand;
     private String name;
     private ArrayList<Path> claimedRoutes = new ArrayList<>();
-    private String color;
-    
+
     /**
      * Constructor for the objects of Player class
      * 
      * @param n: Name of the Player
      */
-    public Player(String n, String c){
+    public Player(String n){
         hand = new Hand();
         name = n;
-        color = c;
     }
-    
+
     /**
      * This method sets the name of the Player
      * 
@@ -33,7 +31,7 @@ public class Player
     public void setName(String n){
         name = n;
     }
-    
+
     /**
      * This method finds the name of the Player
      * 
@@ -42,13 +40,19 @@ public class Player
     public String getName(){
         return name;
     }
-    
+
     /**
      * This method draws cards from the deck and adds them to the Players's hand
      */
-    public void drawCard(){
-        hand.addCard(Board.deck.get(0));
-        Board.deck.remove(0);
+    public void drawCard(Card c){
+        if (c instanceof TransportationCard){
+            hand.addCard(Board.tcDeck.get(0));
+            Board.tcDeck.remove(0);
+        }
+        else {
+            hand.addCard(Board.dtDeck.get(0));
+            Board.dtDeck.remove(0);
+        }
     }
 
     /**
