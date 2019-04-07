@@ -14,6 +14,12 @@ public class Path
 
     /**
      * Constructor for objects of class Path
+     * 
+     * @param s: Start location of the path to be traversed
+     *        e: End location of the path to be traversed
+     *        c: Color of the path to be traversed
+     *        w: 
+     *        l: Tile length of the path to be traversed
      */
     public Path(LocationNode s, LocationNode e, String c, int w, int l){
         start = s;
