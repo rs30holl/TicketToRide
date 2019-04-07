@@ -29,18 +29,38 @@ public class Path
         length = l;
     }
     
+    /**
+     * This method finds the length of the  path.
+     * 
+     * @return the length of the path
+     */
     public int getLength(){
         return length;
     }
     
+    /**
+     * This method finds the color of the path.
+     * 
+     * @return the color of the path
+     */
     public String getColor(){
         return color;
     }
     
+    /**
+     * This method finds the starting node of the path
+     * 
+     * @return the start node of the path
+     */
     public LocationNode getStart(){
         return start;
     }
     
+    /**
+     * This method finds the ending node of the path
+     * 
+     * @return the end node of the path
+     */
     public LocationNode getEnd(){
         return end;
     }
