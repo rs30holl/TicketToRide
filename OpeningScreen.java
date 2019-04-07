@@ -10,7 +10,7 @@ import java.awt.event.*;
  */
 public class OpeningScreen extends JPanel
 {
-    private final ImageIcon cover = new ImageIcon(this.getClass().getResource("/fwdpieces1/board.jpg"));
+    private final ImageIcon cover = new ImageIcon(this.getClass().getResource("/fwdpieces1/Cover.jpg"));
     private final Image cover2 = cover.getImage();
 
     public OpeningScreen(){
