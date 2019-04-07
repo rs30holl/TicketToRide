@@ -21,6 +21,8 @@ public class TransportationCard extends Card
     
     /**
      * Gets the color of the card. 
+     * 
+     * @return color: String
      */
     @Override
     public String getColor(){
