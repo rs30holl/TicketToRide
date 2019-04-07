@@ -5,7 +5,7 @@ import java.util.*;
  *
  * @author Ryan Holland, Julia Krasinski, Briella Sala,
  * Matt Harrison, Michael Lostritto
- * @version (a version number or a date)
+ * @version 4.7.2019
  */
 public class Player
 {
