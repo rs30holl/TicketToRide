@@ -27,6 +27,8 @@ public class DestinationTicket extends Card
     
     /**
      * Returns the starting location.
+     * 
+     * @return start: LocationNode
      */
     public LocationNode getStart(){
         return start;
@@ -34,6 +36,8 @@ public class DestinationTicket extends Card
     
     /**
      * Returns the ending location.
+     * 
+     * @return end: LocationNode
      */
     public LocationNode getEnd(){
         return end;
@@ -41,6 +45,8 @@ public class DestinationTicket extends Card
     
     /**
      * Gets the color of the card. 
+     * 
+     * @return null
      */
     @Override
     public String getColor(){return null;}
