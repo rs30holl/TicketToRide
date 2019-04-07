@@ -8,13 +8,14 @@ import java.awt.event.*;
  * Matt Harrison, Michael Lostritto
  * @version (a version number or a date)
  */
-public class OpeningScreen extends JPanel
+public class OpeningScreen extends JPanel implements MouseListener
 {
     private final ImageIcon cover = new ImageIcon(this.getClass().getResource("/fwdpieces1/Cover.jpg"));
     private final Image cover2 = cover.getImage();
 
     public OpeningScreen(){
         setPreferredSize(new Dimension(1000,1000));
+        addMouseListener(this);
     }
 
     @Override
@@ -33,6 +34,18 @@ public class OpeningScreen extends JPanel
 
         frame.pack();
         frame.setVisible(true);
+    }
+    
+    public void mousePressed(MouseEvent e){}
+    
+    public void mouseEntered(MouseEvent e){}
+
+    public void mouseReleased(MouseEvent e){}
+    
+    public void mouseExited(MouseEvent e){}
+    
+    public void mouseClicked(MouseEvent e){
+        BoardPanel.main(new String[0]);
     }
 
     public static void main(String[] args){
