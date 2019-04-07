@@ -4,7 +4,8 @@ import java.awt.event.*;
 /**
  * Write a description of class OpeningScreen here.
  *
- * @author (your name)
+ * @author Ryan Holland, Julia Krasinski, Briella Sala,
+ * Matt Harrison, Michael Lostritto
  * @version (a version number or a date)
  */
 public class OpeningScreen extends JPanel

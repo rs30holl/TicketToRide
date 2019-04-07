@@ -2,7 +2,8 @@ import java.awt.Color;
 /**
  * Write a description of class DestinationTicket here.
  *
- * @author (your name)
+ * @author Ryan Holland, Julia Krasinski, Briella Sala,
+ * Matt Harrison, Michael Lostritto
  * @version (a version number or a date)
  */
 public class DestinationTicket extends Card
