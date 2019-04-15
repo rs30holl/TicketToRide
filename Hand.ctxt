@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Hand
+comment0.text=\r\n\ Creates\ a\ hand\ of\ Ticket\ to\ Ride\ cards\r\n\r\n\ @author\ Ryan\ Holland,\ Julia\ Krasinski,\ Briella\ Sala,\r\n\ Matt\ Harrison,\ Michael\ Lostritto\r\n\ @version\ 4/7/19\r\n
+comment1.params=numCards
+comment1.target=Hand(Card[])
+comment1.text=\r\n\ Constructor\ for\ a\ hand\ object.\r\n\r\n\ @param\ numCards\ Number\ of\ starting\ cards\ in\ a\ hand\r\n
+comment2.params=c
+comment2.target=void\ addCard(Card)
+comment2.text=\r\n\ Adds\ a\ card\ to\ the\ hand\r\n\r\n\ @param\ c\ The\ card\ to\ be\ added\ to\ the\ hand\r\n
+comment3.params=c
+comment3.target=void\ removeCard(Card)
+comment3.text=\r\n\ Removes\ a\ card\ from\ the\ hand\r\n\r\n\ @param\ c\ The\ card\ to\ be\ removed\r\n
+numComments=4
