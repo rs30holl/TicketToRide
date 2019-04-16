@@ -13,7 +13,7 @@ public class TransportationCard extends Card
     /**
      * Constructor for the objects of TransportationCard class.
      * 
-     * @param c: Color
+     * @param c: The color of the transportation card
      */
     public TransportationCard(String c){
         color = c;
@@ -22,7 +22,7 @@ public class TransportationCard extends Card
     /**
      * Gets the color of the card. 
      * 
-     * @return color: String
+     * @return The color of the transportation card
      */
     @Override
     public String getColor(){
