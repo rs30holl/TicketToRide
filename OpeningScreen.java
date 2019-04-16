@@ -12,6 +12,7 @@ public class OpeningScreen extends JPanel implements MouseListener
 {
     private final ImageIcon cover = new ImageIcon(this.getClass().getResource("/fwdpieces1/Cover.jpg"));
     private final Image cover2 = cover.getImage();
+    private static final JFrame frame = new JFrame("Ticket to Ride: NYC");
 
     public OpeningScreen(){
         setPreferredSize(new Dimension(1000,1000));
@@ -26,7 +27,7 @@ public class OpeningScreen extends JPanel implements MouseListener
     }
 
     public static void createAndShowGUI(){
-        JFrame frame = new JFrame("Ticket to Ride: NYC");
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         OpeningScreen panel = new OpeningScreen();
@@ -46,6 +47,7 @@ public class OpeningScreen extends JPanel implements MouseListener
     
     public void mouseClicked(MouseEvent e){
         BoardPanel.main(new String[0]);
+        frame.dispose();
     }
 
     public static void main(String[] args){
