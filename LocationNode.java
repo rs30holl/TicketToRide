@@ -15,10 +15,11 @@ public class LocationNode
     
     /**
      * Constructs an object of LocationNode
-     * @param String n
-     * @param int a
-     * @param int b 
-     * @param boolean p
+     * 
+     * @param n: The name of the node
+     *        a: The x-coordinate of the node
+     *        b: The y-coordinate of the node
+     *        p: States whether or not the node is worth a point
      */
     public LocationNode(String n, int a, int b, boolean p){
         name = n;
@@ -29,6 +30,7 @@ public class LocationNode
     
     /**
      * Returns the name of this node
+     * 
      * @return String
      */
     public String getName(){
@@ -37,6 +39,7 @@ public class LocationNode
     
     /**
      * Returns the X coordinate of this node
+     * 
      * @return int
      */
     public int getX(){
@@ -45,6 +48,7 @@ public class LocationNode
     
     /**
      * Returns the Y coordinate of this node
+     * 
      * @return int
      */
     public int getY(){
@@ -53,7 +57,8 @@ public class LocationNode
     
     /**
      * Adds the specified path to this nodes list of connected paths
-     * @param Path p
+     * 
+     * @param p: The path to be added to the list of connected paths
      */
     public void addPath(Path p){
         paths.add(p);
@@ -61,7 +66,8 @@ public class LocationNode
     
     /**
      * Removes the specified path from this nodes list of connected paths
-     * @param Path p
+     * 
+     * @param p: The path to be removed from the list of connected paths
      */
     public void removePath(Path p){
         paths.remove(p);
@@ -83,7 +89,7 @@ public class LocationNode
     }
     
     /**
-     * Returns whether this class is worth a point
+     * Returns whether this node is worth a point
      */
     public boolean hasPoints(){
         if (this.point){
