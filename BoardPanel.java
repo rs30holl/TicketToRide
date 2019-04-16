@@ -4,23 +4,27 @@ import java.awt.event.*;
 /**
  * Write a description of class BoardPanel here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ryan Holland, Julia Krasinski, Briella Sala,
+ * Matt Harrison, Michael Lostritto
+ * @version (4/7/2019)
  */
 public class BoardPanel extends JPanel
 {
     private final ImageIcon board = new ImageIcon(this.getClass().getResource("BoardPicture.jpg"));
     private final Image board2 = board.getImage();
-    
+
+    /**
+     * Constructor for the objects of the BoardPanel class
+     */
     public BoardPanel(){
         setPreferredSize(new Dimension(1000,1500));
-        
+
     }
-    
+
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        
+
         g.drawImage(board2, 0, 0, getWidth(), getHeight(), this);
     }
 
@@ -41,6 +45,6 @@ public class BoardPanel extends JPanel
                     createAndShowGUI();
                 }
             });
-        
+
     }
 }
