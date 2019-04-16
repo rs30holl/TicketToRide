@@ -13,8 +13,16 @@ public class Board
     public static ArrayList<Card> tcDeck = new ArrayList<>();
     public static ArrayList<Card> dtDeck = new ArrayList<>();    
     public static ArrayList<Card> discard = new ArrayList<>();
-
+    
+    /** Constructor for objects of class Board
+     * 
+     * This method adds all the location nodes to the board and creates
+     * the paths between those location nodes.  It also initalizes the
+     * destination tickets, and shuffles the deck
+     * 
+     */
     public Board(){
+        //Creates location nodes
         LocationNode cp = new LocationNode("Central Park", 0, 0, true);
         points.add(cp);
         LocationNode un = new LocationNode("United Nations", 0, 0, true);
@@ -46,6 +54,7 @@ public class Board
         LocationNode bk = new LocationNode("Brooklyn", 0, 0, true);
         points.add(bk);
 
+        //connects the location nodes with paths as they are on the game board
         cp.addPath(new Path(cp, lc, "ORANGE", 0, 2));
         cp.addPath(new Path(cp, un, "PINK", 0, 3));
         cp.addPath(new Path(cp, ts, "RED", 0, 2));
@@ -167,6 +176,11 @@ public class Board
         initDeck();
     }
     
+    /**
+     * This class initializes the deck of transportation cards by creating
+     * the 6 different collored cards and then adding them to the deck.  It 
+     * then adds in the wild cards and shuffles the deck
+     */
     public void initDeck(){
         for (int i = 0; i < 6; i++){
             TransportationCard a = new TransportationCard("BLUE");
@@ -190,7 +204,10 @@ public class Board
         
         Collections.shuffle(tcDeck);
     }
-    
+    /**
+     * This is a main method that creates a Board object and prints all the
+     * paths on that Board
+     */
     public static void main(String[] args){
         Board b = new Board();
         for (LocationNode n : b.points){
