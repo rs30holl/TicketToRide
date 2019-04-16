@@ -13,6 +13,9 @@ public class OpeningScreen extends JPanel implements MouseListener
     private final ImageIcon cover = new ImageIcon(this.getClass().getResource("/fwdpieces1/Cover.jpg"));
     private final Image cover2 = cover.getImage();
 
+    /**
+     * Constructor for objects of the OpeningScreen class
+     */
     public OpeningScreen(){
         setPreferredSize(new Dimension(1000,1000));
         addMouseListener(this);
