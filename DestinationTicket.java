@@ -14,9 +14,9 @@ public class DestinationTicket extends Card
     /**
      * Constructor for the objects of DestinationCard class.
      * 
-     * @param s: LocationNode
-     * @param e: LocationNode
-     * @param p: int of score
+     * @param s: starting LocationNode 
+     *        e: ending LocationNode
+     *        p: number of points received if the path is completed
      */
     public DestinationTicket(LocationNode s, LocationNode e, int p){
         start = s;
@@ -28,7 +28,7 @@ public class DestinationTicket extends Card
     /**
      * Returns the starting location.
      * 
-     * @return start: LocationNode
+     * @return The start location node on the destination ticket
      */
     public LocationNode getStart(){
         return start;
@@ -37,7 +37,7 @@ public class DestinationTicket extends Card
     /**
      * Returns the ending location.
      * 
-     * @return end: LocationNode
+     * @return The end location node on the destination ticket
      */
     public LocationNode getEnd(){
         return end;
