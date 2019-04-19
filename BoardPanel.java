@@ -44,8 +44,8 @@ public class BoardPanel extends JPanel
         //g.drawImage(transCardBack2, (int)(0.75 * getWidth()), getHeight() % 100, getWidth() / 10, getHeight() % 100, this);
         //g.drawImage(destTicketBack2, 0, 0, getWidth() / 10, getHeight() % 100, this);
         //g.drawImage(transCardBack2, 0, 0, getWidth() / 10, getHeight() % 100, this);
-        g.drawImage(transCardBack2, (int)(0.71 * getWidth()), 40, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(destTicketBack2, (int)(0.71 * getWidth()), 290, getWidth() / 15, getHeight() / 5, this);
+        g.drawImage(transCardBack2, (int)(0.715 * getWidth()), 40, getWidth() / 15, getHeight() / 5, this);
+        g.drawImage(destTicketBack2, (int)(0.715 * getWidth()), 300, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardSide2, (int)(0.865 * getWidth()), 40, getWidth() / 10, getHeight() / 10, this);
     }
 
