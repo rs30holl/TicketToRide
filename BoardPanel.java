@@ -7,8 +7,9 @@ import java.awt.event.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class BoardPanel extends JPanel
+public class BoardPanel extends JPanel implements MouseListener
 {
+    private static final JFrame frame = new JFrame("Ticket to Ride: NYC");
     private final ImageIcon board = new ImageIcon(this.getClass().getResource("BoardPicture.jpg"));
     private final Image board2 = board.getImage();
     private  final ImageIcon trainTracks = new ImageIcon(this.getClass().getResource("tracks.jpg"));
@@ -47,7 +48,7 @@ public class BoardPanel extends JPanel
         g.drawImage(transCardBack2, (int)(0.715 * getWidth()), 40, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(destTicketBack2, (int)(0.715 * getWidth()), 290, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardSide2, (int)(0.865 * getWidth()), 40, getWidth() / 10, getHeight() / 10, this);
-        
+
         g.drawImage(transCardBack2, (int)(0.51 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.6 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.7 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
@@ -59,7 +60,7 @@ public class BoardPanel extends JPanel
      *
      */
     public static void createAndShowGUI(){
-        JFrame frame = new JFrame("Ticket to Ride: NYC");
+        //JFrame frame = new JFrame("Ticket to Ride: NYC");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         BoardPanel panel = new BoardPanel();
@@ -68,6 +69,26 @@ public class BoardPanel extends JPanel
         frame.pack();
         frame.setVisible(true);
     }
+
+    public void mousePressed(MouseEvent e){}
+
+    public void mouseEntered(MouseEvent e){}
+
+    public void mouseReleased(MouseEvent e){}
+
+    public void mouseExited(MouseEvent e){}
+
+    public void mouseClicked(MouseEvent e){
+        BoardPanel.main(new String[0]);
+        for(int i = 0; i < 4; i++){
+            //TransportationCard t = Board.tcDeck(0);
+            //tcdeck.remove();
+            ImageIcon t1 = new ImageIcon(this.getClass().getResource("\\fwdpieces1\\verticalPink.jpg"));
+            Image t2 = destTicketBack.getImage();
+            //.drawImage(t2, (int)(0.51 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
+        }
+    }
+    
 
     /**
      * @param args
