@@ -204,6 +204,7 @@ public class Board
         
         Collections.shuffle(tcDeck);
     }
+    
     /**
      * This is a main method that creates a Board object and prints all the
      * paths on that Board
