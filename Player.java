@@ -11,6 +11,7 @@ public class Player
 {
     private Hand hand;
     private String name;
+    private int age;
     private ArrayList<Path> claimedRoutes = new ArrayList<>();
 
     /**
@@ -18,9 +19,10 @@ public class Player
      * 
      * @param n: Name of the Player
      */
-    public Player(String n){
+    public Player(String n, int x){
         hand = new Hand();
         name = n;
+        age = x;
     }
 
     /**
@@ -30,6 +32,15 @@ public class Player
      */
     public void setName(String n){
         name = n;
+    }
+    
+    /**
+     * This method returns the age of the Player
+     * 
+     * @return age: age of the Player
+     */
+    public int getAge(){
+        return age;
     }
 
     /**
