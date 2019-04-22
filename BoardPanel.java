@@ -18,15 +18,20 @@ public class BoardPanel extends JPanel implements MouseListener
         //+"BoardPicture.jpg").getImage();
     private final Image board2 = board.getImage();
     //private static Image board;
-    private  final ImageIcon trainTracks = new ImageIcon(this.getClass().getResource("tracks.jpg"));
+    private  final ImageIcon trainTracks = new ImageIcon(this.getClass().
+        getResource("tracks.jpg"));
     private final Image trainTracks2 = trainTracks.getImage();
-    private  final ImageIcon table = new ImageIcon(this.getClass().getResource("table.jpg"));
+    private  final ImageIcon table = new ImageIcon(this.getClass().
+        getResource("table.jpg"));
     private final Image table2 = table.getImage();
-    private final ImageIcon transCardBack = new ImageIcon(this.getClass().getResource(".\\fwdpieces1\\verticalCardFace.jpg"));
+    private final ImageIcon transCardBack = new ImageIcon(this.getClass().
+        getResource(".\\fwdpieces1\\verticalCardFace.jpg"));
     private final Image transCardBack2 = transCardBack.getImage();
-    private final ImageIcon transCardSide = new ImageIcon(this.getClass().getResource("\\fwdpieces1\\sideCardFace.jpg"));
+    private final ImageIcon transCardSide = new ImageIcon(this.getClass().
+        getResource("\\fwdpieces1\\sideCardFace.jpg"));
     private final Image transCardSide2 = transCardSide.getImage();
-    private final ImageIcon destTicketBack = new ImageIcon(this.getClass().getResource("\\fwdboardandtransport1\\frontOfCard.jpg"));
+    private final ImageIcon destTicketBack = new ImageIcon(this.getClass().
+        getResource("\\fwdboardandtransport1\\frontOfCard.jpg"));
     private final Image destTicketBack2 = destTicketBack.getImage();
 
     /**
@@ -49,19 +54,28 @@ public class BoardPanel extends JPanel implements MouseListener
 
         g.drawImage(board2, 0, 0, halfWidth, getHeight(), this);
         g.drawImage(trainTracks2, halfWidth, 0, halfWidth, quarterHeight,this);
-        g.drawImage(table2, halfWidth, quarterHeight, halfWidth, quarterHeight / 3, this);
+        g.drawImage(table2, halfWidth, quarterHeight, halfWidth, 
+            quarterHeight / 3, this);
         //g.drawImage(transCardBack2, (int)(0.75 * getWidth()), getHeight() % 100, getWidth() / 10, getHeight() % 100, this);
         //g.drawImage(destTicketBack2, 0, 0, getWidth() / 10, getHeight() % 100, this);
         //g.drawImage(transCardBack2, 0, 0, getWidth() / 10, getHeight() % 100, this);
-        g.drawImage(transCardBack2, (int)(0.715 * getWidth()), 40, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(destTicketBack2, (int)(0.715 * getWidth()), 270, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardSide2, (int)(0.865 * getWidth()), 40, getWidth() / 10, getHeight() / 8, this);
+        g.drawImage(transCardBack2, (int)(0.715 * getWidth()), 
+            40, getWidth() / 15, getHeight() / 5, this);
+        g.drawImage(destTicketBack2, (int)(0.715 * getWidth()), 
+            270, getWidth() / 15, getHeight() / 5, this);
+        g.drawImage(transCardSide2, (int)(0.865 * getWidth()), 40, 
+            getWidth() / 10, getHeight() / 8, this);
 
-        g.drawImage(transCardBack2, (int)(0.51 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.6 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.7 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.8 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.9 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
+        g.drawImage(transCardBack2, (int)(0.51 * getWidth()), 750, 
+            getWidth() / 15, getHeight() / 5, this);
+        g.drawImage(transCardBack2, (int)(0.6 * getWidth()), 750, 
+            getWidth() / 15, getHeight() / 5, this);
+        g.drawImage(transCardBack2, (int)(0.7 * getWidth()), 750, 
+            getWidth() / 15, getHeight() / 5, this);
+        g.drawImage(transCardBack2, (int)(0.8 * getWidth()), 750, 
+            getWidth() / 15, getHeight() / 5, this);
+        g.drawImage(transCardBack2, (int)(0.9 * getWidth()), 750, 
+            getWidth() / 15, getHeight() / 5, this);
     }
 
     /**
@@ -91,7 +105,8 @@ public class BoardPanel extends JPanel implements MouseListener
         for(int i = 0; i < 4; i++){
             //TransportationCard t = Board.tcDeck(0);
             //tcdeck.remove();
-            ImageIcon t1 = new ImageIcon(this.getClass().getResource("\\fwdpieces1\\verticalPink.jpg"));
+            ImageIcon t1 = new ImageIcon(this.getClass().
+                getResource("\\fwdpieces1\\verticalPink.jpg"));
             Image t2 = destTicketBack.getImage();
             //.drawImage(t2, (int)(0.51 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
         }
