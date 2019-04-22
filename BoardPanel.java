@@ -104,16 +104,41 @@ public class BoardPanel extends JPanel implements MouseListener
             Player p1 = new Player(name1, a1);
             
             String name2 = JOptionPane.showInputDialog("Player 2 enter your name.");
+            String a2 = JOptionPane.showInputDialog("Player 2 enter age");
+            Player p2 = new Player(name2, a2);
+                       
+        }
+        else if(x == JOptionPane.NO_OPTION){//3 players
+            String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
+            String a1 = JOptionPane.showInputDialog("Player 1 enter age");
+            Player p1 = new Player(name1, a1);
+            
+            String name2 = JOptionPane.showInputDialog("Player 2 enter your name.");
+            String a2 = JOptionPane.showInputDialog("Player 2 enter age");
+            Player p2 = new Player(name2, a2);
+            
+            String name3 = JOptionPane.showInputDialog("Player 3 enter your name.");
+            String a3 = JOptionPane.showInputDialog("Player 3 enter age");
+            Player p3 = new Player(name2, a3);
+                      
+        }
+        else{//4 players
+            String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
+            String a1 = JOptionPane.showInputDialog("Player 1 enter age");
+            Player p1 = new Player(name1, a1);
+            
+            String name2 = JOptionPane.showInputDialog("Player 2 enter your name.");
             String aa2 = JOptionPane.showInputDialog("Player 2 enter age");
             Player p2 = new Player(name2, a2);
             
+            String name3 = JOptionPane.showInputDialog("Player 3 enter your name.");
+            String a3 = JOptionPane.showInputDialog("Player 3 enter age");
+            Player p3 = new Player(name2, a3);
             
-        }
-        else if(x == JOptionPane.NO_OPTION){//3 players
-            
-        }
-        else{//4 players
-            
+            String name4 = JOptionPane.showInputDialog("Player 4 enter your name.");
+            String a4 = JOptionPane.showInputDialog("Player 4 enter age");
+            Player p4 = new Player(name2, a3);
+                      
         }
     }
 
