@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.util.*;
 /**
  * Write a description of class BoardPanel here.
  *
@@ -33,6 +34,7 @@ public class BoardPanel extends JPanel implements MouseListener
     private final ImageIcon destTicketBack = new ImageIcon(this.getClass().
             getResource("\\fwdboardandtransport1\\frontOfCard.jpg"));
     private final Image destTicketBack2 = destTicketBack.getImage();
+    private static ArrayList<Player> list;
 
     /**
      *
@@ -91,78 +93,267 @@ public class BoardPanel extends JPanel implements MouseListener
 
         frame.pack();
         frame.setVisible(true);
-        
+
         Object[] options = {"2", "3", "4"};
 
         int x = JOptionPane.showOptionDialog(frame,"How many players?",
                 "Number of Players",JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.QUESTION_MESSAGE,null,options,options[2]);
-                
+
         if(x == JOptionPane.YES_OPTION){//2 players
             String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
             int a1 = Integer.parseInt(JOptionPane.
-                showInputDialog("Player 1 enter age"));
+                    showInputDialog("Player 1 enter age"));
             Player p1 = new Player(name1, a1);
-            
+
             String name2 = JOptionPane.
                 showInputDialog("Player 2 enter your name.");
             int a2 = Integer.parseInt(JOptionPane.
-                showInputDialog("Player 2 enter age"));
+                    showInputDialog("Player 2 enter age"));
             Player p2 = new Player(name2, a2);
-                       
-            if(p1.getAge() > p2.getAge()){
-                JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
+
+            if(p1.getAge() < p2.getAge()){
+                list.add(p1);
+                list.add(p2);
+                JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
             }
             else{
-                JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
+                list.add(p2);
+                list.add(p1);
+                JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
             }
         }
         else if(x == JOptionPane.NO_OPTION){//3 players
             String name1 = JOptionPane.
                 showInputDialog("Player 1 enter your name.");
             int a1 = Integer.parseInt(JOptionPane.
-                showInputDialog("Player 1 enter age"));
+                    showInputDialog("Player 1 enter age"));
             Player p1 = new Player(name1, a1);
-            
+
             String name2 = JOptionPane.
                 showInputDialog("Player 2 enter your name.");
             int a2 = Integer.parseInt(JOptionPane.
-                showInputDialog("Player 2 enter age"));
+                    showInputDialog("Player 2 enter age"));
             Player p2 = new Player(name2, a2);
-            
+
             String name3 = JOptionPane.
                 showInputDialog("Player 3 enter your name.");
             int a3 = Integer.parseInt(JOptionPane.
-                showInputDialog("Player 3 enter age"));
+                    showInputDialog("Player 3 enter age"));
             Player p3 = new Player(name2, a3);
             if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge()){
+                list.add(p1);
                 JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
+                
+                if(p2.getAge() < p3.getAge()){
+                    list.add(p2);
+                    list.add(p3);
+                    
+                }
+                else{
+                    list.add(p3);
+                    list.add(p2);
+                }
             }
             else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge()){
+                list.add(p2);
                 JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
+                if(p3.getAge() < p1.getAge()){
+                    list.add(p3);
+                    list.add(p1);
+                    
+                }
+                else{
+                    list.add(p1);
+                    list.add(p3);
+                }
             }      
+            else{
+                list.add(p3);
+                JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");
+                if(p2.getAge() < p1.getAge()){
+                    list.add(p2);
+                    list.add(p1);
+                    
+                }
+                else{
+                    list.add(p1);
+                    list.add(p2);
+                }
+            }
         }
         else{//4 players
             String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
             int a1 = Integer.parseInt(JOptionPane.
-                showInputDialog("Player 1 enter age"));
+                    showInputDialog("Player 1 enter age"));
             Player p1 = new Player(name1, a1);
-            
+
             String name2 = JOptionPane.showInputDialog("Player 2 enter your name.");
             int a2 = Integer.parseInt(JOptionPane.
-                showInputDialog("Player 2 enter age"));
+                    showInputDialog("Player 2 enter age"));
             Player p2 = new Player(name2, a2);
-            
+
             String name3 = JOptionPane.showInputDialog("Player 3 enter your name.");
             int a3 = Integer.parseInt(JOptionPane.
-                showInputDialog("Player 3 enter age"));
+                    showInputDialog("Player 3 enter age"));
             Player p3 = new Player(name2, a3);
-            
+
             String name4 = JOptionPane.showInputDialog("Player 4 enter your name.");
             int a4 = Integer.parseInt(JOptionPane.
-                showInputDialog("Player 4 enter age"));
+                    showInputDialog("Player 4 enter age"));
             Player p4 = new Player(name2, a3);
-                      
+
+            if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge() && 
+                p1.getAge()< p4.getAge()){
+                list.add(p1);
+                JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
+                if(p2.getAge() < p3.getAge() && p2.getAge() < p4.getAge()){
+                    list.add(p2);
+                    if(p3.getAge() < p4.getAge()){
+                        list.add(p3);
+                        list.add(p4);
+                    }
+                    else{
+                        list.add(p4);
+                        list.add(p3);
+                    }
+                }
+                if(p3.getAge() < p2.getAge() && p3.getAge() < p4.getAge()){
+                    list.add(p3);
+                    if(p2.getAge() < p4.getAge()){
+                        list.add(p2);
+                        list.add(p4);
+                    }
+                    else{
+                        list.add(p4);
+                        list.add(p2);
+                    }
+                }
+                if(p4.getAge() < p3.getAge() && p4.getAge() < p2.getAge()){
+                    list.add(p4);
+                    if(p3.getAge() < p2.getAge()){
+                        list.add(p3);
+                        list.add(p2);
+                    }
+                    else{
+                        list.add(p2);
+                        list.add(p3);
+                    }
+                }
+            }
+            else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge() &&
+                p2.getAge() < p4.getAge()){
+                list.add(p2);
+                JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
+                if(p1.getAge() < p3.getAge() && p1.getAge() < p4.getAge()){
+                    list.add(p1);
+                    if(p3.getAge() < p4.getAge()){
+                        list.add(p3);
+                        list.add(p4);
+                    }
+                    else{
+                        list.add(p4);
+                        list.add(p3);
+                    }
+                }
+                if(p3.getAge() < p1.getAge() && p3.getAge() < p4.getAge()){
+                    list.add(p3);
+                    if(p1.getAge() < p4.getAge()){
+                        list.add(p1);
+                        list.add(p4);
+                    }
+                    else{
+                        list.add(p4);
+                        list.add(p1);
+                    }
+                }
+                if(p4.getAge() < p3.getAge() && p4.getAge() < p1.getAge()){
+                    list.add(p4);
+                    if(p3.getAge() < p1.getAge()){
+                        list.add(p3);
+                        list.add(p1);
+                    }
+                    else{
+                        list.add(p1);
+                        list.add(p3);
+                    }
+                }
+            } 
+            else if(p3.getAge() < p1.getAge() && p3.getAge() < p2.getAge() &&
+                p3.getAge() < p4.getAge()){
+                list.add(p3);
+                JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");
+                if(p2.getAge() < p1.getAge() && p2.getAge() < p4.getAge()){
+                    list.add(p2);
+                    if(p1.getAge() < p4.getAge()){
+                        list.add(p1);
+                        list.add(p4);
+                    }
+                    else{
+                        list.add(p4);
+                        list.add(p1);
+                    }
+                }
+                if(p1.getAge() < p2.getAge() && p1.getAge() < p4.getAge()){
+                    list.add(p1);
+                    if(p2.getAge() < p4.getAge()){
+                        list.add(p2);
+                        list.add(p4);
+                    }
+                    else{
+                        list.add(p4);
+                        list.add(p2);
+                    }
+                }
+                if(p4.getAge() < p1.getAge() && p4.getAge() < p2.getAge()){
+                    list.add(p4);
+                    if(p1.getAge() < p2.getAge()){
+                        list.add(p1);
+                        list.add(p2);
+                    }
+                    else{
+                        list.add(p2);
+                        list.add(p3);
+                    }
+                }
+            }
+            else{
+                list.add(p4);
+                JOptionPane.showMessageDialog(frame, p4.getName() + " goes first.");
+                if(p2.getAge() < p3.getAge() && p2.getAge() < p1.getAge()){
+                    list.add(p2);
+                    if(p3.getAge() < p1.getAge()){
+                        list.add(p3);
+                        list.add(p1);
+                    }
+                    else{
+                        list.add(p1);
+                        list.add(p3);
+                    }
+                }
+                if(p3.getAge() < p2.getAge() && p3.getAge() < p1.getAge()){
+                    list.add(p3);
+                    if(p2.getAge() < p4.getAge()){
+                        list.add(p2);
+                        list.add(p1);
+                    }
+                    else{
+                        list.add(p1);
+                        list.add(p2);
+                    }
+                }
+                if(p1.getAge() < p3.getAge() && p1.getAge() < p2.getAge()){
+                    list.add(p1);
+                    if(p3.getAge() < p2.getAge()){
+                        list.add(p3);
+                        list.add(p2);
+                    }
+                    else{
+                        list.add(p2);
+                        list.add(p3);
+                    }
+                }
+            }
         }
     }
 
