@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 /**
  * Write a description of class BoardPanel here.
  *
@@ -9,9 +10,14 @@ import java.awt.event.*;
  */
 public class BoardPanel extends JPanel implements MouseListener
 {
+////////////////////////////////////////////////////////////////////////////////                  
     private static final JFrame frame = new JFrame("Ticket to Ride: NYC");
-    private final ImageIcon board = new ImageIcon(this.getClass().getResource("BoardPicture.jpg"));
+    private final ImageIcon board = new ImageIcon(this.getClass().
+        getResource("BoardPicture.jpg"));
+    //private final ImageIcon board = new ImageIcon("Images" + File.separator 
+        //+"BoardPicture.jpg").getImage();
     private final Image board2 = board.getImage();
+    //private static Image board;
     private  final ImageIcon trainTracks = new ImageIcon(this.getClass().getResource("tracks.jpg"));
     private final Image trainTracks2 = trainTracks.getImage();
     private  final ImageIcon table = new ImageIcon(this.getClass().getResource("table.jpg"));
@@ -28,6 +34,8 @@ public class BoardPanel extends JPanel implements MouseListener
      */
     public BoardPanel(){
         setPreferredSize(new Dimension(2500,1500));
+        //board = new ImageIcon("Images" + File.separator 
+           // +"BoardPicture.jpg").getImage();
     }
 
     /**
@@ -46,8 +54,8 @@ public class BoardPanel extends JPanel implements MouseListener
         //g.drawImage(destTicketBack2, 0, 0, getWidth() / 10, getHeight() % 100, this);
         //g.drawImage(transCardBack2, 0, 0, getWidth() / 10, getHeight() % 100, this);
         g.drawImage(transCardBack2, (int)(0.715 * getWidth()), 40, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(destTicketBack2, (int)(0.715 * getWidth()), 290, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardSide2, (int)(0.865 * getWidth()), 40, getWidth() / 10, getHeight() / 10, this);
+        g.drawImage(destTicketBack2, (int)(0.715 * getWidth()), 270, getWidth() / 15, getHeight() / 5, this);
+        g.drawImage(transCardSide2, (int)(0.865 * getWidth()), 40, getWidth() / 10, getHeight() / 8, this);
 
         g.drawImage(transCardBack2, (int)(0.51 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.6 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
