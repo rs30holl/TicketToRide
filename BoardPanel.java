@@ -42,14 +42,6 @@ public class BoardPanel extends JPanel implements MouseListener
         //board = new ImageIcon("Images" + File.separator 
         // +"BoardPicture.jpg").getImage();
 
-        
-        // JButton two = new JButton("Two Players");
-        // JButton three = new JButton("Three Players");
-        // JButton four = new JButton("Four Players");
-
-        // add(two);
-        // add(three);
-        // add(four);
     }
 
     /**
@@ -106,13 +98,21 @@ public class BoardPanel extends JPanel implements MouseListener
                 "Number of Players",JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.QUESTION_MESSAGE,null,options,options[2]);
                 
-        if(x == 2){
+        if(x == JOptionPane.YES_OPTION){//2 players
+            String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
+            String a1 = JOptionPane.showInputDialog("Player 1 enter age");
+            Player p1 = new Player(name1, a1);
+            
+            String name2 = JOptionPane.showInputDialog("Player 2 enter your name.");
+            String aa2 = JOptionPane.showInputDialog("Player 2 enter age");
+            Player p2 = new Player(name2, a2);
+            
             
         }
-        else if(x == 3){
+        else if(x == JOptionPane.NO_OPTION){//3 players
             
         }
-        else{
+        else{//4 players
             
         }
     }
