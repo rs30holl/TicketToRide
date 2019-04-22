@@ -33,6 +33,15 @@ public class Player
     public void setName(String n){
         name = n;
     }
+    
+    /**
+     * This method returns the age of the Player
+     * 
+     * @return age: age of the Player
+     */
+    public int getAge(){
+        return age;
+    }
 
     /**
      * This method finds the name of the Player
