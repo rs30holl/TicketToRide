@@ -10,28 +10,28 @@ import java.io.*;
  */
 public class BoardPanel extends JPanel implements MouseListener
 {
-////////////////////////////////////////////////////////////////////////////////                  
+    ////////////////////////////////////////////////////////////////////////////////                  
     private static final JFrame frame = new JFrame("Ticket to Ride: NYC");
     private final ImageIcon board = new ImageIcon(this.getClass().
-        getResource("BoardPicture.jpg"));
+            getResource("BoardPicture.jpg"));
     //private final ImageIcon board = new ImageIcon("Images" + File.separator 
-        //+"BoardPicture.jpg").getImage();
+    //+"BoardPicture.jpg").getImage();
     private final Image board2 = board.getImage();
     //private static Image board;
     private  final ImageIcon trainTracks = new ImageIcon(this.getClass().
-        getResource("tracks.jpg"));
+            getResource("tracks.jpg"));
     private final Image trainTracks2 = trainTracks.getImage();
     private  final ImageIcon table = new ImageIcon(this.getClass().
-        getResource("table.jpg"));
+            getResource("table.jpg"));
     private final Image table2 = table.getImage();
     private final ImageIcon transCardBack = new ImageIcon(this.getClass().
-        getResource(".\\fwdpieces1\\verticalCardFace.jpg"));
+            getResource(".\\fwdpieces1\\verticalCardFace.jpg"));
     private final Image transCardBack2 = transCardBack.getImage();
     private final ImageIcon transCardSide = new ImageIcon(this.getClass().
-        getResource("\\fwdpieces1\\sideCardFace.jpg"));
+            getResource("\\fwdpieces1\\sideCardFace.jpg"));
     private final Image transCardSide2 = transCardSide.getImage();
     private final ImageIcon destTicketBack = new ImageIcon(this.getClass().
-        getResource("\\fwdboardandtransport1\\frontOfCard.jpg"));
+            getResource("\\fwdboardandtransport1\\frontOfCard.jpg"));
     private final Image destTicketBack2 = destTicketBack.getImage();
 
     /**
@@ -40,7 +40,16 @@ public class BoardPanel extends JPanel implements MouseListener
     public BoardPanel(){
         setPreferredSize(new Dimension(2500,1500));
         //board = new ImageIcon("Images" + File.separator 
-           // +"BoardPicture.jpg").getImage();
+        // +"BoardPicture.jpg").getImage();
+
+        
+        // JButton two = new JButton("Two Players");
+        // JButton three = new JButton("Three Players");
+        // JButton four = new JButton("Four Players");
+
+        // add(two);
+        // add(three);
+        // add(four);
     }
 
     /**
@@ -90,6 +99,22 @@ public class BoardPanel extends JPanel implements MouseListener
 
         frame.pack();
         frame.setVisible(true);
+        
+        Object[] options = {"2", "3", "4"};
+
+        int x = JOptionPane.showOptionDialog(frame,"How many players?",
+                "Number of Players",JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE,null,options,options[2]);
+                
+        if(x == 2){
+            
+        }
+        else if(x == 3){
+            
+        }
+        else{
+            
+        }
     }
 
     public void mousePressed(MouseEvent e){}
@@ -106,12 +131,11 @@ public class BoardPanel extends JPanel implements MouseListener
             //TransportationCard t = Board.tcDeck(0);
             //tcdeck.remove();
             ImageIcon t1 = new ImageIcon(this.getClass().
-                getResource("\\fwdpieces1\\verticalPink.jpg"));
+                    getResource("\\fwdpieces1\\verticalPink.jpg"));
             Image t2 = destTicketBack.getImage();
             //.drawImage(t2, (int)(0.51 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
         }
     }
-    
 
     /**
      * @param args
