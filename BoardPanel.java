@@ -38,7 +38,7 @@ public class BoardPanel extends JPanel implements MouseListener
             getResource("\\fwdboardandtransport1\\frontOfCard.jpg"));
 
     private final Image destTicketBack2 = destTicketBack.getImage();
-    private static ArrayList<Player> list = new ArrayList<Player>();
+    public static ArrayList<Player> list = new ArrayList<Player>();
 
     /**
      *
@@ -56,6 +56,7 @@ public class BoardPanel extends JPanel implements MouseListener
         super.paintComponent(g);
         int halfWidth = (int)(0.5 * getWidth());
         int quarterHeight = (int)(0.75 * getHeight());
+        
 
 
         g.drawImage(board2, 0, 0, halfWidth, getHeight(), this);
