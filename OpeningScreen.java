@@ -17,6 +17,7 @@ public class OpeningScreen extends JPanel implements MouseListener
     public OpeningScreen(){
         setPreferredSize(new Dimension(1000,1000));
         addMouseListener(this);
+        //Board b = new Board();
     }
 
     @Override
