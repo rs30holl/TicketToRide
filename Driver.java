@@ -17,7 +17,7 @@ public class Driver {
         while (!done){
             Player currentPlayer = BoardPanel.list.get(pos);
             currentPlayer.turn();
-            if (currentPlayer.taxiCount <= 2){
+            if (currentPlayer.getTaxiCount() <= 2){
                 for (int i = 0; i < BoardPanel.list.size() - 1; i++){
                     pos++;
                     if (pos == BoardPanel.list.size())pos = 0;

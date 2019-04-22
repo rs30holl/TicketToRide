@@ -1,4 +1,7 @@
-import java.awt.Color;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
 import java.util.*;
 /**
  * Write a description of class Player here.
@@ -13,6 +16,7 @@ public class Player
     private String name;
     private int age;
     private ArrayList<Path> claimedRoutes = new ArrayList<>();
+    private int taxiCount;
 
     /**
      * Constructor for the objects of Player class
@@ -23,6 +27,7 @@ public class Player
         hand = new Hand();
         name = n;
         age = x;
+        taxiCount = 15;
     }
 
     /**
@@ -51,6 +56,13 @@ public class Player
     public String getName(){
         return name;
     }
+
+    /**
+     * This method returns the taxiCount of the Player
+     *
+     * @return the taxiCount of the Player
+     */
+    public int getTaxiCount(){ return taxiCount;}
 
     /**
      * This method draws cards from the deck and adds them to the Players's hand
@@ -97,5 +109,29 @@ public class Player
             //removes that path from possible paths for other Players to claim
             p.getEnd().removePath(p);
         }
+        else {
+            for (int i = 0; i <= numCards; i++){
+                hand.addCard(Board.discard.remove(Board.discard.size() - 1));
+            }
+        }
+    }
+
+    /**
+     * This method lets the Player make their move
+     */
+    public void turn(){
+        /*
+                     if (e.get instanceof Image){//Pick up two Transportation Cards
+            drawCard(e);
+            drawCard(e);
+        }
+        else if (e){//Pick up a Destination Ticket
+            drawCard(e);
+        }
+        else  {//Claim a route
+            claimRoute(e);
+        }
+
+         */
     }
 }
