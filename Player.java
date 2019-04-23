@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 3930785fff42c7c57357592f65fb09f19ae37fb8
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -21,10 +17,8 @@ public class Player
     private int age;
     private ArrayList<Path> claimedRoutes = new ArrayList<>();
     private int taxiCount;
-<<<<<<< HEAD
-=======
     private boolean state;
->>>>>>> 3930785fff42c7c57357592f65fb09f19ae37fb8
+
 
     /**
      * Constructor for the objects of Player class
@@ -36,10 +30,9 @@ public class Player
         name = n;
         age = x;
         taxiCount = 15;
-<<<<<<< HEAD
-=======
+
         state = false;
->>>>>>> 3930785fff42c7c57357592f65fb09f19ae37fb8
+
     }
 
     /**
@@ -52,8 +45,6 @@ public class Player
     }
     
     /**
-<<<<<<< HEAD
-=======
      * 
      */
     public void setState(boolean s){
@@ -61,7 +52,7 @@ public class Player
     }
 
     /**
->>>>>>> 3930785fff42c7c57357592f65fb09f19ae37fb8
+
      * This method returns the age of the Player
      * 
      * @return age: age of the Player
@@ -156,7 +147,3 @@ public class Player
 
     }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 3930785fff42c7c57357592f65fb09f19ae37fb8
