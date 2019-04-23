@@ -1,8 +1,9 @@
 /**
  * Write a description of class Driver here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ryan Holland, Julia Krasinski, Briella Sala,
+ * Matt Harrison, Michael Lostritto
+ * @version 4.22.2019
  */
 public class Driver {
 
