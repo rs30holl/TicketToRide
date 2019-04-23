@@ -59,28 +59,13 @@ public class BoardPanel extends JPanel implements MouseListener
         
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> f83bcaa6f85812770d6c496c3f62145660fec560
         g.drawImage(board2, 0, 0, halfWidth, getHeight(), this);
         g.drawImage(trainTracks2, halfWidth, 0, halfWidth, quarterHeight,this);
         g.drawImage(table2, halfWidth, quarterHeight, halfWidth, 
             quarterHeight / 3, this);
-<<<<<<< HEAD
-        //g.drawImage(transCardBack2, (int)(0.75 * getWidth()), getHeight() % 100, getWidth() / 10, getHeight() % 100, this);
-        //g.drawImage(destTicketBack2, 0, 0, getWidth() / 10, getHeight() % 100, this);
-        //g.drawImage(transCardBack2, 0, 0, getWidth() / 10, getHeight() % 100, this);
-        g.drawImage(transCardBack2, (int)(0.715 * getWidth()), 40, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(destTicketBack2, (int)(0.715 * getWidth()), 270, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardSide2, (int)(0.865 * getWidth()), 40, getWidth() / 10, getHeight() / 8, this);
 
-        g.drawImage(transCardBack2, (int)(0.51 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.6 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.7 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.8 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.9 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
-=======
+
         g.drawImage(transCardBack2, (int)(0.715 * getWidth()), 
             40, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(destTicketBack2, (int)(0.715 * getWidth()), 
@@ -98,7 +83,6 @@ public class BoardPanel extends JPanel implements MouseListener
             quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.9 * getWidth()), 
             quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
->>>>>>> f83bcaa6f85812770d6c496c3f62145660fec560
         g.drawImage(transCardBack2, (int)(0.715 * getWidth()), 
             40, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(destTicketBack2, (int)(0.715 * getWidth()), 
@@ -106,18 +90,6 @@ public class BoardPanel extends JPanel implements MouseListener
         g.drawImage(transCardSide2, (int)(0.865 * getWidth()), 40, 
             getWidth() / 10, getHeight() / 8, this);
 
-<<<<<<< HEAD
-        g.drawImage(transCardBack2, (int)(0.51 * getWidth()), 750, 
-            getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.6 * getWidth()), 750, 
-            getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.7 * getWidth()), 750, 
-            getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.8 * getWidth()), 750, 
-            getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.9 * getWidth()), 750, 
-            getWidth() / 15, getHeight() / 5, this);
-=======
         g.drawImage(transCardBack2, (int)(0.51 * getWidth()), 
             quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.6 * getWidth()), 
@@ -128,7 +100,7 @@ public class BoardPanel extends JPanel implements MouseListener
             quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.9 * getWidth()), 
             quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
->>>>>>> f83bcaa6f85812770d6c496c3f62145660fec560
+
     }
 
     /**
@@ -194,51 +166,29 @@ public class BoardPanel extends JPanel implements MouseListener
                     showInputDialog("Player 3 enter age"));
             Player p3 = new Player(name2, a3);
             if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge()){
-<<<<<<< HEAD
+
                 list.add(p1);
+                list.add(p2);
+                list.add(p3);
                 JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
 
-=======
+
                 
-                JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
-                list.add(p1);
->>>>>>> f83bcaa6f85812770d6c496c3f62145660fec560
-                if(p2.getAge() < p3.getAge()){
-                    list.add(p2);
-                    list.add(p3);
-
-                }
-                else{
-                    list.add(p3);
-                    list.add(p2);
-                }
+                
             }
             else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge()){
                 
                 JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
                 list.add(p2);
-                if(p3.getAge() < p1.getAge()){
-                    list.add(p3);
-                    list.add(p1);
-
-                }
-                else{
-                    list.add(p1);
-                    list.add(p3);
-                }
+                list.add(p3);
+                list.add(p1);
+                
             }      
             else{
                 JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");                
                 list.add(p3);
-                if(p2.getAge() < p1.getAge()){
-                    list.add(p2);
-                    list.add(p1);
-
-                }
-                else{
-                    list.add(p1);
-                    list.add(p2);
-                }
+                list.add(p1);
+                list.add(p2);
             }
         }
         else{//4 players
@@ -264,170 +214,41 @@ public class BoardPanel extends JPanel implements MouseListener
 
             if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge() && 
             p1.getAge()< p4.getAge()){
-<<<<<<< HEAD
                 list.add(p1);
-=======
-                
->>>>>>> f83bcaa6f85812770d6c496c3f62145660fec560
+                list.add(p2);
+                list.add(p3);
+                list.add(p4);
                 JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
-                list.add(p1);
-                if(p2.getAge() < p3.getAge() && p2.getAge() < p4.getAge()){
-                    list.add(p2);
-                    if(p3.getAge() < p4.getAge()){
-                        list.add(p3);
-                        list.add(p4);
-                    }
-                    else{
-                        list.add(p4);
-                        list.add(p3);
-                    }
-                }
-                if(p3.getAge() < p2.getAge() && p3.getAge() < p4.getAge()){
-                    list.add(p3);
-                    if(p2.getAge() < p4.getAge()){
-                        list.add(p2);
-                        list.add(p4);
-                    }
-                    else{
-                        list.add(p4);
-                        list.add(p2);
-                    }
-                }
-                if(p4.getAge() < p3.getAge() && p4.getAge() < p2.getAge()){
-                    list.add(p4);
-                    if(p3.getAge() < p2.getAge()){
-                        list.add(p3);
-                        list.add(p2);
-                    }
-                    else{
-                        list.add(p2);
-                        list.add(p3);
-                    }
-                }
+                
             }
             else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge() &&
             p2.getAge() < p4.getAge()){
-<<<<<<< HEAD
+
                 list.add(p2);
-=======
-                
->>>>>>> f83bcaa6f85812770d6c496c3f62145660fec560
+                list.add(p3);
+                list.add(p4);
+                list.add(p1);
                 JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
                 list.add(p2);
-                if(p1.getAge() < p3.getAge() && p1.getAge() < p4.getAge()){
-                    list.add(p1);
-                    if(p3.getAge() < p4.getAge()){
-                        list.add(p3);
-                        list.add(p4);
-                    }
-                    else{
-                        list.add(p4);
-                        list.add(p3);
-                    }
-                }
-                if(p3.getAge() < p1.getAge() && p3.getAge() < p4.getAge()){
-                    list.add(p3);
-                    if(p1.getAge() < p4.getAge()){
-                        list.add(p1);
-                        list.add(p4);
-                    }
-                    else{
-                        list.add(p4);
-                        list.add(p1);
-                    }
-                }
-                if(p4.getAge() < p3.getAge() && p4.getAge() < p1.getAge()){
-                    list.add(p4);
-                    if(p3.getAge() < p1.getAge()){
-                        list.add(p3);
-                        list.add(p1);
-                    }
-                    else{
-                        list.add(p1);
-                        list.add(p3);
-                    }
-                }
+                
             } 
             else if(p3.getAge() < p1.getAge() && p3.getAge() < p2.getAge() &&
             p3.getAge() < p4.getAge()){
-<<<<<<< HEAD
+
                 list.add(p3);
-=======
-                
->>>>>>> f83bcaa6f85812770d6c496c3f62145660fec560
+                list.add(p4);
+                list.add(p1);
+                list.add(p2);
                 JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");
-                list.add(p3);
-                if(p2.getAge() < p1.getAge() && p2.getAge() < p4.getAge()){
-                    list.add(p2);
-                    if(p1.getAge() < p4.getAge()){
-                        list.add(p1);
-                        list.add(p4);
-                    }
-                    else{
-                        list.add(p4);
-                        list.add(p1);
-                    }
-                }
-                if(p1.getAge() < p2.getAge() && p1.getAge() < p4.getAge()){
-                    list.add(p1);
-                    if(p2.getAge() < p4.getAge()){
-                        list.add(p2);
-                        list.add(p4);
-                    }
-                    else{
-                        list.add(p4);
-                        list.add(p2);
-                    }
-                }
-                if(p4.getAge() < p1.getAge() && p4.getAge() < p2.getAge()){
-                    list.add(p4);
-                    if(p1.getAge() < p2.getAge()){
-                        list.add(p1);
-                        list.add(p2);
-                    }
-                    else{
-                        list.add(p2);
-                        list.add(p3);
-                    }
-                }
+                
             }
             else{
                 
                 JOptionPane.showMessageDialog(frame, p4.getName() + " goes first.");
                 list.add(p4);
-                if(p2.getAge() < p3.getAge() && p2.getAge() < p1.getAge()){
-                    list.add(p2);
-                    if(p3.getAge() < p1.getAge()){
-                        list.add(p3);
-                        list.add(p1);
-                    }
-                    else{
-                        list.add(p1);
-                        list.add(p3);
-                    }
-                }
-                if(p3.getAge() < p2.getAge() && p3.getAge() < p1.getAge()){
-                    list.add(p3);
-                    if(p2.getAge() < p4.getAge()){
-                        list.add(p2);
-                        list.add(p1);
-                    }
-                    else{
-                        list.add(p1);
-                        list.add(p2);
-                    }
-                }
-                if(p1.getAge() < p3.getAge() && p1.getAge() < p2.getAge()){
-                    list.add(p1);
-                    if(p3.getAge() < p2.getAge()){
-                        list.add(p3);
-                        list.add(p2);
-                    }
-                    else{
-                        list.add(p2);
-                        list.add(p3);
-                    }
-                }
+                list.add(p1);
+                list.add(p2);
+                list.add(p3);
             }
         }
     }
