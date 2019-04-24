@@ -31,7 +31,8 @@ public class Board
         points.add(lc);
         LocationNode ts = new LocationNode("Times Square", 0, 0, true);
         points.add(ts);
-        LocationNode esb = new LocationNode("Empire State Building", 0, 0, true);
+        LocationNode esb = new LocationNode("Empire State Building",
+            0, 0, true);
         points.add(esb);
         LocationNode mw = new LocationNode("Midtown West", 0, 0, true);
         points.add(mw);
