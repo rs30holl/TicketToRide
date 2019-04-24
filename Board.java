@@ -1,5 +1,4 @@
 import java.util.*;
-import java.awt.Color;
 /**
  * Write a description of class Board here.
  *
@@ -10,14 +9,14 @@ import java.awt.Color;
 public class Board
 {
     private ArrayList<LocationNode> points = new ArrayList<>();
-    public static ArrayList<Card> tcDeck = new ArrayList<>();
-    public static ArrayList<Card> dtDeck = new ArrayList<>();    
-    public static ArrayList<Card> discard = new ArrayList<>();
+    static ArrayList<Card> tcDeck = new ArrayList<>();
+    static ArrayList<Card> dtDeck = new ArrayList<>();
+    static ArrayList<Card> discard = new ArrayList<>();
     
     /** Constructor for objects of class Board
      * 
      * This method adds all the location nodes to the board and creates
-     * the paths between those location nodes.  It also initalizes the
+     * the paths between those location nodes.  It also initializes the
      * destination tickets, and shuffles the deck
      * 
      */
@@ -31,8 +30,7 @@ public class Board
         points.add(lc);
         LocationNode ts = new LocationNode("Times Square", 0, 0, true);
         points.add(ts);
-        LocationNode esb = new LocationNode("Empire State Building",
-            0, 0, true);
+        LocationNode esb = new LocationNode("Empire State Building", 0, 0, true);
         points.add(esb);
         LocationNode mw = new LocationNode("Midtown West", 0, 0, true);
         points.add(mw);
@@ -179,10 +177,10 @@ public class Board
     
     /**
      * This class initializes the deck of transportation cards by creating
-     * the 6 different collored cards and then adding them to the deck.  It 
+     * the 6 different colored cards and then adding them to the deck.  It
      * then adds in the wild cards and shuffles the deck
      */
-    public void initDeck(){
+    private void initDeck(){
         for (int i = 0; i < 6; i++){
             TransportationCard a = new TransportationCard("BLUE");
             TransportationCard b = new TransportationCard("BLACK");

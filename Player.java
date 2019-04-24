@@ -52,6 +52,11 @@ public class Player
     }
 
     /**
+     *
+     */
+    public boolean getState(){return state;}
+
+    /**
 
      * This method returns the age of the Player
      * 
@@ -78,10 +83,7 @@ public class Player
     public int getTaxiCount(){ return taxiCount;}
 
     /**
-     * This method draws cards from the deck and adds them 
-     * to the Players's hand
-     * 
-     * @param c: the card that the player is drawing
+     * This method draws cards from the deck and adds them to the Players's hand
      */
     public void drawCard(Card c){
         if (c instanceof TransportationCard){
@@ -134,23 +136,21 @@ public class Player
 
     /**
      * This method lets the Player make their move
-     * 
-     * @param n: this number determines what action is taken
-     *        p: the path to be claimed if that is the action being taken
-     *        c: the card to be picked up if that is the action being taken
      */
     public void turn(int n, Path p, Card c){
 
         if (n == 0){//Pick up two Transportation Cards
-            drawCard(c);
-            drawCard(c);
+            drawCard(Board.tcDeck.remove(0));
+            drawCard(Board.tcDeck.remove(0));
         }
         else if (n == 1){//Pick up a Destination Ticket
-            drawCard(c);
+            drawCard(Board.dtDeck.remove(0));
         }
-        else  {//Claim a route
+        else if (n == 2){//Claim a route
             claimRoute(p);
         }
-
+        else {//Pick up one of the face up cards
+            drawCard(c);
+        }
     }
 }

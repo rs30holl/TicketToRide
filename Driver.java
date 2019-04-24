@@ -2,8 +2,8 @@
  * Write a description of class Driver here.
  *
  * @author Ryan Holland, Julia Krasinski, Briella Sala,
- * Matt Harrison, Michael Lostritto
- * @version 4.22.2019
+ *  * Matt Harrison, Michael Lostritto
+ * @version (a version number or a date)
  */
 public class Driver {
 

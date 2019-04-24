@@ -1,24 +1,24 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
-
 import java.util.*;
 /**
  * Write a description of class BoardPanel here.
  *
  * @author Ryan Holland, Julia Krasinski, Briella Sala,
- * Matt Harrison, Michael Lostritto
- * @version 4.22.2019
+ *  * Matt Harrison, Michael Lostritto
+ * @version (a version number or a date)
  */
 public class BoardPanel extends JPanel implements MouseListener
 {
-////////////////////////////////////////////////////////////////////////////////                  
-    //initializes the board, and the cards needed for hte home screen
+    ////////////////////////////////////////////////////////////////////////////////                  
     private static final JFrame frame = new JFrame("Ticket to Ride: NYC");
     private final ImageIcon board = new ImageIcon(this.getClass().
             getResource("BoardPicture.jpg"));
+    //private final ImageIcon board = new ImageIcon("Images" + File.separator 
+    //+"BoardPicture.jpg").getImage();
     private final Image board2 = board.getImage();
+    //private static Image board;
     private  final ImageIcon trainTracks = new ImageIcon(this.getClass().
             getResource("tracks.jpg"));
 
@@ -26,18 +26,18 @@ public class BoardPanel extends JPanel implements MouseListener
     private  final ImageIcon table = new ImageIcon(this.getClass().
             getResource("table.jpg"));
     private final Image table2 = table.getImage();
-    private final ImageIcon transCardBack = new ImageIcon(this.getClass().
-            getResource(".\\fwdpieces1\\verticalCardFace.jpg"));
-    private final Image transCardBack2 = transCardBack.getImage();
+    private static final ImageIcon transCardBack = new ImageIcon(
+            ".\\fwdpieces1\\verticalCardFace.jpg");
+   // private static final Image transCardBack2 = transCardBack.getImage();
 
-    private final ImageIcon transCardSide = new ImageIcon(this.getClass().
-            getResource("\\fwdpieces1\\sideCardFace.jpg"));
-    private final Image transCardSide2 = transCardSide.getImage();
-    private final ImageIcon destTicketBack = new ImageIcon(this.getClass().
-            getResource("\\fwdboardandtransport1\\frontOfCard.jpg"));
+    private static final ImageIcon transCardSide = new ImageIcon(
+            ".\\fwdpieces1\\sideCardFace.jpg");
+    //private final Image transCardSide2 = transCardSide.getImage();
+    private static final ImageIcon destTicketBack = new ImageIcon(
+            ".\\fwdboardandtransport1\\frontOfCard.jpg");
 
-    private final Image destTicketBack2 = destTicketBack.getImage();
-    public static ArrayList<Player> list = new ArrayList<Player>();
+    //private final Image destTicketBack2 = destTicketBack.getImage();
+    static ArrayList<Player> list = new ArrayList<>();
 
     /**
      *
@@ -48,7 +48,7 @@ public class BoardPanel extends JPanel implements MouseListener
     }
 
     /**
-     * @param g
+     * @param g Graphics
      */
     @Override
     public void paintComponent(Graphics g){
@@ -56,14 +56,16 @@ public class BoardPanel extends JPanel implements MouseListener
         int halfWidth = (int)(0.5 * getWidth());
         int quarterHeight = (int)(0.75 * getHeight());
         
+
+
+
         g.drawImage(board2, 0, 0, halfWidth, getHeight(), this);
-        g.drawImage(trainTracks2, halfWidth, 0, halfWidth, 
-            quarterHeight,this);
+        g.drawImage(trainTracks2, halfWidth, 0, halfWidth, quarterHeight,this);
         g.drawImage(table2, halfWidth, quarterHeight, halfWidth, 
             quarterHeight / 3, this);
 
-
-        g.drawImage(transCardBack2, (int)(0.715 * getWidth()), 
+    /*
+        g.drawImage(transCardBack2, (int)(0.715 * getWidth()),
             40, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(destTicketBack2, (int)(0.715 * getWidth()), 
             270, getWidth() / 15, getHeight() / 5, this);
@@ -98,31 +100,115 @@ public class BoardPanel extends JPanel implements MouseListener
         g.drawImage(transCardBack2, (int)(0.9 * getWidth()), 
             quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
 
+     */
+
     }
+
 
     /**
      *
      */
-    public static void createAndShowGUI(){ 
+    private static void createAndShowGUI(){
         //JFrame frame = new JFrame("Ticket to Ride: NYC");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         BoardPanel panel = new BoardPanel();
         frame.getContentPane().add(panel);
+        panel.setLayout(null);
 
         frame.pack();
         frame.setVisible(true);
+
+        //int halfWidth = (int)(0.5 * frame.getWidth());
+        int quarterHeight = (int)(0.75 * frame.getHeight());
+        int cardWidth = frame.getWidth() / 15;
+        int cardHeight = frame.getHeight() / 5;
+
+        JLabel tcDeck = new JLabel();
+        tcDeck.setBounds( (int)(0.715 * frame.getWidth()),
+                40, cardWidth, cardHeight);
+        tcDeck.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+        tcDeck.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                for (Player p : list){
+                    if (p.getState()){
+                        p.turn(0, null, null);
+                        p.turn(0, null, null);
+                        p.setState(false);
+                        break;
+                    }
+                }
+            }
+        });
+
+        JLabel dtDeck = new JLabel();
+        dtDeck.setBounds( (int)(0.715 * frame.getWidth()),
+                frame.getHeight() / 4 + 40, cardWidth, cardHeight);
+        dtDeck.setIcon(new ImageIcon(destTicketBack.getImage().getScaledInstance(
+                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+        dtDeck.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                for (Player p : list){
+                    if (p.getState()){
+                        p.turn(1, null, null);
+                        p.setState(false);
+                        break;
+                    }
+                }
+            }
+        });
+
+        JLabel faceUp1 = new JLabel();
+        faceUp1.setBounds((int)(0.51 * frame.getWidth()),
+                quarterHeight + frame.getWidth() / 100, cardWidth, cardHeight);
+        faceUp1.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+        JLabel faceUp2 = new JLabel();
+        faceUp2.setBounds((int)(0.6 * frame.getWidth()),
+                quarterHeight + frame.getWidth() / 100, cardWidth, cardHeight);
+        faceUp2.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+        JLabel faceUp3 = new JLabel();
+        faceUp3.setBounds((int)(0.7 * frame.getWidth()),
+                quarterHeight + frame.getWidth() / 100, cardWidth, cardHeight);
+        faceUp3.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                faceUp3.getWidth(), faceUp3.getHeight(), Image.SCALE_SMOOTH)));
+
+        JLabel faceUp4 = new JLabel();
+        faceUp4.setBounds((int)(0.8 * frame.getWidth()),
+                quarterHeight + (frame.getWidth() / 100), cardWidth, cardHeight);
+        faceUp4.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+        JLabel faceUp5 = new JLabel();
+        faceUp5.setBounds((int)(0.9 * frame.getWidth()),
+                quarterHeight + frame.getWidth() / 100, cardWidth, cardHeight);
+        faceUp5.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+
+
+        panel.add(tcDeck);
+        panel.add(dtDeck);
+        panel.add(faceUp1);
+        panel.add(faceUp2);
+        panel.add(faceUp3);
+        panel.add(faceUp4);
+        panel.add(faceUp5);
 
         Object[] options = {"2", "3", "4"};
 
         int x = JOptionPane.showOptionDialog(frame,"How many players?",
                 "Number of Players",JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.QUESTION_MESSAGE,null,options,options[2]);
-        //These if statements take information from the JOptionPane and 
-        //determine how many players and who goes first
+
         if(x == JOptionPane.YES_OPTION){//2 players
-            String name1 = JOptionPane.
-                showInputDialog("Player 1 enter your name.");
+            String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
             int a1 = Integer.parseInt(JOptionPane.
                     showInputDialog("Player 1 enter age"));
             Player p1 = new Player(name1, a1);
@@ -133,16 +219,14 @@ public class BoardPanel extends JPanel implements MouseListener
                     showInputDialog("Player 2 enter age"));
             Player p2 = new Player(name2, a2);
 
-            if(p1.getAge() < p2.getAge()){//player 1 is younger
-                JOptionPane.showMessageDialog(frame, 
-                    p1.getName() + " goes first.");
+            if(p1.getAge() < p2.getAge()){
+                JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
                 list.add(p1);
                 list.add(p2);
                 
             }
-            else{//player 2 is younger
-                JOptionPane.showMessageDialog(frame, 
-                    p2.getName() + " goes first.");
+            else{
+                JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
                 list.add(p2);
                 list.add(p1);
                
@@ -165,116 +249,144 @@ public class BoardPanel extends JPanel implements MouseListener
                 showInputDialog("Player 3 enter your name.");
             int a3 = Integer.parseInt(JOptionPane.
                     showInputDialog("Player 3 enter age"));
-            Player p3 = new Player(name2, a3);
+            Player p3 = new Player(name3, a3);
             if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge()){
-                //player 1 is youngest
+
                 list.add(p1);
                 list.add(p2);
                 list.add(p3);
-                JOptionPane.showMessageDialog(frame, 
-                    p1.getName() + " goes first.");
-
-
-                
-                
+                JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
             }
             else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge()){
-                //player 2 is youngest
-                JOptionPane.showMessageDialog(frame, 
-                    p2.getName() + " goes first.");
+                
+                JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
                 list.add(p2);
                 list.add(p3);
                 list.add(p1);
-                
             }      
-            else{//player 3 is youngest
-                JOptionPane.showMessageDialog(frame, 
-                    p3.getName() + " goes first.");                
+            else{
+                JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");                
                 list.add(p3);
                 list.add(p1);
                 list.add(p2);
             }
         }
         else{//4 players
-            String name1 = JOptionPane.
-                showInputDialog("Player 1 enter your name.");
+            String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
             int a1 = Integer.parseInt(JOptionPane.
                     showInputDialog("Player 1 enter age"));
             Player p1 = new Player(name1, a1);
 
-            String name2 = JOptionPane.
-                showInputDialog("Player 2 enter your name.");
+            String name2 = JOptionPane.showInputDialog("Player 2 enter your name.");
             int a2 = Integer.parseInt(JOptionPane.
                     showInputDialog("Player 2 enter age"));
             Player p2 = new Player(name2, a2);
 
-            String name3 = JOptionPane.
-                showInputDialog("Player 3 enter your name.");
+            String name3 = JOptionPane.showInputDialog("Player 3 enter your name.");
             int a3 = Integer.parseInt(JOptionPane.
                     showInputDialog("Player 3 enter age"));
-            Player p3 = new Player(name2, a3);
+            Player p3 = new Player(name3, a3);
 
-            String name4 = JOptionPane.
-                showInputDialog("Player 4 enter your name.");
+            String name4 = JOptionPane.showInputDialog("Player 4 enter your name.");
             int a4 = Integer.parseInt(JOptionPane.
                     showInputDialog("Player 4 enter age"));
-            Player p4 = new Player(name2, a3);
+            Player p4 = new Player(name4, a4);
 
             if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge() && 
-            p1.getAge()< p4.getAge()){//player 1 is youngest
+            p1.getAge()< p4.getAge()){
                 list.add(p1);
                 list.add(p2);
                 list.add(p3);
                 list.add(p4);
-                JOptionPane.showMessageDialog(frame, 
-                    p1.getName() + " goes first.");
-                
+                JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
             }
             else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge() &&
-            p2.getAge() < p4.getAge()){//player 2 is youngest
-
+            p2.getAge() < p4.getAge()){
                 list.add(p2);
                 list.add(p3);
                 list.add(p4);
                 list.add(p1);
-                JOptionPane.showMessageDialog(frame, 
-                    p2.getName() + " goes first.");
+                JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
                 list.add(p2);
-                
             } 
             else if(p3.getAge() < p1.getAge() && p3.getAge() < p2.getAge() &&
-            p3.getAge() < p4.getAge()){//player 3 is youngest
-
+            p3.getAge() < p4.getAge()){
                 list.add(p3);
                 list.add(p4);
                 list.add(p1);
                 list.add(p2);
-                JOptionPane.showMessageDialog(frame, 
-                    p3.getName() + " goes first.");
-                
+                JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");
             }
-            else{//player 4 is youngest
-                
-                JOptionPane.showMessageDialog(frame, 
-                    p4.getName() + " goes first.");
+            else{
+                JOptionPane.showMessageDialog(frame, p4.getName() + " goes first.");
                 list.add(p4);
                 list.add(p1);
                 list.add(p2);
                 list.add(p3);
             }
         }
-        JButton o1 = new JButton();
-        JButton o2= new JButton();
-        frame.setLayout(null);
-        //b.setBounds(100,100,140,40);
-        panel.add(o1);
-        panel.add(o2);
-        o1.setBackground(Color.ORANGE);
-        o2.setBackground(Color.ORANGE);
-        o1.setBounds(220, 30, 100, 27);
-        o2.setBounds(321, 30, 100, 27);
-        
-        
+
+        if (list.size() == 2){
+            JLabel p1 = new JLabel();
+            //p1.setBounds();
+            p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+            JLabel p2 = new JLabel();
+            //p2.setBounds();
+            p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+            panel.add(p1);
+            panel.add(p2);
+        }
+        else if (list.size() == 3){
+            JLabel p1 = new JLabel();
+            //p1.setBounds();
+            p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+            JLabel p2 = new JLabel();
+            //p2.setBounds();
+            p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+            JLabel p3 = new JLabel();
+            //p3.setBounds();
+            p3.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+            panel.add(p1);
+            panel.add(p2);
+            panel.add(p3);
+        }
+        else if (list.size() == 4){
+            JLabel p1 = new JLabel();
+            //p1.setBounds();
+            p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+            JLabel p2 = new JLabel();
+            //p2.setBounds();
+            p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+            JLabel p3 = new JLabel();
+            //p3.setBounds();
+            p3.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+            JLabel p4 = new JLabel();
+            //p4.setBounds();
+            p4.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+            panel.add(p1);
+            panel.add(p2);
+            panel.add(p3);
+            panel.add(p4);
+        }
+
     }
 
     public void mousePressed(MouseEvent e){}
@@ -286,6 +398,7 @@ public class BoardPanel extends JPanel implements MouseListener
     public void mouseExited(MouseEvent e){}
 
     public void mouseClicked(MouseEvent e){
+        BoardPanel.main(new String[0]);
         for(int i = 0; i < 4; i++){
             //TransportationCard t = Board.tcDeck(0);
             //tcdeck.remove();
@@ -297,7 +410,7 @@ public class BoardPanel extends JPanel implements MouseListener
     }
 
     /**
-     * @param args
+     * @param args not used
      */
     public static void main(String[] args){
         javax.swing.SwingUtilities.invokeLater(new Runnable(){

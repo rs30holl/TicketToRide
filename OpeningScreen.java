@@ -10,8 +10,7 @@ import java.awt.event.*;
  */
 public class OpeningScreen extends JPanel implements MouseListener
 {
-    private final ImageIcon cover = new ImageIcon(this.
-        getClass().getResource("/fwdpieces1/Cover.jpg"));
+    private final ImageIcon cover = new ImageIcon(this.getClass().getResource("/fwdpieces1/Cover.jpg"));
     private final Image cover2 = cover.getImage();
     private static final JFrame frame = new JFrame("Ticket to Ride: NYC");
 
@@ -28,7 +27,7 @@ public class OpeningScreen extends JPanel implements MouseListener
         g.drawImage(cover2, 0, 0, getWidth(), getHeight(), this);
     }
 
-    public static void createAndShowGUI(){
+    private static void createAndShowGUI(){
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
