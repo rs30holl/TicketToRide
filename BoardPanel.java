@@ -7,8 +7,9 @@ import java.util.*;
 /**
  * Write a description of class BoardPanel here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ryan Holland, Julia Krasinski, Briella Sala,
+ * Matt Harrison, Michael Lostritto
+ * @version 4.22.2019
  */
 public class BoardPanel extends JPanel implements MouseListener
 {
@@ -134,13 +135,13 @@ public class BoardPanel extends JPanel implements MouseListener
                     showInputDialog("Player 2 enter age"));
             Player p2 = new Player(name2, a2);
 
-            if(p1.getAge() < p2.getAge()){
+            if(p1.getAge() < p2.getAge()){//player 1 is younger
                 JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
                 list.add(p1);
                 list.add(p2);
                 
             }
-            else{
+            else{//player 2 is younger
                 JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
                 list.add(p2);
                 list.add(p1);
@@ -166,7 +167,7 @@ public class BoardPanel extends JPanel implements MouseListener
                     showInputDialog("Player 3 enter age"));
             Player p3 = new Player(name2, a3);
             if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge()){
-
+                //player 1 is youngest
                 list.add(p1);
                 list.add(p2);
                 list.add(p3);
@@ -177,14 +178,14 @@ public class BoardPanel extends JPanel implements MouseListener
                 
             }
             else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge()){
-                
+                //player 2 is youngest
                 JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
                 list.add(p2);
                 list.add(p3);
                 list.add(p1);
                 
             }      
-            else{
+            else{//player 3 is youngest
                 JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");                
                 list.add(p3);
                 list.add(p1);
@@ -213,7 +214,7 @@ public class BoardPanel extends JPanel implements MouseListener
             Player p4 = new Player(name2, a3);
 
             if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge() && 
-            p1.getAge()< p4.getAge()){
+            p1.getAge()< p4.getAge()){//player 1 is youngest
                 list.add(p1);
                 list.add(p2);
                 list.add(p3);
@@ -222,7 +223,7 @@ public class BoardPanel extends JPanel implements MouseListener
                 
             }
             else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge() &&
-            p2.getAge() < p4.getAge()){
+            p2.getAge() < p4.getAge()){//player 2 is youngest
 
                 list.add(p2);
                 list.add(p3);
@@ -233,7 +234,7 @@ public class BoardPanel extends JPanel implements MouseListener
                 
             } 
             else if(p3.getAge() < p1.getAge() && p3.getAge() < p2.getAge() &&
-            p3.getAge() < p4.getAge()){
+            p3.getAge() < p4.getAge()){//player 3 is youngest
 
                 list.add(p3);
                 list.add(p4);
@@ -242,7 +243,7 @@ public class BoardPanel extends JPanel implements MouseListener
                 JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");
                 
             }
-            else{
+            else{//player 4 is youngest
                 
                 JOptionPane.showMessageDialog(frame, p4.getName() + " goes first.");
                 list.add(p4);
