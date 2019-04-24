@@ -263,12 +263,14 @@ public class BoardPanel extends JPanel implements MouseListener
                 list.add(p3);
             }
         }
-        JButton o1 = new JButton("Orange");
-        JButton o2= new JButton("Orange");
+        JButton o1 = new JButton();
+        JButton o2= new JButton();
         frame.setLayout(null);
         //b.setBounds(100,100,140,40);
         panel.add(o1);
         panel.add(o2);
+        o1.setBackground(Color.ORANGE);
+        o2.setBackground(Color.ORANGE);
         o1.setBounds(220, 30, 100, 27);
         o2.setBounds(321, 30, 100, 27);
         
