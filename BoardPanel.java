@@ -30,15 +30,19 @@ public class BoardPanel extends JPanel implements MouseListener
             ".\\ttr cards\\vcardback.png");
     // private static final Image transCardBack2 = transCardBack.getImage();
     private static final ImageIcon blue = new ImageIcon(
-            ".\\ttr cards\\bluecard.png");
+            ".\\fwdpiences1\\verticalBlue.png");
     private static final ImageIcon black = new ImageIcon(
-            ".\\ttr cards\\blackcard.png");
+            ".\\fwdpieces1\\verticalBlack.png");
+    private static final ImageIcon red = new ImageIcon(
+            ".\\fwdpieces1\\verticalRed.png");
+    private static final ImageIcon pink = new ImageIcon(
+            ".\\fwdpieces1\\verticalPink.png");
     private static final ImageIcon green = new ImageIcon(
-            ".\\ttr cards\\greencard.png");
+            ".\\fwdpieces1\\verticalGreen.png");
     private static final ImageIcon orange = new ImageIcon(
-            ".\\ttr cards\\orangecard.png");
+            ".\\fwdpieces1\\verticalOrange.png");
     private static final ImageIcon rainbow = new ImageIcon(
-            ".\\ttr cards\\rainbowcard.png");
+            ".\\fwdpieces\\verticalRainbow.png");
     private static final ImageIcon transCardSide = new ImageIcon(
             ".\\ttr cards\\cardback.png");
     //private final Image transCardSide2 = transCardSide.getImage();
@@ -110,6 +114,61 @@ public class BoardPanel extends JPanel implements MouseListener
 
     }
 
+    private static void generateCards(){
+        Board b = new Board();
+        int quarterHeight = (int)(0.71 * frame.getHeight());
+        int cardWidth = frame.getWidth() / 15;
+        int cardHeight = frame.getHeight() / 5;
+        double pos1 = 0.51;
+        //double pos2
+
+        for(int i = 0; i < 6; i++){
+            if(b.tcDeck.get(i).getColor().equals("ORANGE")){
+                JLabel faceUp11 = new JLabel();
+                faceUp11.setBounds((int)(0.51 * frame.getWidth()),
+                    9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                faceUp11.setIcon(new ImageIcon(orange.getImage().getScaledInstance(
+                            cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                //panel.add(faceUp11);
+            }
+            if(b.tcDeck.get(i).getColor().equals("RED")){
+                JLabel faceUp11 = new JLabel();
+                faceUp11.setBounds((int)(0.51 * frame.getWidth()),
+                    9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                faceUp11.setIcon(new ImageIcon(red.getImage().getScaledInstance(
+                            cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            }
+            if(b.tcDeck.get(i).getColor().equals("BLACK")){
+                JLabel faceUp11 = new JLabel();
+                faceUp11.setBounds((int)(0.51 * frame.getWidth()),
+                    9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                faceUp11.setIcon(new ImageIcon(black.getImage().getScaledInstance(
+                            cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            }
+            if(b.tcDeck.get(i).getColor().equals("BLUE")){
+                JLabel faceUp11 = new JLabel();
+                faceUp11.setBounds((int)(0.51 * frame.getWidth()),
+                    9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                faceUp11.setIcon(new ImageIcon(blue.getImage().getScaledInstance(
+                            cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            }
+            if(b.tcDeck.get(i).getColor().equals("PINK")){
+                JLabel faceUp11 = new JLabel();
+                faceUp11.setBounds((int)(0.51 * frame.getWidth()),
+                    9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                faceUp11.setIcon(new ImageIcon(pink.getImage().getScaledInstance(
+                            cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            }
+            if(b.tcDeck.get(i).getColor().equals("RAINBOW")){
+                JLabel faceUp11 = new JLabel();
+                faceUp11.setBounds((int)(0.51 * frame.getWidth()),
+                    9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                faceUp11.setIcon(new ImageIcon(rainbow.getImage().getScaledInstance(
+                            cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            }
+        }
+    }
+
     /**
      *
      */
@@ -169,13 +228,13 @@ public class BoardPanel extends JPanel implements MouseListener
         JLabel faceUp1 = new JLabel();
         faceUp1.setBounds((int)(0.51 * frame.getWidth()),
             9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
-        faceUp1.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+        faceUp1.setIcon(new ImageIcon(red.getImage().getScaledInstance(
                     cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
         JLabel faceUp2 = new JLabel();
         faceUp2.setBounds((int)(0.6 * frame.getWidth()),
             9*quarterHeight/10 + frame.getWidth() / 100, cardWidth, cardHeight);
-        faceUp2.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+        faceUp2.setIcon(new ImageIcon(orange.getImage().getScaledInstance(
                     cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
         JLabel faceUp3 = new JLabel();
@@ -200,9 +259,10 @@ public class BoardPanel extends JPanel implements MouseListener
         panel.add(dtDeck);
         panel.add(faceUp1);
         panel.add(faceUp2);
-        panel.add(faceUp3);
-        panel.add(faceUp4);
-        panel.add(faceUp5);
+        //panel.add(faceUp3);
+        //panel.add(faceUp4);
+        //panel.add(faceUp5);
+
         Board b = new Board();
         for(int i = 0; i < 6; i++){
             if(b.tcDeck.get(i).getColor().equals("ORANGE")){
@@ -211,6 +271,7 @@ public class BoardPanel extends JPanel implements MouseListener
                     9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
                 faceUp11.setIcon(new ImageIcon(orange.getImage().getScaledInstance(
                             cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                panel.add(faceUp11);
             }
             if(b.tcDeck.get(i).getColor().equals("RED")){
                 JLabel faceUp11 = new JLabel();
@@ -218,6 +279,7 @@ public class BoardPanel extends JPanel implements MouseListener
                     9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
                 faceUp11.setIcon(new ImageIcon(red.getImage().getScaledInstance(
                             cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                panel.add(faceUp11);
             }
             if(b.tcDeck.get(i).getColor().equals("BLACK")){
                 JLabel faceUp11 = new JLabel();
@@ -225,6 +287,7 @@ public class BoardPanel extends JPanel implements MouseListener
                     9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
                 faceUp11.setIcon(new ImageIcon(black.getImage().getScaledInstance(
                             cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                panel.add(faceUp11);
             }
             if(b.tcDeck.get(i).getColor().equals("BLUE")){
                 JLabel faceUp11 = new JLabel();
@@ -232,6 +295,7 @@ public class BoardPanel extends JPanel implements MouseListener
                     9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
                 faceUp11.setIcon(new ImageIcon(blue.getImage().getScaledInstance(
                             cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                panel.add(faceUp11);
             }
             if(b.tcDeck.get(i).getColor().equals("PINK")){
                 JLabel faceUp11 = new JLabel();
@@ -239,6 +303,7 @@ public class BoardPanel extends JPanel implements MouseListener
                     9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
                 faceUp11.setIcon(new ImageIcon(pink.getImage().getScaledInstance(
                             cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                panel.add(faceUp11);
             }
             if(b.tcDeck.get(i).getColor().equals("RAINBOW")){
                 JLabel faceUp11 = new JLabel();
@@ -246,11 +311,19 @@ public class BoardPanel extends JPanel implements MouseListener
                     9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
                 faceUp11.setIcon(new ImageIcon(rainbow.getImage().getScaledInstance(
                             cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                panel.add(faceUp11);
+            }
+            else{
+                JLabel faceUp11 = new JLabel();
+                faceUp11.setBounds((int)(0.51 * frame.getWidth()),
+                    9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                faceUp11.setIcon(new ImageIcon(rainbow.getImage().getScaledInstance(
+                            cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                panel.add(faceUp11);   
             }
         }
 
         Object[] options = {"2", "3", "4"};
-
         int x = JOptionPane.showOptionDialog(frame,"How many players?",
                 "Number of Players",JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.QUESTION_MESSAGE,null,options,options[2]);
