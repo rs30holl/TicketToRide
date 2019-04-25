@@ -202,6 +202,8 @@ public class Board
         }
         
         Collections.shuffle(tcDeck);
+        
+        
     }
     
     /**
@@ -213,6 +215,9 @@ public class Board
         for (LocationNode n : b.points){
             n.printPaths();
             System.out.println();
+        }
+        for (Card c : tcDeck){
+            System.out.println(c.getColor());
         }
     }
 }

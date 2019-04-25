@@ -28,8 +28,9 @@ public class BoardPanel extends JPanel implements MouseListener
     private final Image table2 = table.getImage();
     private static final ImageIcon transCardBack = new ImageIcon(
             ".\\ttr cards\\vcardback.png");
-   // private static final Image transCardBack2 = transCardBack.getImage();
-
+    // private static final Image transCardBack2 = transCardBack.getImage();
+    private static final ImageIcon blue = new ImageIcon(
+            ".\\ttr cards\\bluecard.png");
     private static final ImageIcon transCardSide = new ImageIcon(
             ".\\ttr cards\\cardback.png");
     //private final Image transCardSide2 = transCardSide.getImage();
@@ -55,55 +56,51 @@ public class BoardPanel extends JPanel implements MouseListener
         super.paintComponent(g);
         int halfWidth = (int)(0.5 * getWidth());
         int quarterHeight = (int)(0.75 * getHeight());
-        
-
-
 
         g.drawImage(board2, 0, 0, halfWidth, getHeight(), this);
         g.drawImage(trainTracks2, halfWidth, 0, halfWidth, quarterHeight,this);
         g.drawImage(table2, halfWidth, quarterHeight, halfWidth, 
             quarterHeight / 3, this);
 
-    /*
+        /*
         g.drawImage(transCardBack2, (int)(0.715 * getWidth()),
-            40, getWidth() / 15, getHeight() / 5, this);
+        40, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(destTicketBack2, (int)(0.715 * getWidth()), 
-            270, getWidth() / 15, getHeight() / 5, this);
+        270, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardSide2, (int)(0.865 * getWidth()), 
-            40, getWidth() / 10, getHeight() / 8, this);
+        40, getWidth() / 10, getHeight() / 8, this);
 
         g.drawImage(transCardBack2, (int)(0.51 * getWidth()), 
-            quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
+        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.6 * getWidth()), 
-            quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
+        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.7 * getWidth()), 
-            quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
+        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.8 * getWidth()), 
-            quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
+        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.9 * getWidth()), 
-            quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
+        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.715 * getWidth()), 
-            40, getWidth() / 15, getHeight() / 5, this);
+        40, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(destTicketBack2, (int)(0.715 * getWidth()), 
-            270, getWidth() / 15, getHeight() / 5, this);
+        270, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardSide2, (int)(0.865 * getWidth()), 40, 
-            getWidth() / 10, getHeight() / 8, this);
+        getWidth() / 10, getHeight() / 8, this);
 
         g.drawImage(transCardBack2, (int)(0.51 * getWidth()), 
-            quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
+        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.6 * getWidth()), 
-            quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
+        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.7 * getWidth()), 
-            quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
+        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.8 * getWidth()), 
-            quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
+        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
         g.drawImage(transCardBack2, (int)(0.9 * getWidth()), 
-            quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
+        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
 
-     */
+         */
 
     }
-
 
     /**
      *
@@ -126,72 +123,70 @@ public class BoardPanel extends JPanel implements MouseListener
 
         JLabel tcDeck = new JLabel();
         tcDeck.setBounds( (int)(0.71 * frame.getWidth()),
-                15, cardWidth, cardHeight);
+            15, cardWidth, cardHeight);
         tcDeck.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
-                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
         tcDeck.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                for (Player p : list){
-                    if (p.getState()){
-                        p.turn(0, null, null);
-                        p.turn(0, null, null);
-                        p.setState(false);
-                        break;
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    for (Player p : list){
+                        if (p.getState()){
+                            p.turn(0, null, null);
+                            p.turn(0, null, null);
+                            p.setState(false);
+                            break;
+                        }
                     }
                 }
-            }
-        });
+            });
 
         JLabel dtDeck = new JLabel();
         dtDeck.setBounds( (int)(0.71 * frame.getWidth()),
-                frame.getHeight() / 5 + 20 , cardWidth, cardHeight);
+            frame.getHeight() / 5 + 20 , cardWidth, cardHeight);
         dtDeck.setIcon(new ImageIcon(destTicketBack.getImage().getScaledInstance(
-                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
         dtDeck.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                for (Player p : list){
-                    if (p.getState()){
-                        p.turn(1, null, null);
-                        p.setState(false);
-                        break;
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    for (Player p : list){
+                        if (p.getState()){
+                            p.turn(1, null, null);
+                            p.setState(false);
+                            break;
+                        }
                     }
                 }
-            }
-        });
+            });
 
         JLabel faceUp1 = new JLabel();
         faceUp1.setBounds((int)(0.51 * frame.getWidth()),
-                9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+            9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
         faceUp1.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
-                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
         JLabel faceUp2 = new JLabel();
         faceUp2.setBounds((int)(0.6 * frame.getWidth()),
-                9*quarterHeight/10 + frame.getWidth() / 100, cardWidth, cardHeight);
+            9*quarterHeight/10 + frame.getWidth() / 100, cardWidth, cardHeight);
         faceUp2.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
-                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
         JLabel faceUp3 = new JLabel();
         faceUp3.setBounds((int)(0.7 * frame.getWidth()),
-                9*quarterHeight/10 + frame.getWidth() / 100, cardWidth, cardHeight);
+            9*quarterHeight/10 + frame.getWidth() / 100, cardWidth, cardHeight);
         faceUp3.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
-                faceUp3.getWidth(), faceUp3.getHeight(), Image.SCALE_SMOOTH)));
+                    faceUp3.getWidth(), faceUp3.getHeight(), Image.SCALE_SMOOTH)));
 
         JLabel faceUp4 = new JLabel();
         faceUp4.setBounds((int)(0.8 * frame.getWidth()),
-                9*quarterHeight/10 + (frame.getWidth() / 100), cardWidth, cardHeight);
+            9*quarterHeight/10 + (frame.getWidth() / 100), cardWidth, cardHeight);
         faceUp4.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
-                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
         JLabel faceUp5 = new JLabel();
         faceUp5.setBounds((int)(0.9 * frame.getWidth()),
-                9*quarterHeight/10 + frame.getWidth() / 100, cardWidth, cardHeight);
+            9*quarterHeight/10 + frame.getWidth() / 100, cardWidth, cardHeight);
         faceUp5.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
-                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
-
-
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
         panel.add(tcDeck);
         panel.add(dtDeck);
@@ -200,192 +195,237 @@ public class BoardPanel extends JPanel implements MouseListener
         panel.add(faceUp3);
         panel.add(faceUp4);
         panel.add(faceUp5);
+        Board b = new Board();
+        for(int i = 0; i < 6; i++){
+            if(b.tcDeck.get(i).getColor().equals("ORANGE")){
+                JLabel faceUp11 = new JLabel();
+                faceUp11.setBounds((int)(0.51 * frame.getWidth()),
+                    9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                faceUp11.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                            cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            }
+            if(b.tcDeck.get(i).getColor().equals("RED")){
+                JLabel faceUp11 = new JLabel();
+                faceUp11.setBounds((int)(0.51 * frame.getWidth()),
+                    9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                faceUp11.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                            cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            }
+            if(b.tcDeck.get(i).getColor().equals("BLACK")){
+                JLabel faceUp11 = new JLabel();
+                faceUp11.setBounds((int)(0.51 * frame.getWidth()),
+                    9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                faceUp11.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                            cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            }
+            if(b.tcDeck.get(i).getColor().equals("BLUE")){
+                JLabel faceUp11 = new JLabel();
+                faceUp11.setBounds((int)(0.51 * frame.getWidth()),
+                    9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                faceUp11.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                            cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            }
+            if(b.tcDeck.get(i).getColor().equals("PINK")){
+                JLabel faceUp11 = new JLabel();
+                faceUp11.setBounds((int)(0.51 * frame.getWidth()),
+                    9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                faceUp11.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                            cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            }
+            if(b.tcDeck.get(i).getColor().equals("RAINBOW")){
+                JLabel faceUp11 = new JLabel();
+                faceUp11.setBounds((int)(0.51 * frame.getWidth()),
+                    9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                faceUp11.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                            cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            }
+        }
 
         Object[] options = {"2", "3", "4"};
 
-        // int x = JOptionPane.showOptionDialog(frame,"How many players?",
-                // "Number of Players",JOptionPane.YES_NO_CANCEL_OPTION,
-                // JOptionPane.QUESTION_MESSAGE,null,options,options[2]);
+        int x = JOptionPane.showOptionDialog(frame,"How many players?",
+                "Number of Players",JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE,null,options,options[2]);
 
-        // if(x == JOptionPane.YES_OPTION){//2 players
-            // String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
-            // int a1 = Integer.parseInt(JOptionPane.
-                    // showInputDialog("Player 1 enter age"));
-            // Player p1 = new Player(name1, a1);
+        if(x == JOptionPane.YES_OPTION){//2 players
+            String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
+            int a1 = Integer.parseInt(JOptionPane.
+                    showInputDialog("Player 1 enter age"));
+            Player p1 = new Player(name1, a1);
 
-            // String name2 = JOptionPane.
-                // showInputDialog("Player 2 enter your name.");
-            // int a2 = Integer.parseInt(JOptionPane.
-                    // showInputDialog("Player 2 enter age"));
-            // Player p2 = new Player(name2, a2);
+            String name2 = JOptionPane.
+                showInputDialog("Player 2 enter your name.");
+            int a2 = Integer.parseInt(JOptionPane.
+                    showInputDialog("Player 2 enter age"));
+            Player p2 = new Player(name2, a2);
 
-            // if(p1.getAge() < p2.getAge()){
-                // JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
-                // list.add(p1);
-                // list.add(p2);
-                
-            // }
-            // else{
-                // JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
-                // list.add(p2);
-                // list.add(p1);
-               
-            // }
-        // }
-        // else if(x == JOptionPane.NO_OPTION){//3 players
-            // String name1 = JOptionPane.
-                // showInputDialog("Player 1 enter your name.");
-            // int a1 = Integer.parseInt(JOptionPane.
-                    // showInputDialog("Player 1 enter age"));
-            // Player p1 = new Player(name1, a1);
+            if(p1.getAge() < p2.getAge()){
+                JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
+                list.add(p1);
+                list.add(p2);
 
-            // String name2 = JOptionPane.
-                // showInputDialog("Player 2 enter your name.");
-            // int a2 = Integer.parseInt(JOptionPane.
-                    // showInputDialog("Player 2 enter age"));
-            // Player p2 = new Player(name2, a2);
+            }
+            else{
+                JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
+                list.add(p2);
+                list.add(p1);
 
-            // String name3 = JOptionPane.
-                // showInputDialog("Player 3 enter your name.");
-            // int a3 = Integer.parseInt(JOptionPane.
-                    // showInputDialog("Player 3 enter age"));
-            // Player p3 = new Player(name3, a3);
-            // if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge()){
+            }
+        }
+        else if(x == JOptionPane.NO_OPTION){//3 players
+            String name1 = JOptionPane.
+                showInputDialog("Player 1 enter your name.");
+            int a1 = Integer.parseInt(JOptionPane.
+                    showInputDialog("Player 1 enter age"));
+            Player p1 = new Player(name1, a1);
 
-                // list.add(p1);
-                // list.add(p2);
-                // list.add(p3);
-                // JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
-            // }
-            // else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge()){
-                
-                // JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
-                // list.add(p2);
-                // list.add(p3);
-                // list.add(p1);
-            // }      
-            // else{
-                // JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");                
-                // list.add(p3);
-                // list.add(p1);
-                // list.add(p2);
-            // }
-        // }
-        // else{//4 players
-            // String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
-            // int a1 = Integer.parseInt(JOptionPane.
-                    // showInputDialog("Player 1 enter age"));
-            // Player p1 = new Player(name1, a1);
+            String name2 = JOptionPane.
+                showInputDialog("Player 2 enter your name.");
+            int a2 = Integer.parseInt(JOptionPane.
+                    showInputDialog("Player 2 enter age"));
+            Player p2 = new Player(name2, a2);
 
-            // String name2 = JOptionPane.showInputDialog("Player 2 enter your name.");
-            // int a2 = Integer.parseInt(JOptionPane.
-                    // showInputDialog("Player 2 enter age"));
-            // Player p2 = new Player(name2, a2);
+            String name3 = JOptionPane.
+                showInputDialog("Player 3 enter your name.");
+            int a3 = Integer.parseInt(JOptionPane.
+                    showInputDialog("Player 3 enter age"));
+            Player p3 = new Player(name3, a3);
+            if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge()){
 
-            // String name3 = JOptionPane.showInputDialog("Player 3 enter your name.");
-            // int a3 = Integer.parseInt(JOptionPane.
-                    // showInputDialog("Player 3 enter age"));
-            // Player p3 = new Player(name3, a3);
+                list.add(p1);
+                list.add(p2);
+                list.add(p3);
+                JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
+            }
+            else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge()){
 
-            // String name4 = JOptionPane.showInputDialog("Player 4 enter your name.");
-            // int a4 = Integer.parseInt(JOptionPane.
-                    // showInputDialog("Player 4 enter age"));
-            // Player p4 = new Player(name4, a4);
+                JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
+                list.add(p2);
+                list.add(p3);
+                list.add(p1);
+            }      
+            else{
+                JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");                
+                list.add(p3);
+                list.add(p1);
+                list.add(p2);
+            }
+        }
+        else{//4 players
+            String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
+            int a1 = Integer.parseInt(JOptionPane.
+                    showInputDialog("Player 1 enter age"));
+            Player p1 = new Player(name1, a1);
 
-            // if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge() && 
-            // p1.getAge()< p4.getAge()){
-                // list.add(p1);
-                // list.add(p2);
-                // list.add(p3);
-                // list.add(p4);
-                // JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
-            // }
-            // else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge() &&
-            // p2.getAge() < p4.getAge()){
-                // list.add(p2);
-                // list.add(p3);
-                // list.add(p4);
-                // list.add(p1);
-                // JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
-                // list.add(p2);
-            // } 
-            // else if(p3.getAge() < p1.getAge() && p3.getAge() < p2.getAge() &&
-            // p3.getAge() < p4.getAge()){
-                // list.add(p3);
-                // list.add(p4);
-                // list.add(p1);
-                // list.add(p2);
-                // JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");
-            // }
-            // else{
-                // JOptionPane.showMessageDialog(frame, p4.getName() + " goes first.");
-                // list.add(p4);
-                // list.add(p1);
-                // list.add(p2);
-                // list.add(p3);
-            // }
-        // }
+            String name2 = JOptionPane.showInputDialog("Player 2 enter your name.");
+            int a2 = Integer.parseInt(JOptionPane.
+                    showInputDialog("Player 2 enter age"));
+            Player p2 = new Player(name2, a2);
 
-        // if (list.size() == 2){
-            // JLabel p1 = new JLabel();
-            // //p1.setBounds();
-            // p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            String name3 = JOptionPane.showInputDialog("Player 3 enter your name.");
+            int a3 = Integer.parseInt(JOptionPane.
+                    showInputDialog("Player 3 enter age"));
+            Player p3 = new Player(name3, a3);
 
-            // JLabel p2 = new JLabel();
-            // //p2.setBounds();
-            // p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            String name4 = JOptionPane.showInputDialog("Player 4 enter your name.");
+            int a4 = Integer.parseInt(JOptionPane.
+                    showInputDialog("Player 4 enter age"));
+            Player p4 = new Player(name4, a4);
 
-            // panel.add(p1);
-            // panel.add(p2);
-        // }
-        // else if (list.size() == 3){
-            // JLabel p1 = new JLabel();
-            // //p1.setBounds();
-            // p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge() && 
+            p1.getAge()< p4.getAge()){
+                list.add(p1);
+                list.add(p2);
+                list.add(p3);
+                list.add(p4);
+                JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
+            }
+            else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge() &&
+            p2.getAge() < p4.getAge()){
+                list.add(p2);
+                list.add(p3);
+                list.add(p4);
+                list.add(p1);
+                JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
+                list.add(p2);
+            } 
+            else if(p3.getAge() < p1.getAge() && p3.getAge() < p2.getAge() &&
+            p3.getAge() < p4.getAge()){
+                list.add(p3);
+                list.add(p4);
+                list.add(p1);
+                list.add(p2);
+                JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");
+            }
+            else{
+                JOptionPane.showMessageDialog(frame, p4.getName() + " goes first.");
+                list.add(p4);
+                list.add(p1);
+                list.add(p2);
+                list.add(p3);
+            }
+        }
 
-            // JLabel p2 = new JLabel();
-            // //p2.setBounds();
-            // p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+        if (list.size() == 2){
+            JLabel p1 = new JLabel();
+            //p1.setBounds();
+            p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            // JLabel p3 = new JLabel();
-            // //p3.setBounds();
-            // p3.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            JLabel p2 = new JLabel();
+            //p2.setBounds();
+            p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            // panel.add(p1);
-            // panel.add(p2);
-            // panel.add(p3);
-        // }
-        // else if (list.size() == 4){
-            // JLabel p1 = new JLabel();
-            // //p1.setBounds();
-            // p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            panel.add(p1);
+            panel.add(p2);
+        }
+        else if (list.size() == 3){
+            JLabel p1 = new JLabel();
+            //p1.setBounds();
+            p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            // JLabel p2 = new JLabel();
-            // //p2.setBounds();
-            // p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            JLabel p2 = new JLabel();
+            //p2.setBounds();
+            p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            // JLabel p3 = new JLabel();
-            // //p3.setBounds();
-            // p3.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            JLabel p3 = new JLabel();
+            //p3.setBounds();
+            p3.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            // JLabel p4 = new JLabel();
-            // //p4.setBounds();
-            // p4.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            panel.add(p1);
+            panel.add(p2);
+            panel.add(p3);
+        }
+        else if (list.size() == 4){
+            JLabel p1 = new JLabel();
+            //p1.setBounds();
+            p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            // panel.add(p1);
-            // panel.add(p2);
-            // panel.add(p3);
-            // panel.add(p4);
-        // }
+            JLabel p2 = new JLabel();
+            //p2.setBounds();
+            p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+            JLabel p3 = new JLabel();
+            //p3.setBounds();
+            p3.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+            JLabel p4 = new JLabel();
+            //p4.setBounds();
+            p4.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
+            panel.add(p1);
+            panel.add(p2);
+            panel.add(p3);
+            panel.add(p4);
+        }
 
     }
 
