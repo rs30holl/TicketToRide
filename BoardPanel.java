@@ -31,6 +31,14 @@ public class BoardPanel extends JPanel implements MouseListener
     // private static final Image transCardBack2 = transCardBack.getImage();
     private static final ImageIcon blue = new ImageIcon(
             ".\\ttr cards\\bluecard.png");
+    private static final ImageIcon black = new ImageIcon(
+            ".\\ttr cards\\blackcard.png");
+    private static final ImageIcon green = new ImageIcon(
+            ".\\ttr cards\\greencard.png");
+    private static final ImageIcon orange = new ImageIcon(
+            ".\\ttr cards\\orangecard.png");
+    private static final ImageIcon rainbow = new ImageIcon(
+            ".\\ttr cards\\rainbowcard.png");
     private static final ImageIcon transCardSide = new ImageIcon(
             ".\\ttr cards\\cardback.png");
     //private final Image transCardSide2 = transCardSide.getImage();
@@ -201,42 +209,42 @@ public class BoardPanel extends JPanel implements MouseListener
                 JLabel faceUp11 = new JLabel();
                 faceUp11.setBounds((int)(0.51 * frame.getWidth()),
                     9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
-                faceUp11.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                faceUp11.setIcon(new ImageIcon(orange.getImage().getScaledInstance(
                             cardWidth, cardHeight, Image.SCALE_SMOOTH)));
             }
             if(b.tcDeck.get(i).getColor().equals("RED")){
                 JLabel faceUp11 = new JLabel();
                 faceUp11.setBounds((int)(0.51 * frame.getWidth()),
                     9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
-                faceUp11.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                faceUp11.setIcon(new ImageIcon(red.getImage().getScaledInstance(
                             cardWidth, cardHeight, Image.SCALE_SMOOTH)));
             }
             if(b.tcDeck.get(i).getColor().equals("BLACK")){
                 JLabel faceUp11 = new JLabel();
                 faceUp11.setBounds((int)(0.51 * frame.getWidth()),
                     9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
-                faceUp11.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                faceUp11.setIcon(new ImageIcon(black.getImage().getScaledInstance(
                             cardWidth, cardHeight, Image.SCALE_SMOOTH)));
             }
             if(b.tcDeck.get(i).getColor().equals("BLUE")){
                 JLabel faceUp11 = new JLabel();
                 faceUp11.setBounds((int)(0.51 * frame.getWidth()),
                     9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
-                faceUp11.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                faceUp11.setIcon(new ImageIcon(blue.getImage().getScaledInstance(
                             cardWidth, cardHeight, Image.SCALE_SMOOTH)));
             }
             if(b.tcDeck.get(i).getColor().equals("PINK")){
                 JLabel faceUp11 = new JLabel();
                 faceUp11.setBounds((int)(0.51 * frame.getWidth()),
                     9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
-                faceUp11.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                faceUp11.setIcon(new ImageIcon(pink.getImage().getScaledInstance(
                             cardWidth, cardHeight, Image.SCALE_SMOOTH)));
             }
             if(b.tcDeck.get(i).getColor().equals("RAINBOW")){
                 JLabel faceUp11 = new JLabel();
                 faceUp11.setBounds((int)(0.51 * frame.getWidth()),
                     9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
-                faceUp11.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
+                faceUp11.setIcon(new ImageIcon(rainbow.getImage().getScaledInstance(
                             cardWidth, cardHeight, Image.SCALE_SMOOTH)));
             }
         }
