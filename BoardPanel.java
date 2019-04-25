@@ -163,31 +163,31 @@ public class BoardPanel extends JPanel implements MouseListener
 
         JLabel faceUp1 = new JLabel();
         faceUp1.setBounds((int)(0.51 * frame.getWidth()),
-                7*quarterHeight/8 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
         faceUp1.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
                 cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
         JLabel faceUp2 = new JLabel();
         faceUp2.setBounds((int)(0.6 * frame.getWidth()),
-                quarterHeight + frame.getWidth() / 100, cardWidth, cardHeight);
+                9*quarterHeight/10 + frame.getWidth() / 100, cardWidth, cardHeight);
         faceUp2.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
                 cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
         JLabel faceUp3 = new JLabel();
         faceUp3.setBounds((int)(0.7 * frame.getWidth()),
-                quarterHeight + frame.getWidth() / 100, cardWidth, cardHeight);
+                9*quarterHeight/10 + frame.getWidth() / 100, cardWidth, cardHeight);
         faceUp3.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
                 faceUp3.getWidth(), faceUp3.getHeight(), Image.SCALE_SMOOTH)));
 
         JLabel faceUp4 = new JLabel();
         faceUp4.setBounds((int)(0.8 * frame.getWidth()),
-                quarterHeight + (frame.getWidth() / 100), cardWidth, cardHeight);
+                9*quarterHeight/10 + (frame.getWidth() / 100), cardWidth, cardHeight);
         faceUp4.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
                 cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
         JLabel faceUp5 = new JLabel();
         faceUp5.setBounds((int)(0.9 * frame.getWidth()),
-                quarterHeight + frame.getWidth() / 100, cardWidth, cardHeight);
+                9*quarterHeight/10 + frame.getWidth() / 100, cardWidth, cardHeight);
         faceUp5.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
                 cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
