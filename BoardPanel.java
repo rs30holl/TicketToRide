@@ -27,14 +27,14 @@ public class BoardPanel extends JPanel implements MouseListener
             getResource("table.jpg"));
     private final Image table2 = table.getImage();
     private static final ImageIcon transCardBack = new ImageIcon(
-            ".\\fwdpieces1\\verticalCardFace.jpg");
+            ".\\ttr cards\\vcardback.png");
    // private static final Image transCardBack2 = transCardBack.getImage();
 
     private static final ImageIcon transCardSide = new ImageIcon(
-            ".\\fwdpieces1\\sideCardFace.jpg");
+            ".\\ttr cards\\cardback.png");
     //private final Image transCardSide2 = transCardSide.getImage();
     private static final ImageIcon destTicketBack = new ImageIcon(
-            ".\\fwdboardandtransport1\\frontOfCard.jpg");
+            ".\\ttr cards\\vcardbackDT.png");
 
     //private final Image destTicketBack2 = destTicketBack.getImage();
     static ArrayList<Player> list = new ArrayList<>();
@@ -120,13 +120,13 @@ public class BoardPanel extends JPanel implements MouseListener
         frame.setVisible(true);
 
         //int halfWidth = (int)(0.5 * frame.getWidth());
-        int quarterHeight = (int)(0.75 * frame.getHeight());
+        int quarterHeight = (int)(0.71 * frame.getHeight());
         int cardWidth = frame.getWidth() / 15;
         int cardHeight = frame.getHeight() / 5;
 
         JLabel tcDeck = new JLabel();
-        tcDeck.setBounds( (int)(0.715 * frame.getWidth()),
-                40, cardWidth, cardHeight);
+        tcDeck.setBounds( (int)(0.71 * frame.getWidth()),
+                15, cardWidth, cardHeight);
         tcDeck.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
                 cardWidth, cardHeight, Image.SCALE_SMOOTH)));
         tcDeck.addMouseListener(new MouseAdapter() {
@@ -144,8 +144,8 @@ public class BoardPanel extends JPanel implements MouseListener
         });
 
         JLabel dtDeck = new JLabel();
-        dtDeck.setBounds( (int)(0.715 * frame.getWidth()),
-                frame.getHeight() / 4 + 40, cardWidth, cardHeight);
+        dtDeck.setBounds( (int)(0.71 * frame.getWidth()),
+                frame.getHeight() / 5 + 20 , cardWidth, cardHeight);
         dtDeck.setIcon(new ImageIcon(destTicketBack.getImage().getScaledInstance(
                 cardWidth, cardHeight, Image.SCALE_SMOOTH)));
         dtDeck.addMouseListener(new MouseAdapter() {
@@ -163,7 +163,7 @@ public class BoardPanel extends JPanel implements MouseListener
 
         JLabel faceUp1 = new JLabel();
         faceUp1.setBounds((int)(0.51 * frame.getWidth()),
-                quarterHeight + frame.getWidth() / 100, cardWidth, cardHeight);
+                7*quarterHeight/8 + frame.getWidth() / 100 , cardWidth, cardHeight);
         faceUp1.setIcon(new ImageIcon(transCardBack.getImage().getScaledInstance(
                 cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
@@ -203,189 +203,189 @@ public class BoardPanel extends JPanel implements MouseListener
 
         Object[] options = {"2", "3", "4"};
 
-        int x = JOptionPane.showOptionDialog(frame,"How many players?",
-                "Number of Players",JOptionPane.YES_NO_CANCEL_OPTION,
-                JOptionPane.QUESTION_MESSAGE,null,options,options[2]);
+        // int x = JOptionPane.showOptionDialog(frame,"How many players?",
+                // "Number of Players",JOptionPane.YES_NO_CANCEL_OPTION,
+                // JOptionPane.QUESTION_MESSAGE,null,options,options[2]);
 
-        if(x == JOptionPane.YES_OPTION){//2 players
-            String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
-            int a1 = Integer.parseInt(JOptionPane.
-                    showInputDialog("Player 1 enter age"));
-            Player p1 = new Player(name1, a1);
+        // if(x == JOptionPane.YES_OPTION){//2 players
+            // String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
+            // int a1 = Integer.parseInt(JOptionPane.
+                    // showInputDialog("Player 1 enter age"));
+            // Player p1 = new Player(name1, a1);
 
-            String name2 = JOptionPane.
-                showInputDialog("Player 2 enter your name.");
-            int a2 = Integer.parseInt(JOptionPane.
-                    showInputDialog("Player 2 enter age"));
-            Player p2 = new Player(name2, a2);
+            // String name2 = JOptionPane.
+                // showInputDialog("Player 2 enter your name.");
+            // int a2 = Integer.parseInt(JOptionPane.
+                    // showInputDialog("Player 2 enter age"));
+            // Player p2 = new Player(name2, a2);
 
-            if(p1.getAge() < p2.getAge()){
-                JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
-                list.add(p1);
-                list.add(p2);
+            // if(p1.getAge() < p2.getAge()){
+                // JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
+                // list.add(p1);
+                // list.add(p2);
                 
-            }
-            else{
-                JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
-                list.add(p2);
-                list.add(p1);
+            // }
+            // else{
+                // JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
+                // list.add(p2);
+                // list.add(p1);
                
-            }
-        }
-        else if(x == JOptionPane.NO_OPTION){//3 players
-            String name1 = JOptionPane.
-                showInputDialog("Player 1 enter your name.");
-            int a1 = Integer.parseInt(JOptionPane.
-                    showInputDialog("Player 1 enter age"));
-            Player p1 = new Player(name1, a1);
+            // }
+        // }
+        // else if(x == JOptionPane.NO_OPTION){//3 players
+            // String name1 = JOptionPane.
+                // showInputDialog("Player 1 enter your name.");
+            // int a1 = Integer.parseInt(JOptionPane.
+                    // showInputDialog("Player 1 enter age"));
+            // Player p1 = new Player(name1, a1);
 
-            String name2 = JOptionPane.
-                showInputDialog("Player 2 enter your name.");
-            int a2 = Integer.parseInt(JOptionPane.
-                    showInputDialog("Player 2 enter age"));
-            Player p2 = new Player(name2, a2);
+            // String name2 = JOptionPane.
+                // showInputDialog("Player 2 enter your name.");
+            // int a2 = Integer.parseInt(JOptionPane.
+                    // showInputDialog("Player 2 enter age"));
+            // Player p2 = new Player(name2, a2);
 
-            String name3 = JOptionPane.
-                showInputDialog("Player 3 enter your name.");
-            int a3 = Integer.parseInt(JOptionPane.
-                    showInputDialog("Player 3 enter age"));
-            Player p3 = new Player(name3, a3);
-            if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge()){
+            // String name3 = JOptionPane.
+                // showInputDialog("Player 3 enter your name.");
+            // int a3 = Integer.parseInt(JOptionPane.
+                    // showInputDialog("Player 3 enter age"));
+            // Player p3 = new Player(name3, a3);
+            // if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge()){
 
-                list.add(p1);
-                list.add(p2);
-                list.add(p3);
-                JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
-            }
-            else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge()){
+                // list.add(p1);
+                // list.add(p2);
+                // list.add(p3);
+                // JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
+            // }
+            // else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge()){
                 
-                JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
-                list.add(p2);
-                list.add(p3);
-                list.add(p1);
-            }      
-            else{
-                JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");                
-                list.add(p3);
-                list.add(p1);
-                list.add(p2);
-            }
-        }
-        else{//4 players
-            String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
-            int a1 = Integer.parseInt(JOptionPane.
-                    showInputDialog("Player 1 enter age"));
-            Player p1 = new Player(name1, a1);
+                // JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
+                // list.add(p2);
+                // list.add(p3);
+                // list.add(p1);
+            // }      
+            // else{
+                // JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");                
+                // list.add(p3);
+                // list.add(p1);
+                // list.add(p2);
+            // }
+        // }
+        // else{//4 players
+            // String name1 = JOptionPane.showInputDialog("Player 1 enter your name.");
+            // int a1 = Integer.parseInt(JOptionPane.
+                    // showInputDialog("Player 1 enter age"));
+            // Player p1 = new Player(name1, a1);
 
-            String name2 = JOptionPane.showInputDialog("Player 2 enter your name.");
-            int a2 = Integer.parseInt(JOptionPane.
-                    showInputDialog("Player 2 enter age"));
-            Player p2 = new Player(name2, a2);
+            // String name2 = JOptionPane.showInputDialog("Player 2 enter your name.");
+            // int a2 = Integer.parseInt(JOptionPane.
+                    // showInputDialog("Player 2 enter age"));
+            // Player p2 = new Player(name2, a2);
 
-            String name3 = JOptionPane.showInputDialog("Player 3 enter your name.");
-            int a3 = Integer.parseInt(JOptionPane.
-                    showInputDialog("Player 3 enter age"));
-            Player p3 = new Player(name3, a3);
+            // String name3 = JOptionPane.showInputDialog("Player 3 enter your name.");
+            // int a3 = Integer.parseInt(JOptionPane.
+                    // showInputDialog("Player 3 enter age"));
+            // Player p3 = new Player(name3, a3);
 
-            String name4 = JOptionPane.showInputDialog("Player 4 enter your name.");
-            int a4 = Integer.parseInt(JOptionPane.
-                    showInputDialog("Player 4 enter age"));
-            Player p4 = new Player(name4, a4);
+            // String name4 = JOptionPane.showInputDialog("Player 4 enter your name.");
+            // int a4 = Integer.parseInt(JOptionPane.
+                    // showInputDialog("Player 4 enter age"));
+            // Player p4 = new Player(name4, a4);
 
-            if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge() && 
-            p1.getAge()< p4.getAge()){
-                list.add(p1);
-                list.add(p2);
-                list.add(p3);
-                list.add(p4);
-                JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
-            }
-            else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge() &&
-            p2.getAge() < p4.getAge()){
-                list.add(p2);
-                list.add(p3);
-                list.add(p4);
-                list.add(p1);
-                JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
-                list.add(p2);
-            } 
-            else if(p3.getAge() < p1.getAge() && p3.getAge() < p2.getAge() &&
-            p3.getAge() < p4.getAge()){
-                list.add(p3);
-                list.add(p4);
-                list.add(p1);
-                list.add(p2);
-                JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");
-            }
-            else{
-                JOptionPane.showMessageDialog(frame, p4.getName() + " goes first.");
-                list.add(p4);
-                list.add(p1);
-                list.add(p2);
-                list.add(p3);
-            }
-        }
+            // if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge() && 
+            // p1.getAge()< p4.getAge()){
+                // list.add(p1);
+                // list.add(p2);
+                // list.add(p3);
+                // list.add(p4);
+                // JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
+            // }
+            // else if(p2.getAge() < p1.getAge() && p2.getAge() < p3.getAge() &&
+            // p2.getAge() < p4.getAge()){
+                // list.add(p2);
+                // list.add(p3);
+                // list.add(p4);
+                // list.add(p1);
+                // JOptionPane.showMessageDialog(frame, p2.getName() + " goes first.");
+                // list.add(p2);
+            // } 
+            // else if(p3.getAge() < p1.getAge() && p3.getAge() < p2.getAge() &&
+            // p3.getAge() < p4.getAge()){
+                // list.add(p3);
+                // list.add(p4);
+                // list.add(p1);
+                // list.add(p2);
+                // JOptionPane.showMessageDialog(frame, p3.getName() + " goes first.");
+            // }
+            // else{
+                // JOptionPane.showMessageDialog(frame, p4.getName() + " goes first.");
+                // list.add(p4);
+                // list.add(p1);
+                // list.add(p2);
+                // list.add(p3);
+            // }
+        // }
 
-        if (list.size() == 2){
-            JLabel p1 = new JLabel();
-            //p1.setBounds();
-            p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+        // if (list.size() == 2){
+            // JLabel p1 = new JLabel();
+            // //p1.setBounds();
+            // p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            JLabel p2 = new JLabel();
-            //p2.setBounds();
-            p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            // JLabel p2 = new JLabel();
+            // //p2.setBounds();
+            // p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            panel.add(p1);
-            panel.add(p2);
-        }
-        else if (list.size() == 3){
-            JLabel p1 = new JLabel();
-            //p1.setBounds();
-            p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            // panel.add(p1);
+            // panel.add(p2);
+        // }
+        // else if (list.size() == 3){
+            // JLabel p1 = new JLabel();
+            // //p1.setBounds();
+            // p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            JLabel p2 = new JLabel();
-            //p2.setBounds();
-            p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            // JLabel p2 = new JLabel();
+            // //p2.setBounds();
+            // p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            JLabel p3 = new JLabel();
-            //p3.setBounds();
-            p3.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            // JLabel p3 = new JLabel();
+            // //p3.setBounds();
+            // p3.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            panel.add(p1);
-            panel.add(p2);
-            panel.add(p3);
-        }
-        else if (list.size() == 4){
-            JLabel p1 = new JLabel();
-            //p1.setBounds();
-            p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            // panel.add(p1);
+            // panel.add(p2);
+            // panel.add(p3);
+        // }
+        // else if (list.size() == 4){
+            // JLabel p1 = new JLabel();
+            // //p1.setBounds();
+            // p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            JLabel p2 = new JLabel();
-            //p2.setBounds();
-            p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            // JLabel p2 = new JLabel();
+            // //p2.setBounds();
+            // p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            JLabel p3 = new JLabel();
-            //p3.setBounds();
-            p3.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            // JLabel p3 = new JLabel();
+            // //p3.setBounds();
+            // p3.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            JLabel p4 = new JLabel();
-            //p4.setBounds();
-            p4.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            // JLabel p4 = new JLabel();
+            // //p4.setBounds();
+            // p4.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
+                    // cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            panel.add(p1);
-            panel.add(p2);
-            panel.add(p3);
-            panel.add(p4);
-        }
+            // panel.add(p1);
+            // panel.add(p2);
+            // panel.add(p3);
+            // panel.add(p4);
+        // }
 
     }
 
