@@ -868,11 +868,14 @@ public class BoardPanel extends JPanel implements MouseListener
     }
 
     private static void selectionButtonPressed(){
-        JDialog d = new JDialog(frame , "Score Board", true); 
+        //JDialog d = new JDialog(frame , "Score Board", true); 
+        JFrame f = new JFrame();
+        f.add(new JLabel(new ImageIcon(".\\fwdpieces1\\scoreCard.jpg")));
         // set the size of the window
-        d.setSize(300, 150);
-        d.setVisible(true);
-        frame.add(d);
+        f.setSize(1067,589);
+        f.setVisible(true);
+        //f.add(new JLabel("Scores"));
+        //frame.add(f);
     }
 
     public void mousePressed(MouseEvent e){}
