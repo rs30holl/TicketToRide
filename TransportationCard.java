@@ -1,6 +1,6 @@
 import java.awt.Color;
 /**
- * This is a class for the transportation cards.
+ * This iclass creates the transportation cards.
  *
  * @author Ryan Holland, Julia Krasinski, Briella Sala,
  * Matt Harrison, Michael Lostritto
