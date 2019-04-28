@@ -9,6 +9,7 @@ The objective of the game is to score points by:
 -claiming a route between two adjacent cities on the map of New York
 -completing a continuous path of routes between two cities listed on your Destination Tickets
 -completing the longest continuous path of routes
+
 To start the game, enter players names and ages, the youngest player goes first. On each players turn, they must choose from one of the following actions:
 -draw transportation cards
 -claim a route
