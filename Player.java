@@ -4,7 +4,7 @@ import java.awt.event.*;
 import java.io.*;
 import java.util.*;
 /**
- * Write a description of class Player here.
+ * This class creates individual players for the game.
  *
  * @author Ryan Holland, Julia Krasinski, Briella Sala,
  * Matt Harrison, Michael Lostritto

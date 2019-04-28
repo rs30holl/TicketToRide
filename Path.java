@@ -1,10 +1,10 @@
 import java.awt.Color;
 /**
- * Write a description of class Path here.
+ * This class establishes the paths seen on the Ticket to Ride board.
  *
  * @author Ryan Holland, Julia Krasinski, Briella Sala,
  * Matt Harrison, Michael Lostritto
- * @version (a version number or a date)
+ * @version 4.7.2019
  */
 public class Path
 {

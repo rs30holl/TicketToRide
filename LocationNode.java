@@ -1,10 +1,10 @@
 import java.util.*;
 /**
- * Write a description of class LocationNode here.
+ * This class creates the Nodes between the Paths on the game board.
  *
  * @author Ryan Holland, Julia Krasinski, Briella Sala,
  * Matt Harrison, Michael Lostritto
- * @version 4/7/2019
+ * @version 4.7.2019
  */
 public class LocationNode
 {
