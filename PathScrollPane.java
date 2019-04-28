@@ -14,7 +14,7 @@ public class PathScrollPane implements Runnable{
     public void run() {
         for (LocationNode n : b1.points){
             for (Path p : n.getPaths()){
-                ButtonItem b = new ButtonItem(p.getStart().getName() + " to " + p.getEnd().getName());
+                ButtonItem b = new ButtonItem(p.getStart().getName() + " to " + p.getEnd().getName() + " (" +p.getColor()+ ") ");
                 buttonList.add(b);
             }
         }
