@@ -11,10 +11,9 @@ public class PathScrollPane extends JScrollPane{
     private ArrayList<JButton> buttonList = new ArrayList<>();
 
     /**
-     * @param p
+     *
      */
-    public PathScrollPane(JPanel p){
-        setPreferredSize(new Dimension(p.getWidth() / 4, p.getHeight() - 30));
+    public PathScrollPane(){
         createButtons();
         addButtons();
     }

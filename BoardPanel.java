@@ -129,7 +129,6 @@ public class BoardPanel extends JPanel implements MouseListener
                     9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
                 faceUp11.setIcon(new ImageIcon(orange.getImage().getScaledInstance(
                             cardWidth, cardHeight, Image.SCALE_SMOOTH)));
-                //panel.add(faceUp11);
             }
             if(b.tcDeck.get(i).getColor().equals("RED")){
                 JLabel faceUp11 = new JLabel();
@@ -137,6 +136,7 @@ public class BoardPanel extends JPanel implements MouseListener
                     9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
                 faceUp11.setIcon(new ImageIcon(red.getImage().getScaledInstance(
                             cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+
             }
             if(b.tcDeck.get(i).getColor().equals("BLACK")){
                 JLabel faceUp11 = new JLabel();
@@ -229,6 +229,11 @@ public class BoardPanel extends JPanel implements MouseListener
         panel.add(tcDeck);
         panel.add(dtDeck);
         generateCards();
+
+        PathScrollPane scrollPane = new PathScrollPane();
+        scrollPane.setBounds(frame.getWidth() + 20, 30, panel.getWidth() / 4, panel.getHeight() - 30);
+        scrollPane.setVisible(true);
+        panel.add(scrollPane);
         
         JButton score = new JButton("Show Score");
         score.setBounds(1680, 730, 150, 50);

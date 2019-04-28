@@ -11,7 +11,7 @@ public class LocationNode
     private String name;
     private int x, y;
     private boolean point;
-    private ArrayList<Path> paths = new ArrayList<>();
+    protected static ArrayList<Path> paths = new ArrayList<>();
     
     /**
      * Constructs an object of LocationNode

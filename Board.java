@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class Board
 {
-    private ArrayList<LocationNode> points = new ArrayList<>();
+    protected static ArrayList<LocationNode> points = new ArrayList<>();
     static ArrayList<Card> tcDeck = new ArrayList<>();
     static ArrayList<Card> dtDeck = new ArrayList<>();
     static ArrayList<Card> discard = new ArrayList<>();
