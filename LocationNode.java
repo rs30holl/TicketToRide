@@ -1,17 +1,17 @@
 import java.util.*;
 /**
- * This class creates the Nodes between the Paths on the game board.
+ * Write a description of class LocationNode here.
  *
  * @author Ryan Holland, Julia Krasinski, Briella Sala,
  * Matt Harrison, Michael Lostritto
- * @version 4.7.2019
+ * @version 4/7/2019
  */
 public class LocationNode
 {
     private String name;
     private int x, y;
     private boolean point;
-    protected static ArrayList<Path> paths = new ArrayList<>();
+    private ArrayList<Path> paths = new ArrayList<>();
     
     /**
      * Constructs an object of LocationNode
@@ -54,14 +54,21 @@ public class LocationNode
     public int getY(){
         return y;
     }
-    
+
     /**
-     * Adds the specified path to this nodes list of connected paths
+     * Returns the Path list for this node
+     *
+     * @return ArrayList
+     */
+    public ArrayList<Path> getPaths(){ return this.paths;}
+
+    /**
+     * Adds the specified path to this node's list of connected paths
      * 
      * @param p: The path to be added to the list of connected paths
      */
     public void addPath(Path p){
-        paths.add(p);
+        this.paths.add(p);
     }
     
     /**

@@ -6,67 +6,48 @@ import java.util.*;
 /**
  *
  */
-public class PathScrollPane extends JScrollPane{
-    private JScrollPane pane = new JScrollPane();
-    private ArrayList<JButton> buttonList = new ArrayList<>();
+public class PathScrollPane implements Runnable{
+    private static JList pane;
+    private static ArrayList<ButtonItem> buttonList = new ArrayList<>();
+    private Board b1 = new Board();
 
-    /**
-     *
-     */
-    public PathScrollPane(){
-        JFrame f = new JFrame();
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel panel = new JPanel();
-        ScrollPane s = new ScrollPane();
-        for (LocationNode n : Board.points){
-            for (Path p : n.paths){
-                JButton b = new JButton();
-                b.setText(p.getStart() + " to " + p.getEnd());
+    public void run() {
+        for (LocationNode n : b1.points){
+            for (Path p : n.getPaths()){
+                ButtonItem b = new ButtonItem(p.getStart().getName() + " to " + p.getEnd().getName());
                 buttonList.add(b);
             }
         }
+        Object[] buttons = buttonList.toArray();
+        pane = new JList(buttons);
+        pane.setCellRenderer(new ButtonListRenderer());
+        pane.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        pane.setVisibleRowCount(5);
+        pane.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent event)
+            {
+                clickButtonAt(event.getPoint());
+            }
+        });
 
-        for (JButton b : buttonList){
-            s.setContent(b);
-        }
-
-        JPanel container = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 0));
-        container.add(panel);
-        JScrollPane scrollPane = new JScrollPane(container);
-        f.getContentPane().add(scrollPane);
-
-        f.pack();
-        f.setLocationRelativeTo(null);
-        f.setVisible(true);
-    }
-
-    public void addButtons(){
-
-    }
-
-    public void createButtons(){
-
-    }
-
-    /**
-     * Creates a JFrame for Koch Curve display
-     */
-    private static void createAndShowGUI() {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        PathScrollPane panel = new PathScrollPane();
-        frame.getContentPane().add(panel);
-
+        frame.getContentPane().add(new JScrollPane(pane));
         frame.pack();
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
-    public static void main(String args[]) {
-        javax.swing.SwingUtilities.invokeLater(new Runnable(){
-                public void run(){
-                    createAndShowGUI();
-                }
-            });
+    private static void clickButtonAt(Point point)
+    {
+        int index = pane.locationToIndex(point);
+        ButtonItem item = (ButtonItem) pane.getModel().getElementAt(index);
+        item.getButton().doClick();
+    }
+
+    public static void main(String[] args){
+         SwingUtilities.invokeLater(new PathScrollPane());
     }
 }
