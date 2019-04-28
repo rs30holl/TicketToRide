@@ -1,8 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
- import java.util.*;
- /**
+import java.util.*;
+/**
  * Write a description of class BoardPanel here.
  *
  * @author Ryan Holland, Julia Krasinski, Briella Sala,
@@ -179,6 +179,7 @@ public class BoardPanel extends JPanel implements MouseListener
         BoardPanel panel = new BoardPanel();
         frame.getContentPane().add(panel);
         panel.setLayout(null);
+        
 
         frame.pack();
         frame.setVisible(true);
@@ -228,6 +229,11 @@ public class BoardPanel extends JPanel implements MouseListener
         panel.add(tcDeck);
         panel.add(dtDeck);
         generateCards();
+        
+        JButton score = new JButton("Show Score");
+        score.setBounds(1680, 730, 150, 50);
+        panel.add(score);
+        //score.setVisible(true);
 
         Board b = new Board();
         for(int i = 0; i < 6; i++){
