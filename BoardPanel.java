@@ -51,6 +51,7 @@ public class BoardPanel extends JPanel implements MouseListener
 
     //private final Image destTicketBack2 = destTicketBack.getImage();
     static ArrayList<Player> list = new ArrayList<>();
+    private static int numPlayers = 0;
 
     /**
      *
@@ -696,7 +697,7 @@ public class BoardPanel extends JPanel implements MouseListener
             int a2 = Integer.parseInt(JOptionPane.
                     showInputDialog("Player 2 enter age"));
             Player p2 = new Player(name2, a2);
-
+            numPlayers = 2;
             if(p1.getAge() < p2.getAge()){
                 JOptionPane.showMessageDialog(frame, p1.getName() + " goes first.");
                 list.add(p1);
@@ -728,6 +729,7 @@ public class BoardPanel extends JPanel implements MouseListener
             int a3 = Integer.parseInt(JOptionPane.
                     showInputDialog("Player 3 enter age"));
             Player p3 = new Player(name3, a3);
+            numPlayers = 3;
             if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge()){
 
                 list.add(p1);
@@ -769,7 +771,7 @@ public class BoardPanel extends JPanel implements MouseListener
             int a4 = Integer.parseInt(JOptionPane.
                     showInputDialog("Player 4 enter age"));
             Player p4 = new Player(name4, a4);
-
+            numPlayers = 4; 
             if(p1.getAge() < p2.getAge() && p1.getAge() < p3.getAge() && 
             p1.getAge()< p4.getAge()){
                 list.add(p1);
@@ -870,7 +872,17 @@ public class BoardPanel extends JPanel implements MouseListener
     private static void selectionButtonPressed(){
         //JDialog d = new JDialog(frame , "Score Board", true); 
         JFrame f = new JFrame();
-        f.add(new JLabel(new ImageIcon(".\\fwdpieces1\\scoreCard.jpg")));
+        JPanel p = new JPanel();
+
+        JLabel scoreCard = new JLabel(new ImageIcon(".\\fwdpieces1\\scoreCard.jpg"));
+        p.add(scoreCard);
+        if(numPlayers == 2){
+            JLabel score = new JLabel(player.getName());
+            score.setBounds(50,50,50,50);
+            scoreCard.add(score);
+            f.add(p);
+        }
+
         // set the size of the window
         f.setSize(1067,589);
         f.setVisible(true);
