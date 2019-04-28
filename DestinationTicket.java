@@ -1,6 +1,6 @@
 import java.awt.Color;
 /**
- * This is a class for the destination cards.
+ * This class creates the destination tickets.
  *
  * @author Ryan Holland, Julia Krasinski, Briella Sala,
  * Matt Harrison, Michael Lostritto
