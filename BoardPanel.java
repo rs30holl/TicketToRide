@@ -73,8 +73,6 @@ public class BoardPanel extends JPanel implements MouseListener
         g.drawImage(trainTracks2, halfWidth, 0, halfWidth, quarterHeight,this);
         g.drawImage(table2, halfWidth, quarterHeight, halfWidth, 
             quarterHeight / 3, this);
-            
-            
 
         /*
         g.drawImage(transCardBack2, (int)(0.715 * getWidth()),
@@ -122,10 +120,8 @@ public class BoardPanel extends JPanel implements MouseListener
         int quarterHeight = (int)(0.71 * frame.getHeight());
         int cardWidth = frame.getWidth() / 15;
         int cardHeight = frame.getHeight() / 5;
-        
 
         for(int i = 0; i < 6; i++){
-
             if((b.tcDeck.get(i)).getColor().equals("ORANGE")){
                 JLabel faceUp11 = new JLabel();
                 if(i ==1){
@@ -373,14 +369,12 @@ public class BoardPanel extends JPanel implements MouseListener
 
         frame.pack();
         frame.setVisible(true);
-        generateCards();
+        panel.generateCards();
 
         //int halfWidth = (int)(0.5 * frame.getWidth());
         int quarterHeight = (int)(0.71 * frame.getHeight());
         int cardWidth = frame.getWidth() / 15;
         int cardHeight = frame.getHeight() / 5;
-        
-        
 
         JLabel tcDeck = new JLabel();
         tcDeck.setBounds( (int)(0.71 * frame.getWidth()),
@@ -423,12 +417,14 @@ public class BoardPanel extends JPanel implements MouseListener
         panel.add(tcDeck);
         panel.add(dtDeck);
         generateCards();
+        /*
         JLabel faceUp21 = new JLabel();
         faceUp21.setBounds((int)(0.51 * frame.getWidth()),
-                        9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
-                    faceUp21.setIcon(new ImageIcon(orange.getImage().getScaledInstance(
-                                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
-                    panel.add(faceUp21);
+        9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+        faceUp21.setIcon(new ImageIcon(orange.getImage().getScaledInstance(
+        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+        panel.add(faceUp21);
+         */
 
         Board b = new Board();
 
@@ -443,10 +439,14 @@ public class BoardPanel extends JPanel implements MouseListener
         JButton score = new JButton("Show Score");
         score.setBounds(1680, 730, 150, 50);
         panel.add(score);
+        score.addActionListener(new ActionListener() { 
+                public void actionPerformed(ActionEvent e) { 
+                    selectionButtonPressed();
+                } 
+            } );
+
         //score.setVisible(true);
-
         for(int i = 0; i < 6; i++){
-
             if((b.tcDeck.get(i)).getColor().equals("ORANGE")){
                 JLabel faceUp11 = new JLabel();
                 if(i ==1){
@@ -865,6 +865,14 @@ public class BoardPanel extends JPanel implements MouseListener
             panel.add(p4);
         }
 
+    }
+
+    private static void selectionButtonPressed(){
+        JDialog d = new JDialog(frame , "Score Board", true); 
+        // set the size of the window
+        d.setSize(300, 150);
+        d.setVisible(true);
+        frame.add(d);
     }
 
     public void mousePressed(MouseEvent e){}
