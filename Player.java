@@ -19,7 +19,6 @@ public class Player
     private int taxiCount;
     private boolean state;
 
-
     /**
      * Constructor for the objects of Player class
      * 
@@ -43,7 +42,7 @@ public class Player
     public void setName(String n){
         name = n;
     }
-    
+
     /**
      * 
      */
@@ -150,7 +149,13 @@ public class Player
             claimRoute(p);
         }
         else {//Pick up one of the face up cards
-            drawCard(c);
+            if(c.getColor().equals("RAINBOW")){
+                drawCard(c);
+            }
+            else{
+                drawCard(c);
+                drawCard(c);
+            }
         }
     }
 }
