@@ -4,7 +4,12 @@ import java.awt.event.*;
 import java.util.*;
 
 /**
- *
+ * This class creates the panel that holds the possible routes
+ * still available to be claimed.
+ * 
+ * @author Ryan Holland, Julia Krasinski, Briella Sala,
+ * Matt Harrison, Michael Lostritto
+ * @version 4.28.2019
  */
 public class PathScrollPane implements Runnable{
     private static JList pane;
