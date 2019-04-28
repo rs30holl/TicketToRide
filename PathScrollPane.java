@@ -22,15 +22,17 @@ public class PathScrollPane implements Runnable{
         pane = new JList(buttons);
         pane.setCellRenderer(new ButtonListRenderer());
         pane.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        pane.setVisibleRowCount(5);
+        pane.setVisibleRowCount(25);
+        pane.setLocation(1500,100);
         pane.addMouseListener(new MouseAdapter()
-        {
-            @Override
-            public void mouseClicked(MouseEvent event)
             {
-                clickButtonAt(event.getPoint());
-            }
-        });
+                @Override
+                public void mouseClicked(MouseEvent event)
+                {
+                    clickButtonAt(event.getPoint());
+
+                }
+            });
 
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,7 +49,7 @@ public class PathScrollPane implements Runnable{
         item.getButton().doClick();
     }
 
-    public static void main(String[] args){
-         SwingUtilities.invokeLater(new PathScrollPane());
+        public static void main(String[] args){
+        SwingUtilities.invokeLater(new PathScrollPane());
     }
 }

@@ -229,19 +229,26 @@ public class BoardPanel extends JPanel implements MouseListener
         panel.add(tcDeck);
         panel.add(dtDeck);
         generateCards();
+        
+        Board b = new Board();
 
         PathScrollPane scroll = new PathScrollPane();
+        scroll.run();
+        
+        
+        
+        
         //JScrollPane scrollPane = new JScrollPane(scroll);
         //scrollPane.setBounds(frame.getWidth() + 20, 30, panel.getWidth() / 4, panel.getHeight() - 30);
         //scrollPane.setVisible(true);
-        //frame.add(scrollPane);
+        //panel.add(scroll);
         
         JButton score = new JButton("Show Score");
         score.setBounds(1680, 730, 150, 50);
         panel.add(score);
         //score.setVisible(true);
 
-        Board b = new Board();
+        
         for(int i = 0; i < 6; i++){
             if(b.tcDeck.get(i).getColor().equals("ORANGE")){
                 JLabel faceUp11 = new JLabel();
