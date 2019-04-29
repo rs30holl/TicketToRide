@@ -21,7 +21,7 @@ public class ButtonItem
                     for (LocationNode n : b.points){
                         for (Path p : n.getPaths()){
                             if(e.getSource().equals(p.toString())){
-                                //p1.claimRoute(p);
+                                p1.claimRoute(p);
                                 
                             }
                         }
