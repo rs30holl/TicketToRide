@@ -601,71 +601,7 @@ public class BoardPanel extends JPanel implements MouseListener
     }
 
     private static void selectionButtonPressed(){
-        //JDialog d = new JDialog(frame , "Score Board", true); 
-        JFrame f = new JFrame();
-        JPanel p = new JPanel();
-
-        JLabel scoreCard = new JLabel(new ImageIcon(".\\fwdpieces1\\scoreCard.jpg"));
-        p.add(scoreCard);
-        if(numPlayers == 2){
-            JLabel name1 = new JLabel(p1.getName());
-            name1.setBounds(300,50,100,50);
-            name1.setFont(name1.getFont().deriveFont(24.0f));
-            scoreCard.add(name1);
-            JLabel taxi1 = new JLabel("" +p1.getTaxiCount());
-            taxi1.setBounds(300,100,100,50);
-            taxi1.setFont(taxi1.getFont().deriveFont(24.0f));
-            scoreCard.add(taxi1);
-            JLabel name2 = new JLabel(p2.getName());
-            name2.setBounds(500,50,100,50);
-            name2.setFont(name2.getFont().deriveFont(24.0f));
-            scoreCard.add(name2);
-            JLabel taxi2 = new JLabel("" +p2.getTaxiCount());
-            taxi2.setBounds(300,100,100,50);
-            taxi2.setFont(taxi2.getFont().deriveFont(24.0f));
-            scoreCard.add(taxi2);
-            f.add(p);
-        }
-        else if(numPlayers == 3){
-            JLabel name1 = new JLabel(p1.getName());
-            name1.setBounds(300,50,100,50);
-            name1.setFont(name1.getFont().deriveFont(24.0f));
-            scoreCard.add(name1);
-            JLabel name2 = new JLabel(p2.getName());
-            name2.setBounds(500,50,100,50);
-            name2.setFont(name2.getFont().deriveFont(24.0f));
-            scoreCard.add(name2);
-            JLabel name3 = new JLabel(p3.getName());
-            name3.setBounds(700,50,100,50);
-            name3.setFont(name3.getFont().deriveFont(24.0f));
-            scoreCard.add(name3);
-            f.add(p);
-        }
-        else if(numPlayers == 4){
-            JLabel name1 = new JLabel(p1.getName());
-            name1.setBounds(300,50,100,50);
-            name1.setFont(name1.getFont().deriveFont(24.0f));
-            scoreCard.add(name1);
-            JLabel name2 = new JLabel(p2.getName());
-            name2.setBounds(500,50,100,50);
-            name2.setFont(name2.getFont().deriveFont(24.0f));
-            scoreCard.add(name2);
-            JLabel name3 = new JLabel(p3.getName());
-            name3.setBounds(700,50,100,50);
-            name3.setFont(name3.getFont().deriveFont(24.0f));
-            scoreCard.add(name3);
-            JLabel name4 = new JLabel(p4.getName());
-            name4.setBounds(900,50,100,50);
-            name4.setFont(name4.getFont().deriveFont(24.0f));
-            scoreCard.add(name4);
-            f.add(p);
-        }
-
-        // set the size of the window
-        f.setSize(1067,589);
-        f.setVisible(true);
-        //f.add(new JLabel("Scores"));
-        //frame.add(f);
+       Scorecard s = new Scorecard(numPlayers, list);
     }
 
     public void mousePressed(MouseEvent e){}
