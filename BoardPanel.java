@@ -320,8 +320,13 @@ public class BoardPanel extends JPanel implements MouseListener
                     p.add(faceUp11);
                 }
             }
-
+            
         }
+        b.tcDeck.remove(0);
+        b.tcDeck.remove(0);
+        b.tcDeck.remove(0);
+        b.tcDeck.remove(0);
+        b.tcDeck.remove(0);
     }
 
     /**

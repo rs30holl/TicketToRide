@@ -18,14 +18,11 @@ public class ButtonItem
                 public void actionPerformed(ActionEvent e)
                 {
                     //call players turn
-                    for (LocationNode n : b.points){
-                        for (Path p : n.getPaths()){
-                            if(e.getSource().equals(p.toString())){
-                                p1.claimRoute(p);
-                                
-                            }
+                    for (Player p : BoardPanel.list){
+                        if(p.getState()){
+                            p.turn(2, null)
                         }
-                    } 
+                    }
                     button.setEnabled(false);
                     button.setBackground(Color.RED);
                     button.setOpaque(true);
