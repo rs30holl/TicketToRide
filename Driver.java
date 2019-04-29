@@ -1,9 +1,9 @@
 /**
- * Write a description of class Driver here.
+ * Used to run game in its entirety 
  *
  * @author Ryan Holland, Julia Krasinski, Briella Sala,
  *  * Matt Harrison, Michael Lostritto
- * @version (a version number or a date)
+ * @version (04/28/2019)
  */
 public class Driver {
 
