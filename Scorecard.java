@@ -49,6 +49,9 @@ public class Scorecard
             scoreCard.add(name1);
             JLabel taxi1 = new JLabel(Integer.toString(p1.getTaxiCount()));
             taxi1.setBounds(300,160,100,50);
+            taxi1.setFont(taxi1.getFont().d
+            JLabel score1 = new JLabel(Integer.toString(p1.getTaxiCount()));
+            taxi1.setBounds(300,160,100,50);
             taxi1.setFont(taxi1.getFont().deriveFont(24.0f));
             scoreCard.add(taxi1);
             JLabel name2 = new JLabel(p2.getName());

@@ -38,4 +38,13 @@ public class Hand
     public void removeCard(Card c){
         cards.remove(c);
     }
+    
+    public Card getDestinationCard(){
+        for (Card c : cards){
+            if(c instanceof TransportationCard){
+                return c;
+            }
+        }
+        return null;
+    }
 }

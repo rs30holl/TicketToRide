@@ -44,6 +44,13 @@ public class DestinationTicket extends Card
     }
     
     /**
+     * 
+     */
+    public int getScore(){
+        return score;
+    }
+    
+    /**
      * Gets the color of the card. 
      * 
      * @return null
