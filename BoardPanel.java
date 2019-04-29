@@ -122,6 +122,7 @@ public class BoardPanel extends JPanel implements MouseListener
     private static void generateCards(JPanel p){
         Board b = new Board();
         //BoardPanel p = new BoardPanel();
+        int halfWidth = (int)(0.5 * frame.getWidth());
         int quarterHeight = (int)(0.71 * frame.getHeight());
         int cardWidth = frame.getWidth() / 15;
         int cardHeight = frame.getHeight() / 5;
@@ -376,7 +377,7 @@ public class BoardPanel extends JPanel implements MouseListener
         frame.setVisible(true);
         generateCards(panel);
 
-        //int halfWidth = (int)(0.5 * frame.getWidth());
+        int halfWidth = (int)(0.5 * frame.getWidth());
         int quarterHeight = (int)(0.71 * frame.getHeight());
         int cardWidth = frame.getWidth() / 15;
         int cardHeight = frame.getHeight() / 5;
@@ -433,8 +434,10 @@ public class BoardPanel extends JPanel implements MouseListener
 
         Board b = new Board();
 
-        PathScrollPane scroll = new PathScrollPane();
-        scroll.run();
+        PathScrollPane scroll = new PathScrollPane(b);
+        JScrollPane s = new JScrollPane(scroll);
+        s.setBounds(halfWidth + 20, 30, cardWidth + 200, quarterHeight - 75);
+        panel.add(s);
 
         //JScrollPane scrollPane = new JScrollPane(scroll);
         //scrollPane.setBounds(frame.getWidth() + 20, 30, panel.getWidth() / 4, panel.getHeight() - 30);
@@ -653,7 +656,7 @@ public class BoardPanel extends JPanel implements MouseListener
             name1.setBounds(300,50,100,50);
             name1.setFont(name1.getFont().deriveFont(24.0f));
             scoreCard.add(name1);
-            JLabel taxi1 = new JLabel(Integer.toString(p1.getTaxiCount()));
+            JLabel taxi1 = new JLabel("" +p1.getTaxiCount());
             taxi1.setBounds(300,100,100,50);
             taxi1.setFont(taxi1.getFont().deriveFont(24.0f));
             scoreCard.add(taxi1);
