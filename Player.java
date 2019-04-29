@@ -42,6 +42,10 @@ public class Player
     public void setName(String n){
         name = n;
     }
+    
+    public Hand getHand(){
+        return hand;
+    }
 
     /**
      * Setter method for state 

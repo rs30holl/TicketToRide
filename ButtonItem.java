@@ -15,6 +15,7 @@ public class ButtonItem
             @Override
             public void actionPerformed(ActionEvent e)
             {
+                //call players turn
                 System.out.println(button.getText() + " was clicked.");
             }
         });

@@ -49,11 +49,10 @@ public class Scorecard
             scoreCard.add(name1);
             JLabel taxi1 = new JLabel(Integer.toString(p1.getTaxiCount()));
             taxi1.setBounds(300,160,100,50);
-            taxi1.setFont(taxi1.getFont().d
-            JLabel score1 = new JLabel(Integer.toString(p1.getTaxiCount()));
-            taxi1.setBounds(300,160,100,50);
             taxi1.setFont(taxi1.getFont().deriveFont(24.0f));
-            scoreCard.add(taxi1);
+            DestinationTicket c1 = p1.getHand().getDestinationTicket();
+            JLabel score1 = new JLabel(Integer.toString(c1.getScore()));
+            scoreCard.add(score1);
             JLabel name2 = new JLabel(p2.getName());
             name2.setBounds(500,50,100,50);
             name2.setFont(name2.getFont().deriveFont(24.0f));
@@ -62,6 +61,9 @@ public class Scorecard
             taxi2.setBounds(500,160,100,50);
             taxi2.setFont(taxi2.getFont().deriveFont(24.0f));
             scoreCard.add(taxi2);
+            DestinationTicket c2 = p2.getHand().getDestinationTicket();
+            JLabel score2 = new JLabel(Integer.toString(c2.getScore()));
+            scoreCard.add(score2);
             f.add(p);
         }
         else if(numPlayers == 3){
@@ -73,6 +75,9 @@ public class Scorecard
             taxi1.setBounds(300,160,100,50);
             taxi1.setFont(taxi1.getFont().deriveFont(24.0f));
             scoreCard.add(taxi1);
+            DestinationTicket c1 = p1.getHand().getDestinationTicket();
+            JLabel score1 = new JLabel(Integer.toString(c1.getScore()));
+            scoreCard.add(score1);
             JLabel name2 = new JLabel(p2.getName());
             name2.setBounds(500,50,100,50);
             name2.setFont(name2.getFont().deriveFont(24.0f));
@@ -81,6 +86,9 @@ public class Scorecard
             taxi2.setBounds(300,160,100,50);
             taxi2.setFont(taxi2.getFont().deriveFont(24.0f));
             scoreCard.add(taxi2);
+            DestinationTicket c2 = p2.getHand().getDestinationTicket();
+            JLabel score2 = new JLabel(Integer.toString(c2.getScore()));
+            scoreCard.add(score2);
             JLabel name3 = new JLabel(p3.getName());
             name3.setBounds(700,50,100,50);
             name3.setFont(name3.getFont().deriveFont(24.0f));
@@ -89,6 +97,9 @@ public class Scorecard
             taxi3.setBounds(700,160,100,50);
             taxi3.setFont(taxi3.getFont().deriveFont(24.0f));
             scoreCard.add(taxi3);
+            DestinationTicket c3 = p3.getHand().getDestinationTicket();
+            JLabel score3 = new JLabel(Integer.toString(c3.getScore()));
+            scoreCard.add(score3);
             f.add(p);
         }
         else if(numPlayers == 4){
@@ -100,6 +111,9 @@ public class Scorecard
             taxi1.setBounds(300,160,100,50);
             taxi1.setFont(taxi1.getFont().deriveFont(24.0f));
             scoreCard.add(taxi1);
+            DestinationTicket c1 = p1.getHand().getDestinationTicket();
+            JLabel score1 = new JLabel(Integer.toString(c1.getScore()));
+            scoreCard.add(score1);
             JLabel name2 = new JLabel(p2.getName());
             name2.setBounds(500,50,100,50);
             name2.setFont(name2.getFont().deriveFont(24.0f));
@@ -108,6 +122,9 @@ public class Scorecard
             taxi2.setBounds(300,160,100,50);
             taxi2.setFont(taxi2.getFont().deriveFont(24.0f));
             scoreCard.add(taxi2);
+            DestinationTicket c2 = p2.getHand().getDestinationTicket();
+            JLabel score2 = new JLabel(Integer.toString(c2.getScore()));
+            scoreCard.add(score2);
             JLabel name3 = new JLabel(p3.getName());
             name3.setBounds(700,50,100,50);
             name3.setFont(name3.getFont().deriveFont(24.0f));
@@ -116,6 +133,9 @@ public class Scorecard
             taxi3.setBounds(700,160,100,50);
             taxi3.setFont(taxi3.getFont().deriveFont(24.0f));
             scoreCard.add(taxi3);
+            DestinationTicket c3 = p3.getHand().getDestinationTicket();
+            JLabel score3 = new JLabel(Integer.toString(c3.getScore()));
+            scoreCard.add(score3);
             JLabel name4 = new JLabel(p4.getName());
             name4.setBounds(900,50,100,50);
             name4.setFont(name4.getFont().deriveFont(24.0f));
@@ -124,6 +144,9 @@ public class Scorecard
             taxi4.setBounds(700,160,100,50);
             taxi4.setFont(taxi4.getFont().deriveFont(24.0f));
             scoreCard.add(taxi4);
+            DestinationTicket c4 = p4.getHand().getDestinationTicket();
+            JLabel score4 = new JLabel(Integer.toString(c4.getScore()));
+            scoreCard.add(score4);
             f.add(p);
         }
 

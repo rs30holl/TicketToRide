@@ -39,10 +39,10 @@ public class Hand
         cards.remove(c);
     }
     
-    public Card getDestinationCard(){
+    public DestinationTicket getDestinationTicket(){
         for (Card c : cards){
-            if(c instanceof TransportationCard){
-                return c;
+            if(c instanceof DestinationTicket){
+                return (DestinationTicket) c;
             }
         }
         return null;
