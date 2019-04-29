@@ -435,7 +435,7 @@ public class BoardPanel extends JPanel implements MouseListener
         Board b = new Board();
 
         PathScrollPane scroll = new PathScrollPane(b);
-        JScrollPane s = new JScrollPane(scroll);
+        JScrollPane s = scroll.PathScrollPane();
         s.setBounds(halfWidth + 20, 30, cardWidth + 200, quarterHeight - 75);
         panel.add(s);
 

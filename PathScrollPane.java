@@ -14,10 +14,15 @@ import java.util.*;
 public class PathScrollPane extends JList{
     private static JList pane;
     private static ArrayList<ButtonItem> buttonList = new ArrayList<>();
+    private Board board;
 
     public PathScrollPane(Board b1){
+        board = b1;
+    }
+
+    public JScrollPane PathScrollPane(){
         //makes buttons for all of the paths on the board
-        for (LocationNode n : b1.points){
+        for (LocationNode n : board.points){
             for (Path p : n.getPaths()){
                 ButtonItem b = new ButtonItem(p.getStart().getName() + " to "
                         + p.getEnd().getName() + " (" +p.getColor()+ ") ");
@@ -38,6 +43,8 @@ public class PathScrollPane extends JList{
                 clickButtonAt(event.getPoint());
             }
         });
+        JScrollPane s = new JScrollPane(pane);
+        return s;
     }
 
     /**
