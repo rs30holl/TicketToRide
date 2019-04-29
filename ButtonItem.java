@@ -22,15 +22,15 @@ public class ButtonItem
                         for (Path p : n.getPaths()){
                             if(e.getSource().equals(p.toString())){
                                 //p1.claimRoute(p);
-                                button.setEnabled(false);
+                                
                             }
                         }
                     } 
-
+                    button.setEnabled(false);
                     button.setBackground(Color.RED);
                     button.setOpaque(true);
                     
-                    //System.out.println(button.getText() + " was clicked.");
+                    System.out.println(button.getText() + " was clicked.");
                 }
             });
 
