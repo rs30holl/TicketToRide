@@ -34,7 +34,7 @@ public class PathScrollPane extends JList{
         pane = new JList(buttons);
         pane.setCellRenderer(new ButtonListRenderer());
         pane.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        pane.setVisibleRowCount(25);
+        pane.setVisibleRowCount(10);
         pane.addMouseListener(new MouseAdapter()
         {
             @Override

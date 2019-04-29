@@ -56,6 +56,7 @@ public class BoardPanel extends JPanel implements MouseListener
     private static Player p2;
     private static Player p3;
     private static Player p4;
+    private static Board b = new Board();
     
     /**
      *
@@ -79,48 +80,9 @@ public class BoardPanel extends JPanel implements MouseListener
         g.drawImage(table2, halfWidth, quarterHeight, halfWidth, 
             quarterHeight / 3, this);
 
-        /*
-        g.drawImage(transCardBack2, (int)(0.715 * getWidth()),
-        40, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(destTicketBack2, (int)(0.715 * getWidth()), 
-        270, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardSide2, (int)(0.865 * getWidth()), 
-        40, getWidth() / 10, getHeight() / 8, this);
-
-        g.drawImage(transCardBack2, (int)(0.51 * getWidth()), 
-        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.6 * getWidth()), 
-        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.7 * getWidth()), 
-        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.8 * getWidth()), 
-        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.9 * getWidth()), 
-        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.715 * getWidth()), 
-        40, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(destTicketBack2, (int)(0.715 * getWidth()), 
-        270, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardSide2, (int)(0.865 * getWidth()), 40, 
-        getWidth() / 10, getHeight() / 8, this);
-
-        g.drawImage(transCardBack2, (int)(0.51 * getWidth()), 
-        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.6 * getWidth()), 
-        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.7 * getWidth()), 
-        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.8 * getWidth()), 
-        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
-        g.drawImage(transCardBack2, (int)(0.9 * getWidth()), 
-        quarterHeight +25, getWidth() / 15, getHeight() / 5, this);
-
-         */
-
     }
 
     private static void generateCards(JPanel p){
-        Board b = new Board();
         //BoardPanel p = new BoardPanel();
         int halfWidth = (int)(0.5 * frame.getWidth());
         int quarterHeight = (int)(0.71 * frame.getHeight());
@@ -422,7 +384,7 @@ public class BoardPanel extends JPanel implements MouseListener
         //adds the card decks to the board    
         panel.add(tcDeck);
         panel.add(dtDeck);
-        generateCards(panel);
+        panel.generateCards(panel);
         /*
         JLabel faceUp21 = new JLabel();
         faceUp21.setBounds((int)(0.51 * frame.getWidth()),
@@ -432,17 +394,11 @@ public class BoardPanel extends JPanel implements MouseListener
         panel.add(faceUp21);
          */
 
-        Board b = new Board();
 
         PathScrollPane scroll = new PathScrollPane(b);
         JScrollPane s = scroll.PathScrollPane();
         s.setBounds(halfWidth + 20, 30, cardWidth + 200, quarterHeight - 75);
         panel.add(s);
-
-        //JScrollPane scrollPane = new JScrollPane(scroll);
-        //scrollPane.setBounds(frame.getWidth() + 20, 30, panel.getWidth() / 4, panel.getHeight() - 30);
-        //scrollPane.setVisible(true);
-        //panel.add(scroll);
 
         JButton score = new JButton("Show Score");
         score.setBounds(1680, 730, 150, 50);
