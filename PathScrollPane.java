@@ -27,6 +27,7 @@ public class PathScrollPane extends JList{
                 ButtonItem b = new ButtonItem(p.getStart().getName() + " to "
                         + p.getEnd().getName() + " (" +p.getColor()+ ") ");
                 buttonList.add(b);
+                
             }
         }
         Object[] buttons = buttonList.toArray();

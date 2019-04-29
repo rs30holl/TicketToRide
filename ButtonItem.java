@@ -21,10 +21,14 @@ public class ButtonItem
                     for (LocationNode n : b.points){
                         for (Path p : n.getPaths()){
                             if(p.toString().equals(button.getText())){
-                                p1.claimRoute(p);
+                                //p1.claimRoute(p);
+                                button.setBackground(Color.RED);
+                                button.setOpaque(true);
+                                button.setEnabled(false);
                             }
                         }
                     } 
+                    
 
                     System.out.println(button.getText() + " was clicked.");
                 }
