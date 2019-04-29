@@ -4,7 +4,7 @@ import java.util.*;
  *
  * @author Ryan Holland, Julia Krasinski, Briella Sala,
  * Matt Harrison, Michael Lostritto
- * @version 4/7/19
+ * @version 4/28/19
  */
 public class Hand
 {

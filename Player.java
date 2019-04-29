@@ -8,7 +8,7 @@ import java.util.*;
  *
  * @author Ryan Holland, Julia Krasinski, Briella Sala,
  * Matt Harrison, Michael Lostritto
- * @version 4.7.2019
+ * @version 4/28/2019
  */
 public class Player
 {
@@ -44,14 +44,16 @@ public class Player
     }
 
     /**
-     * 
+     * Setter method for state 
+     * @param s, boolean state to be set 
      */
     public void setState(boolean s){
         state = s;
     }
 
     /**
-     *
+     * Getter method for state 
+     * @return state 
      */
     public boolean getState(){return state;}
 
@@ -133,8 +135,13 @@ public class Player
         }
     }
 
+
     /**
-     * This method lets the Player make their move
+     * Method which allows player to make their turn 
+     *
+     * @param n marker which represents what type of move player wants to do 
+     * @param p path chosen by player
+     * @param c card chosen by player
      */
     public void turn(int n, Path p, Card c){
 
