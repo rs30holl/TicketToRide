@@ -69,11 +69,11 @@ public class Scorecard
                 JLabel score2 = new JLabel(Integer.toString(c2.getScore()));
                 scoreCard.add(score2);
             }
-            for(Path w : p1.claimedRoutes){
+            //for(Path w : p1.claimedRoutes){
                 if(true){
                 }
                 f.add(p);
-            }
+            //}
         }
             else if(numPlayers == 3){
                 JLabel name1 = new JLabel(p1.getName());
