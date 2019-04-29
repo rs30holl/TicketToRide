@@ -8,31 +8,41 @@ public class ButtonItem
     private JButton button;
     private Board b;
     private Player p1;
-
+    
     public ButtonItem(String name)
     {
         this.button = new JButton(name);
         button.addActionListener(new ActionListener()
             {
-                @Override
+                //@Override
                 public void actionPerformed(ActionEvent e)
                 {
                     //call players turn
                     for (LocationNode n : b.points){
                         for (Path p : n.getPaths()){
-                            if(p.toString().equals(button.getText())){
+                            if(e.getSource().equals(p.toString())){
                                 //p1.claimRoute(p);
-                                button.setBackground(Color.RED);
-                                button.setOpaque(true);
                                 button.setEnabled(false);
                             }
                         }
                     } 
-                    
 
-                    System.out.println(button.getText() + " was clicked.");
+                    button.setBackground(Color.RED);
+                    button.setOpaque(true);
+                    
+                    //System.out.println(button.getText() + " was clicked.");
                 }
             });
+
+        // button.addActionListener(new ActionListener() { 
+        // public void actionPerformed(ActionEvent e) { 
+        // buttonPressed();
+        // } 
+        // } );
+    }
+
+    public void buttonPressed(){
+
     }
 
     public JButton getButton()
