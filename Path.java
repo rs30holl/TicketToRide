@@ -64,4 +64,9 @@ public class Path
     public LocationNode getEnd(){
         return end;
     }
+    
+    public String toString(){
+        return getStart().getName() + " to "
+                        + getEnd().getName() + " (" +getColor()+ ") ";
+    }
 }
