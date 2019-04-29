@@ -6,19 +6,29 @@ import java.util.*;
 public class ButtonItem
 {
     private JButton button;
+    private Board b;
+    private Player p1;
 
     public ButtonItem(String name)
     {
         this.button = new JButton(name);
         button.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
             {
-                //call players turn
-                System.out.println(button.getText() + " was clicked.");
-            }
-        });
+                @Override
+                public void actionPerformed(ActionEvent e)
+                {
+                    //call players turn
+                    for (LocationNode n : b.points){
+                        for (Path p : n.getPaths()){
+                            if(p.toString().equals(button.getText())){
+                                p1.claimRoute(p);
+                            }
+                        }
+                    } 
+
+                    System.out.println(button.getText() + " was clicked.");
+                }
+            });
     }
 
     public JButton getButton()
@@ -36,7 +46,7 @@ public class ButtonItem
 class ButtonListRenderer extends JButton implements ListCellRenderer
 {
     public Component getListCellRendererComponent(JList comp, Object value, int index,
-                                                  boolean isSelected, boolean hasFocus)
+    boolean isSelected, boolean hasFocus)
     {
         setEnabled(comp.isEnabled());
         setFont(comp.getFont());
