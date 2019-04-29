@@ -653,7 +653,7 @@ public class BoardPanel extends JPanel implements MouseListener
             name1.setBounds(300,50,100,50);
             name1.setFont(name1.getFont().deriveFont(24.0f));
             scoreCard.add(name1);
-            JLabel taxi1 = new JLabel("" +p1.getTaxiCount());
+            JLabel taxi1 = new JLabel(Integer.toString(p1.getTaxiCount()));
             taxi1.setBounds(300,100,100,50);
             taxi1.setFont(taxi1.getFont().deriveFont(24.0f));
             scoreCard.add(taxi1);
