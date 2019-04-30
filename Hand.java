@@ -15,9 +15,11 @@ public class Hand
      *
      * @param numCards Number of starting cards in a hand
      */
-    public Hand(Card... numCards){
-        for (Card c : numCards){
-            cards.add(c);
+    public Hand(Object... numCards){
+        for (Object c : numCards){
+            if (c instanceof Card){
+                cards.add((Card)c);
+            }
         }
     }
     

@@ -10,7 +10,7 @@ public class Board
 {
     protected static ArrayList<LocationNode> points = new ArrayList<>();
     static ArrayList<Card> tcDeck = new ArrayList<>();
-    static ArrayList<Card> dtDeck = new ArrayList<>();
+    static ArrayList<DestinationTicket> dtDeck = new ArrayList<>();
     static ArrayList<Card> discard = new ArrayList<>();
     
     /** Constructor for objects of class Board
@@ -152,24 +152,24 @@ public class Board
         //bk.addPath(new Path(bk, les, "GRAY", 0, 3));
         
         //Initialize the destination tickets
-        dtDeck.add(new DestinationTicket(un,ws,8));
-        dtDeck.add(new DestinationTicket(lc,gv,6));
-        dtDeck.add(new DestinationTicket(esb,bk,7));
-        dtDeck.add(new DestinationTicket(cp,ct,8));
-        dtDeck.add(new DestinationTicket(ts,so,6));
-        dtDeck.add(new DestinationTicket(ch,ws,6));
-        dtDeck.add(new DestinationTicket(cp,ch,5));
-        dtDeck.add(new DestinationTicket(ts,ev,4));
-        dtDeck.add(new DestinationTicket(ev,so,4));
-        dtDeck.add(new DestinationTicket(ch,bk,8));
-        dtDeck.add(new DestinationTicket(cp,gp,4));
-        dtDeck.add(new DestinationTicket(gp,ct,4));
-        dtDeck.add(new DestinationTicket(un,mw,3));
-        dtDeck.add(new DestinationTicket(cp,mw,2));
-        dtDeck.add(new DestinationTicket(lc,esb,3));
-        dtDeck.add(new DestinationTicket(les,ws,2));
-        dtDeck.add(new DestinationTicket(esb,gv,3));
-        dtDeck.add(new DestinationTicket(ts,bk,8));
+        dtDeck.add(new DestinationTicket(un,ws,8,"unws"));
+        dtDeck.add(new DestinationTicket(lc,gv,6,"lcgv"));
+        dtDeck.add(new DestinationTicket(esb,bk,7,"esbbk"));
+        dtDeck.add(new DestinationTicket(cp,ct,8,"cpct"));
+        dtDeck.add(new DestinationTicket(ts,so,6,"tsso"));
+        dtDeck.add(new DestinationTicket(ch,ws,6,"chws"));
+        dtDeck.add(new DestinationTicket(cp,ch,5,"cpch"));
+        dtDeck.add(new DestinationTicket(ts,ev,4,"tsev"));
+        dtDeck.add(new DestinationTicket(ev,so,4,"evso"));
+        dtDeck.add(new DestinationTicket(ch,bk,8,"chbk"));
+        dtDeck.add(new DestinationTicket(cp,gp,4,"cpgp"));
+        dtDeck.add(new DestinationTicket(gp,ct,4,"gpct"));
+        dtDeck.add(new DestinationTicket(un,mw,3,"unmw"));
+        dtDeck.add(new DestinationTicket(cp,mw,2,"cpmw"));
+        dtDeck.add(new DestinationTicket(lc,esb,3,"lcesb"));
+        dtDeck.add(new DestinationTicket(les,ws,2,"lesws"));
+        dtDeck.add(new DestinationTicket(esb,gv,3,"esbgv"));
+        dtDeck.add(new DestinationTicket(ts,bk,8,"tsbk"));
         Collections.shuffle(dtDeck);
         
         initDeck();

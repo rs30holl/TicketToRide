@@ -8,8 +8,9 @@ public class ButtonItem
     private JButton button;
     private Board b;
     private Player p1;
+    private Path path;
     
-    public ButtonItem(String name)
+    public ButtonItem(String name, Path p)
     {
         this.button = new JButton(name);
         button.addActionListener(new ActionListener()
@@ -17,19 +18,11 @@ public class ButtonItem
                 //@Override
                 public void actionPerformed(ActionEvent e)
                 {
-                    //call players turn
-                    for (Player p : BoardPanel.list){
-                        if(p.getState()){
-                            p.turn(2, null)
-                        }
-                    }
+                    button.setText("");
                     button.setEnabled(false);
-                    button.setBackground(Color.RED);
-                    button.setOpaque(true);
-                    
-                    System.out.println(button.getText() + " was clicked.");
                 }
             });
+        path = p;
 
         // button.addActionListener(new ActionListener() { 
         // public void actionPerformed(ActionEvent e) { 
@@ -37,6 +30,8 @@ public class ButtonItem
         // } 
         // } );
     }
+    
+    public Path getPath(){return path;}
 
     public void buttonPressed(){
 

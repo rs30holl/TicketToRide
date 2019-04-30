@@ -24,7 +24,7 @@ public class Driver {
                 for (int i = 0; i < BoardPanel.list.size() - 1; i++){
                     pos++;
                     if (pos == BoardPanel.list.size())pos = 0;
-                    BoardPanel.list.get(pos).turn(0, null, null);
+                    BoardPanel.list.get(pos);
                 }
                 done = true;
             }

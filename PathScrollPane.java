@@ -25,9 +25,10 @@ public class PathScrollPane extends JList{
         for (LocationNode n : board.points){
             for (Path p : n.getPaths()){
                 ButtonItem b = new ButtonItem(p.getStart().getName() + " to "
-                        + p.getEnd().getName() + " (" +p.getColor()+ ") ");
+                        + p.getEnd().getName() + " (" +p.getColor()+ ") ", p);
                 buttonList.add(b);
                 
+
             }
         }
         Object[] buttons = buttonList.toArray();
@@ -37,13 +38,13 @@ public class PathScrollPane extends JList{
         pane.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         pane.setVisibleRowCount(10);
         pane.addMouseListener(new MouseAdapter()
-        {
-            @Override
-            public void mouseClicked(MouseEvent event)
             {
-                clickButtonAt(event.getPoint());
-            }
-        });
+                @Override
+                public void mouseClicked(MouseEvent event)
+                {
+                    clickButtonAt(event.getPoint());
+                }
+            });
         JScrollPane s = new JScrollPane(pane);
         return s;
     }
@@ -58,6 +59,15 @@ public class PathScrollPane extends JList{
         int index = pane.locationToIndex(point);
         ButtonItem item = (ButtonItem) pane.getModel().getElementAt(index);
         item.getButton().doClick();
+        for (Player p : BoardPanel.list){
+            if(p.getState()){
+                p.turn(2, item.getPath(),null);
+                p.setState(false);
+                break;
+            }
+        }
+
+
     }
 
     /**
@@ -66,6 +76,6 @@ public class PathScrollPane extends JList{
      * @param args[]: not used
      */
     //public static void main(String[] args){
-       // SwingUtilities.invokeLater(new PathScrollPane());
+    // SwingUtilities.invokeLater(new PathScrollPane());
     //}
 }
