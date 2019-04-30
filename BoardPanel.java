@@ -30,19 +30,19 @@ public class BoardPanel extends JPanel implements MouseListener
             ".\\ttr cards\\vcardback.png");
     // private static final Image transCardBack2 = transCardBack.getImage();
     private static final ImageIcon blue = new ImageIcon(
-            ".\\fwdpiences1\\verticalBlue.png");
+            ".\\ttr cards\\bluecard.png");
     private static final ImageIcon black = new ImageIcon(
-            ".\\fwdpieces1\\verticalBlack.png");
+            ".\\ttr cards\\blackcard.png");
     private static final ImageIcon red = new ImageIcon(
-            ".\\fwdpieces1\\verticalRed.png");
+            ".\\fwdpieces1\\verticalRed.jpg");
     private static final ImageIcon pink = new ImageIcon(
-            ".\\fwdpieces1\\verticalPink.png");
+            ".\\fwdpieces1\\verticalPink.jpg");
     private static final ImageIcon green = new ImageIcon(
-            ".\\fwdpieces1\\verticalGreen.png");
+            ".\\ttr cards\\greencard.png");
     private static final ImageIcon orange = new ImageIcon(
-            ".\\fwdpieces1\\verticalOrange.png");
+            ".\\ttr cards\\orangecard.png");
     private static final ImageIcon rainbow = new ImageIcon(
-            ".\\fwdpieces\\verticalRainbow.png");
+            ".\\ttr cards\\rainbowcard.png");
     private static final ImageIcon transCardSide = new ImageIcon(
             ".\\ttr cards\\cardback.png");
     //private final Image transCardSide2 = transCardSide.getImage();
@@ -57,7 +57,7 @@ public class BoardPanel extends JPanel implements MouseListener
     private static Player p3;
     private static Player p4;
     private static Board b = new Board();
-    
+
     /**
      *
      */
@@ -90,8 +90,31 @@ public class BoardPanel extends JPanel implements MouseListener
         int cardHeight = frame.getHeight() / 5;
 
         for(int i = 0; i < 5; i++){
-            if((b.tcDeck.get(i)).getColor().equals("ORANGE")){
+            if((b.tcDeck.get(b.tcDeck.size() - 1)).getColor().equals("ORANGE")){
+                Card x = (b.tcDeck.get(b.tcDeck.size() - 1));
                 JLabel faceUp11 = new JLabel();
+                faceUp11.addMouseListener(new MouseAdapter(){
+                        public void mouseClicked(MouseEvent e){
+                            for (Player p : list){
+                                if (p.getState()){
+                                    if (p.getTurnCount() == 2){
+                                        p.setState(false);
+                                        p.setTurnCount(0);
+                                        break;
+                                    }
+                                    else if (p.getTurnCount() == 1){
+                                        p.turn(3,null,x);
+                                        p.setState(false);
+                                        p.setTurnCount(0);
+                                        break;
+                                    }
+                                    p.turn(3,null,x);
+                                    break;
+                                }
+                            }
+                            removeCard(faceUp11);
+                        }
+                    });
                 if(i ==0){
                     faceUp11.setBounds((int)(0.51 * frame.getWidth()),
                         9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
@@ -129,8 +152,93 @@ public class BoardPanel extends JPanel implements MouseListener
                 }
 
             }
-            if((b.tcDeck.get(i)).getColor().equals("RED")){
+            else if((b.tcDeck.get(b.tcDeck.size() - 1)).getColor().equals("GREEN")){
+                Card x = (b.tcDeck.get(b.tcDeck.size() - 1));
                 JLabel faceUp11 = new JLabel();
+                faceUp11.addMouseListener(new MouseAdapter(){
+                        public void mouseClicked(MouseEvent e){
+                            for (Player p : list){
+                                if (p.getState()){
+                                    if (p.getTurnCount() == 2){
+                                        p.setState(false);
+                                        p.setTurnCount(0);
+                                        break;
+                                    }
+                                    else if (p.getTurnCount() == 1){
+                                        p.turn(3,null,x);
+                                        p.setState(false);
+                                        p.setTurnCount(0);
+                                        break;
+                                    }
+                                    p.turn(3,null,x);
+                                    break;
+                                }
+                            }
+                            removeCard(faceUp11);
+                        }
+                    });
+                if(i ==0){
+                    faceUp11.setBounds((int)(0.51 * frame.getWidth()),
+                        9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                    faceUp11.setIcon(new ImageIcon(green.getImage().getScaledInstance(
+                                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                    p.add(faceUp11);
+                }
+                else if(i == 1){
+                    faceUp11.setBounds((int)(0.6 * frame.getWidth()),
+                        9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                    faceUp11.setIcon(new ImageIcon(green.getImage().getScaledInstance(
+                                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                    p.add(faceUp11);
+                }
+                else if(i == 2){
+                    faceUp11.setBounds((int)(0.7 * frame.getWidth()),
+                        9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                    faceUp11.setIcon(new ImageIcon(green.getImage().getScaledInstance(
+                                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                    p.add(faceUp11);
+                }
+                else if(i == 3){
+                    faceUp11.setBounds((int)(0.8 * frame.getWidth()),
+                        9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                    faceUp11.setIcon(new ImageIcon(green.getImage().getScaledInstance(
+                                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                    p.add(faceUp11);
+                }
+                else{
+                    faceUp11.setBounds((int)(0.9 * frame.getWidth()),
+                        9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+                    faceUp11.setIcon(new ImageIcon(green.getImage().getScaledInstance(
+                                cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+                    p.add(faceUp11);
+                }
+
+            }
+            else if((b.tcDeck.get(b.tcDeck.size() - 1)).getColor().equals("RED")){
+                Card x = (b.tcDeck.get(b.tcDeck.size() - 1));
+                JLabel faceUp11 = new JLabel();
+                faceUp11.addMouseListener(new MouseAdapter(){
+                        public void mouseClicked(MouseEvent e){
+                            for (Player p : list){
+                                if (p.getState()){
+                                    if (p.getTurnCount() == 2){
+                                        p.setState(false);
+                                        p.setTurnCount(0);
+                                        break;
+                                    }
+                                    else if (p.getTurnCount() == 1){
+                                        p.turn(3,null,x);
+                                        p.setState(false);
+                                        p.setTurnCount(0);
+                                        break;
+                                    }
+                                    p.turn(3,null,x);
+                                    break;
+                                }
+                            }
+                            removeCard(faceUp11);
+                        }
+                    });
                 if(i ==0){
                     faceUp11.setBounds((int)(0.51 * frame.getWidth()),
                         9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
@@ -168,8 +276,31 @@ public class BoardPanel extends JPanel implements MouseListener
                 }
 
             }
-            if((b.tcDeck.get(i)).getColor().equals("BLACK")){
+            else if((b.tcDeck.get(b.tcDeck.size() - 1)).getColor().equals("BLACK")){
+                Card x = (b.tcDeck.get(b.tcDeck.size() - 1));
                 JLabel faceUp11 = new JLabel();
+                faceUp11.addMouseListener(new MouseAdapter(){
+                        public void mouseClicked(MouseEvent e){
+                            for (Player p : list){
+                                if (p.getState()){
+                                    if (p.getTurnCount() == 2){
+                                        p.setState(false);
+                                        p.setTurnCount(0);
+                                        break;
+                                    }
+                                    else if (p.getTurnCount() == 1){
+                                        p.turn(3,null,x);
+                                        p.setState(false);
+                                        p.setTurnCount(0);
+                                        break;
+                                    }
+                                    p.turn(3,null,x);
+                                    break;
+                                }
+                            }
+                            removeCard(faceUp11);
+                        }
+                    });
                 if(i ==0){
                     faceUp11.setBounds((int)(0.51 * frame.getWidth()),
                         9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
@@ -206,8 +337,31 @@ public class BoardPanel extends JPanel implements MouseListener
                     p.add(faceUp11);
                 }
             }
-            if((b.tcDeck.get(i)).getColor().equals("BLUE")){
+            else if((b.tcDeck.get(b.tcDeck.size() - 1)).getColor().equals("BLUE")){
+                Card x = (b.tcDeck.get(b.tcDeck.size() - 1));
                 JLabel faceUp11 = new JLabel();
+                faceUp11.addMouseListener(new MouseAdapter(){
+                        public void mouseClicked(MouseEvent e){
+                            for (Player p : list){
+                                if (p.getState()){
+                                    if (p.getTurnCount() == 2){
+                                        p.setState(false);
+                                        p.setTurnCount(0);
+                                        break;
+                                    }
+                                    else if (p.getTurnCount() == 1){
+                                        p.turn(3,null,x);
+                                        p.setState(false);
+                                        p.setTurnCount(0);
+                                        break;
+                                    }
+                                    p.turn(3,null,x);
+                                    break;
+                                }
+                            }
+                            removeCard(faceUp11);
+                        }
+                    });
                 if(i ==0){
                     faceUp11.setBounds((int)(0.51 * frame.getWidth()),
                         9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
@@ -244,8 +398,31 @@ public class BoardPanel extends JPanel implements MouseListener
                     p.add(faceUp11);
                 }
             }
-            if((b.tcDeck.get(i)).getColor().equals("PINK")){
+            else if((b.tcDeck.get(b.tcDeck.size() - 1)).getColor().equals("PINK")){
+                Card x = (b.tcDeck.get(b.tcDeck.size() - 1));
                 JLabel faceUp11 = new JLabel();
+                faceUp11.addMouseListener(new MouseAdapter(){
+                        public void mouseClicked(MouseEvent e){
+                            for (Player p : list){
+                                if (p.getState()){
+                                    if (p.getTurnCount() == 2){
+                                        p.setState(false);
+                                        p.setTurnCount(0);
+                                        break;
+                                    }
+                                    else if (p.getTurnCount() == 1){
+                                        p.turn(3,null,x);
+                                        p.setState(false);
+                                        p.setTurnCount(0);
+                                        break;
+                                    }
+                                    p.turn(3,null,x);
+                                    break;
+                                }
+                            }
+                            removeCard(faceUp11);
+                        }
+                    });
                 if(i ==0){
                     faceUp11.setBounds((int)(0.51 * frame.getWidth()),
                         9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
@@ -282,8 +459,31 @@ public class BoardPanel extends JPanel implements MouseListener
                     p.add(faceUp11);
                 }
             }
-            if((b.tcDeck.get(i)).getColor().equals("RAINBOW")){
+            else if((b.tcDeck.get(b.tcDeck.size() - 1)).getColor().equals("RAINBOW")){
+                Card x = (b.tcDeck.get(b.tcDeck.size() - 1));
                 JLabel faceUp11 = new JLabel();
+                faceUp11.addMouseListener(new MouseAdapter(){
+                        public void mouseClicked(MouseEvent e){
+                            for (Player p : list){
+                                if (p.getState()){
+                                    if (p.getTurnCount() == 2){
+                                        p.setState(false);
+                                        p.setTurnCount(0);
+                                        break;
+                                    }
+                                    else if (p.getTurnCount() == 1){
+                                        p.turn(3,null,x);
+                                        p.setState(false);
+                                        p.setTurnCount(0);
+                                        break;
+                                    }
+                                    p.turn(3,null,x);
+                                    break;
+                                }
+                            }
+                            removeCard(faceUp11);
+                        }
+                    });
                 if(i ==0){
                     faceUp11.setBounds((int)(0.51 * frame.getWidth()),
                         9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
@@ -320,13 +520,9 @@ public class BoardPanel extends JPanel implements MouseListener
                     p.add(faceUp11);
                 }
             }
-            
+            b.discard.add(b.tcDeck.get(b.tcDeck.size()-1));
+            b.tcDeck.remove(b.tcDeck.size() - 1);
         }
-        b.tcDeck.remove(0);
-        b.tcDeck.remove(0);
-        b.tcDeck.remove(0);
-        b.tcDeck.remove(0);
-        b.tcDeck.remove(0);
     }
 
     /**
@@ -341,13 +537,19 @@ public class BoardPanel extends JPanel implements MouseListener
         panel.setLayout(null);
 
         frame.pack();
-        frame.setVisible(true);
-        generateCards(panel);
+        //generateCards(panel);
 
         int halfWidth = (int)(0.5 * frame.getWidth());
         int quarterHeight = (int)(0.71 * frame.getHeight());
         int cardWidth = frame.getWidth() / 15;
         int cardHeight = frame.getHeight() / 5;
+
+        JLabel faceUp11 = new JLabel();
+        faceUp11.setBounds((int)(0.9 * frame.getWidth()),
+            9*quarterHeight/10 + frame.getWidth() / 100 , cardWidth, cardHeight);
+        faceUp11.setIcon(new ImageIcon(rainbow.getImage().getScaledInstance(
+                    cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+        panel.add(faceUp11);
 
         JLabel tcDeck = new JLabel();
         tcDeck.setBounds( (int)(0.71 * frame.getWidth()),
@@ -399,14 +601,13 @@ public class BoardPanel extends JPanel implements MouseListener
         panel.add(faceUp21);
          */
 
-
         PathScrollPane scroll = new PathScrollPane(b);
         JScrollPane s = scroll.PathScrollPane();
         s.setBounds(halfWidth + 20, 30, cardWidth + 200, quarterHeight - 75);
         panel.add(s);
 
         JButton score = new JButton("Show Score");
-        score.setBounds(1680, 730, 150, 50);
+        score.setBounds(1370, 650, 150,50);
         panel.add(score);
         score.addActionListener(new ActionListener() { 
                 public void actionPerformed(ActionEvent e) { 
@@ -415,8 +616,6 @@ public class BoardPanel extends JPanel implements MouseListener
             } );
 
         //score.setVisible(true);
-        
-
         Object[] options = {"2", "3", "4"};
         int x = JOptionPane.showOptionDialog(frame,"How many players?",
                 "Number of Players",JOptionPane.YES_NO_CANCEL_OPTION,
@@ -542,71 +741,113 @@ public class BoardPanel extends JPanel implements MouseListener
             }
         }
 
+
+        addButtons(panel);
+        for(Player p : list){
+            p.startGame();
+        }
+        frame.pack();
+        frame.setVisible(true);
+
+    }
+    
+
+    public static void addButtons(JPanel panel){
         if (list.size() == 2){
-            JLabel p1 = new JLabel();
-            //p1.setBounds();
-            p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
 
-            JLabel p2 = new JLabel();
-            //p2.setBounds();
-            p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            JButton j1 = new JButton();
+            j1.setText(p1.getName() + "'s Hand");
+            j1.setBounds(frame.getWidth() - 200,100,150,50);
+            j1.setVisible(true);
+            j1.addActionListener(new ActionListener() { 
+                    public void actionPerformed(ActionEvent e) { 
+                        new showHand();
+                    } 
+                } );
 
-            panel.add(p1);
-            panel.add(p2);
+            JButton j2 = new JButton(p2.getName() + "'s Hand");
+            j2.setBounds(frame.getWidth() - 200, 150, 150, 50);
+            j2.addActionListener(new ActionListener() { 
+                    public void actionPerformed(ActionEvent e) { 
+                        new showHand();
+                    } 
+                } );
+
+            panel.add(j1);
+            panel.add(j2);
+
         }
         else if (list.size() == 3){
-            JLabel p1 = new JLabel();
-            //p1.setBounds();
-            p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            JButton j1 = new JButton(p1.getName() + "'s Hand");
+            j1.setBounds(frame.getWidth() - 200,100,150,50);
+            j1.addActionListener(new ActionListener() { 
+                    public void actionPerformed(ActionEvent e) { 
+                        new showHand();
+                    } 
+                } );
 
-            JLabel p2 = new JLabel();
-            //p2.setBounds();
-            p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            JButton j2 = new JButton(p2.getName() + "'s Hand");
+            j2.setBounds(frame.getWidth() - 200, 150, 150, 50);
+            j2.addActionListener(new ActionListener() { 
+                    public void actionPerformed(ActionEvent e) { 
+                        new showHand();
+                    } 
+                } );
 
-            JLabel p3 = new JLabel();
-            //p3.setBounds();
-            p3.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            JButton j3 = new JButton(p3.getName() + "'s Hand");
+            j3.setBounds(frame.getWidth() - 200, 200, 150, 50);
+            j3.addActionListener(new ActionListener() { 
+                    public void actionPerformed(ActionEvent e) { 
+                         new showHand();
+                    } 
+                } );
 
-            panel.add(p1);
-            panel.add(p2);
-            panel.add(p3);
+            panel.add(j1);
+            panel.add(j2);
+            panel.add(j3);
         }
-        else if (list.size() == 4){
-            JLabel p1 = new JLabel();
-            //p1.setBounds();
-            p1.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+        else{
+            JButton j1 = new JButton(p1.getName() + "'s Hand");
+            j1.setBounds(frame.getWidth() - 200,100,150,50);
+            j1.addActionListener(new ActionListener() { 
+                    public void actionPerformed(ActionEvent e) { 
+                        new showHand();
+                    } 
+                } );
 
-            JLabel p2 = new JLabel();
-            //p2.setBounds();
-            p2.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            JButton j2 = new JButton(p2.getName() + "'s Hand");
+            j2.setBounds(frame.getWidth() - 200, 150, 150, 50);
+            j2.addActionListener(new ActionListener() { 
+                    public void actionPerformed(ActionEvent e) { 
+                        new showHand();
+                    } 
+                } );
 
-            JLabel p3 = new JLabel();
-            //p3.setBounds();
-            p3.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            JButton j3 = new JButton(p3.getName() + "'s Hand");
+            j3.setBounds(frame.getWidth() - 200, 200, 150, 50);
+            j3.addActionListener(new ActionListener() { 
+                    public void actionPerformed(ActionEvent e) { 
+                        new showHand();
+                    } 
+                } );
 
-            JLabel p4 = new JLabel();
-            //p4.setBounds();
-            p4.setIcon(new ImageIcon(transCardSide.getImage().getScaledInstance(
-                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            JButton j4 = new JButton(p4.getName() + "'s Hand");
+            j4.setBounds(frame.getWidth() - 200, 250, 150, 50);
+            j4.addActionListener(new ActionListener() { 
+                    public void actionPerformed(ActionEvent e) { 
+                        new showHand();
+                    } 
+                } );
 
-            panel.add(p1);
-            panel.add(p2);
-            panel.add(p3);
-            panel.add(p4);
+            panel.add(j1);
+            panel.add(j2);
+            panel.add(j3);
+            panel.add(j4);
         }
-
     }
 
     private static void selectionButtonPressed(){
-       Scorecard s = new Scorecard(numPlayers, list);
+        Scorecard s = new Scorecard(numPlayers, list);
     }
 
     public void mousePressed(MouseEvent e){}
@@ -617,15 +858,52 @@ public class BoardPanel extends JPanel implements MouseListener
 
     public void mouseExited(MouseEvent e){}
 
-    public void mouseClicked(MouseEvent e){
-        BoardPanel.main(new String[0]);
-        for(int i = 0; i < 4; i++){
-            //TransportationCard t = Board.tcDeck(0);
-            //tcdeck.remove();
-            ImageIcon t1 = new ImageIcon(this.getClass().
-                    getResource("\\fwdpieces1\\verticalPink.jpg"));
-            Image t2 = destTicketBack.getImage();
-            //.drawImage(t2, (int)(0.51 * getWidth()), 750, getWidth() / 15, getHeight() / 5, this);
+    public void mouseClicked(MouseEvent e){}
+
+    public static void removeCard(JLabel l){
+        int cardWidth = frame.getWidth() / 15;
+        int cardHeight = frame.getHeight() / 5;
+        if((b.tcDeck.get(b.tcDeck.size() - 1)).getColor().equals("ORANGE")){
+            l.setIcon(new ImageIcon(orange.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            b.discard.add(b.tcDeck.get(b.tcDeck.size() - 1));
+            b.tcDeck.remove(b.tcDeck.size() - 1);
+        }
+        else if((b.tcDeck.get(b.tcDeck.size() - 1)).getColor().equals("RED")){
+            l.setIcon(new ImageIcon(red.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            b.discard.add(b.tcDeck.get(b.tcDeck.size() - 1));
+            b.tcDeck.remove(b.tcDeck.size() - 1);
+        }
+        else if((b.tcDeck.get(b.tcDeck.size() - 1)).getColor().equals("BLACK")){
+            l.setIcon(new ImageIcon(black.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            b.discard.add(b.tcDeck.get(b.tcDeck.size() - 1));
+            b.tcDeck.remove(b.tcDeck.size() - 1);
+        }
+        else if((b.tcDeck.get(b.tcDeck.size() - 1)).getColor().equals("BLUE")){
+            l.setIcon(new ImageIcon(blue.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            b.discard.add(b.tcDeck.get(b.tcDeck.size() - 1));
+            b.tcDeck.remove(b.tcDeck.size() - 1);
+        }
+        else if((b.tcDeck.get(b.tcDeck.size() - 1)).getColor().equals("PINK")){
+            l.setIcon(new ImageIcon(pink.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            b.discard.add(b.tcDeck.get(b.tcDeck.size() - 1));
+            b.tcDeck.remove(b.tcDeck.size() - 1);
+        }
+        else if((b.tcDeck.get(b.tcDeck.size() - 1)).getColor().equals("GREEN")){
+            l.setIcon(new ImageIcon(green.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            b.discard.add(b.tcDeck.get(b.tcDeck.size() - 1));
+            b.tcDeck.remove(b.tcDeck.size() - 1);
+        }
+        else if((b.tcDeck.get(b.tcDeck.size() - 1)).getColor().equals("RAINBOW")){
+            l.setIcon(new ImageIcon(rainbow.getImage().getScaledInstance(
+                        cardWidth, cardHeight, Image.SCALE_SMOOTH)));
+            b.discard.add(b.tcDeck.get(b.tcDeck.size() - 1));
+            b.tcDeck.remove(b.tcDeck.size() - 1);
         }
     }
 
@@ -640,4 +918,5 @@ public class BoardPanel extends JPanel implements MouseListener
             });
 
     }
+
 }
